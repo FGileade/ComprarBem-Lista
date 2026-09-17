@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CompraBem — Sistema Refinado de Design & PWA</title>
+  <meta name="description" content="Ecossistema Refinado CompraBem: Lista, Nutri, Lembretes e Profissionais. Sua orientação aplicada às compras.">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#2F7D5A">
+  <!-- Google Fonts: Nunito -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde-escuro: #1F5A42;
+      --verde-principal: #2F7D5A;
+      --verde-claro: #DDF2E7;
+      --amarelo-destaque: #E7A93B;
+      --azul-suave: #3B82F6;
+      --roxo-nutri: #7C3AED;
+      --fundo-claro: #F7F9F6;
+      --fundo-card: #FFFFFF;
+      --texto-escuro: #20302A;
+      --cinza-secundario: #667085;
+      --branco: #FFFFFF;
+      --vermelho-alerta: #D64545;
+      --borda-suave: #E2E8F0;
+      --sombra-card: 0 4px 20px rgba(32, 48, 42, 0.06);
+      --sombra-flutuante: 0 12px 32px rgba(31, 90, 66, 0.12);
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 24px;
+      --radius-full: 9999px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--fundo-claro);
+      color: var(--texto-escuro);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header */
+    header.top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(247, 249, 246, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--borda-suave);
+      padding: 16px 0;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .nav-brand img {
+      height: 40px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--texto-escuro);
+      font-weight: 700;
+      font-size: 15px;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--verde-principal);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      font-size: 14px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background-color: var(--verde-principal);
+      color: var(--branco);
+      box-shadow: 0 2px 8px rgba(47, 125, 90, 0.25);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--verde-escuro);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background-color: var(--verde-claro);
+      color: var(--verde-escuro);
+    }
+
+    .btn-secondary:hover {
+      background-color: #c9ebd8;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid var(--verde-principal);
+      color: var(--verde-principal);
+    }
+
+    .btn-outline:hover {
+      background: var(--verde-claro);
+    }
+
+    .btn-amber {
+      background: #FEF7EB;
+      border: 1px solid var(--amarelo-destaque);
+      color: #8C5A08;
+    }
+
+    .btn-amber:hover {
+      background: #FDE8C7;
+    }
+
+    .btn-purple {
+      background: #F3E8FF;
+      border: 1px solid var(--roxo-nutri);
+      color: var(--roxo-nutri);
+    }
+
+    /* Hero */
+    .hero {
+      padding: 56px 0 32px;
+      text-align: center;
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--verde-claro);
+      color: var(--verde-escuro);
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: 44px;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      color: var(--verde-escuro);
+      margin-bottom: 10px;
+    }
+
+    .hero p.slogan {
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--cinza-secundario);
+      max-width: 720px;
+      margin: 0 auto 28px;
+    }
+
+    /* Mother Tabs Bar */
+    .mother-tabs-bar {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+
+    .mother-tab {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      background: var(--branco);
+      border: 1px solid var(--borda-suave);
+      border-radius: var(--radius-full);
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--texto-escuro);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .mother-tab:hover, .mother-tab.active {
+      background: var(--verde-claro);
+      border-color: var(--verde-principal);
+      color: var(--verde-escuro);
+      transform: translateY(-2px);
+      box-shadow: var(--sombra-card);
+    }
+
+    .mother-tab.nutri {
+      border-color: #DDD6FE;
+    }
+    .mother-tab.nutri:hover, .mother-tab.nutri.active {
+      background: #F3E8FF;
+      border-color: var(--roxo-nutri);
+      color: var(--roxo-nutri);
+    }
+
+    /* Slide Card */
+    .slide-card {
+      background: var(--branco);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--borda-suave);
+      padding: 36px;
+      margin-bottom: 36px;
+      box-shadow: var(--sombra-card);
+    }
+
+    .slide-tag {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--verde-principal);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .slide-heading {
+      font-size: 30px;
+      font-weight: 800;
+      color: var(--verde-escuro);
+      margin-bottom: 20px;
+    }
+
+    /* Stitch Screens Gallery */
+    .screens-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 0.9fr;
+      gap: 28px;
+      margin-top: 24px;
+    }
+
+    @media (max-width: 900px) {
+      .screens-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .screen-showcase {
+      border: 1px solid var(--borda-suave);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: #F0F4F2;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .screen-showcase-header {
+      padding: 14px 18px;
+      background: var(--branco);
+      border-bottom: 1px solid var(--borda-suave);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .screen-showcase-header h4 {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--verde-escuro);
+    }
+
+    .screen-img-scroll {
+      max-height: 520px;
+      overflow-y: auto;
+      padding: 12px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .screen-img-scroll img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+
+    /* Refined Components Showcase */
+    .components-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .component-box {
+      border: 1px solid var(--borda-suave);
+      border-radius: var(--radius-md);
+      padding: 22px;
+      background: #FAFBF9;
+    }
+
+    .component-box h4 {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--verde-escuro);
+      margin-bottom: 6px;
+    }
+
+    .component-box p.desc {
+      font-size: 13px;
+      color: var(--cinza-secundario);
+      margin-bottom: 16px;
+    }
+
+    /* Origin Badges */
+    .origin-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: var(--radius-full);
+    }
+    .origin-nutri {
+      background: #F3E8FF;
+      color: var(--roxo-nutri);
+      border: 1px solid #DDD6FE;
+    }
+    .origin-manual {
+      background: var(--verde-claro);
+      color: var(--verde-escuro);
+      border: 1px solid #B8E6CE;
+    }
+    .origin-pref {
+      background: #EFF6FF;
+      color: var(--azul-suave);
+      border: 1px solid #BFDBFE;
+    }
+
+    /* Interactive Non-Alarmist Conflict Banner */
+    .conflict-card-refined {
+      background: #FFFDF9;
+      border: 1px solid #F6D79E;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 14px;
+    }
+
+    .conflict-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .conflict-title {
+      font-weight: 800;
+      color: #8C5A08;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .conflict-body {
+      font-size: 13.5px;
+      color: var(--texto-escuro);
+      margin-bottom: 12px;
+    }
+
+    .conflict-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    /* Actionable Reminder Banner */
+    .reminder-banner {
+      background: #FEF7EB;
+      border: 1px solid var(--amarelo-destaque);
+      border-radius: 12px;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    /* Custom Product Spotlight */
+    .product-spotlight {
+      background: var(--branco);
+      border: 1px solid var(--borda-suave);
+      border-radius: 12px;
+      padding: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .star-fav {
+      color: #E7A93B;
+      font-size: 16px;
+    }
+
+    /* Empty State Welcoming */
+    .empty-state-card {
+      text-align: center;
+      padding: 32px 20px;
+      background: #FBFDFB;
+      border: 1px dashed #B8D8C7;
+      border-radius: var(--radius-md);
+    }
+
+    .empty-state-icon {
+      font-size: 38px;
+      margin-bottom: 10px;
+    }
+
+    /* Swatches */
+    .swatches-bar {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+
+    .swatch-chip {
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 13px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Toast */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--texto-escuro);
+      color: var(--branco);
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="toast" class="toast">Ação concluída!</div>
+
+  <!-- Header -->
+  <header class="top-nav">
+    <div class="container nav-inner">
+      <a href="#" class="nav-brand">
+        <img src="/assets/svg/logo-comprabem-lista.svg" alt="CompraBem Lista">
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#telas">Telas Refinadas</a></li>
+          <li><a href="#arquitetura">Arquitetura de Abas</a></li>
+          <li><a href="#componentes">Componentes Acolhedores</a></li>
+          <li><a href="#conflitos">Conflito & Origem</a></li>
+          <li><a href="/CompraBem-Lista-Kit-Marca-Completo.zip" class="btn btn-primary" download>⬇ Baixar Kit de Marca</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="badge-pill">
+        ✨ Projeto Refinado • Acolhedor & Não-Médico • PWA Guidelines
+      </div>
+      <h1>CompraBem</h1>
+      <p class="slogan">“Sua orientação aplicada às compras.”</p>
+
+      <!-- 4 Mother Tabs Selector -->
+      <div class="mother-tabs-bar">
+        <div class="mother-tab active" onclick="filtrarAba('lista')">
+          🛒 <strong>CompraBem Lista</strong> (Mercado & Despensa)
+        </div>
+        <div class="mother-tab nutri" onclick="filtrarAba('nutri')">
+          🥗 <strong>CompraBem Nutri</strong> (Perfil & Orientações)
+        </div>
+        <div class="mother-tab" onclick="filtrarAba('lembretes')">
+          📅 <strong>CompraBem Lembretes</strong> (Feiras & Recorrência)
+        </div>
+        <div class="mother-tab nutri" onclick="filtrarAba('profissionais')">
+          💼 <strong>Para Profissionais</strong> (Área Nutricionista)
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO: Telas Refinadas Google Stitch -->
+    <section id="telas" class="slide-card">
+      <div class="slide-tag">Google Stitch MCP • Telas Refinadas</div>
+      <h2 class="slide-heading">Visual Refinado Desktop Web & Mobile PWA</h2>
+      <p style="font-size: 16px; color: var(--cinza-secundario); margin-bottom: 20px;">
+        As duas telas oficiais foram refinadas diretamente no projeto do Stitch <code>projects/4486368252013266985</code>, incorporando a paleta acolhedora, Nunito em alto contraste, cards concisos e o fim de qualquer conotação hospitalar.
+      </p>
+
+      <div class="screens-grid">
+        <!-- Desktop Screen -->
+        <div class="screen-showcase">
+          <div class="screen-showcase-header">
+            <div>
+              <h4>Desktop Web — Ecossistema Multi-Abas & Dashboard</h4>
+              <small style="color: var(--cinza-secundario);">Sidebar com as 4 abas-mãe, cards concisos e pontes nutricionais</small>
+            </div>
+            <span class="origin-badge origin-manual">Desktop 2560px</span>
+          </div>
+          <div class="screen-img-scroll">
+            <img src="https://lh3.googleusercontent.com/aida/AEtjO1UPzM4HZ3PKUr-NK_lA023PyWcR6uCtRj_IeVOtbIyTeDTgLEGQbKE65WQ4doK19SKnXahOzq4UiwJxCapTZku6sA7VGER06hZI33eTBT33b03mnjxGM_KcRqPaYYP2T9j1pQDQ7_gesuzsAPyKw_qu0_H0Pe7p_XvM7itm8tWZTnRt3e9O0hORxkNY1XFDbWgpdcl0pJS02pqg2C5morlURguS6TEOFaJ0gXuXZhqtBJkft1IBu82Gly4" alt="CompraBem Desktop Refinado">
+          </div>
+        </div>
+
+        <!-- Mobile Screen -->
+        <div class="screen-showcase">
+          <div class="screen-showcase-header">
+            <div>
+              <h4>Mobile PWA — Aplicativo no Supermercado</h4>
+              <small style="color: var(--cinza-secundario);">Grandes alvos de toque, bottom bar e feira fresca</small>
+            </div>
+            <span class="origin-badge origin-pref">Mobile 780px</span>
+          </div>
+          <div class="screen-img-scroll">
+            <img src="https://lh3.googleusercontent.com/aida/AEtjO1U6chOwph5bTC5Ya09RItKDY8om33Q7Nu_1oe1DdkbWhILSeWtLO6156-ywzJfsc3UjU4fXub-YqHR53M9NDqnx5JrZLw1XjnrUIZvn9te1a5ttD-MT1SAgR7YBCcnFHpsTYmcqTg-bE3FiKO5gF0rgt4AJRpC7_nZX5HtP33cXjL0JUubIrghibDLXxhYNaxiHUVWKiInJ6S5IR8_1zJ-7Wru4Otf2ywPTz7DjyQ2qrMc16Ao0BmXz8Qw" alt="CompraBem Mobile Refinado">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO: Componentes Refinados com Origem de Regra e Tom Acolhedor -->
+    <section id="componentes" class="slide-card">
+      <div class="slide-tag">Consistência Visual & Componentes Refinados</div>
+      <h2 class="slide-heading">Ajustes Chave Implementados</h2>
+      <p style="font-size: 16px; color: var(--cinza-secundario); margin-bottom: 24px;">
+        Testando interativamente as novas diretrizes: sem termos de perigo, com origem clara da regra e controle do usuário.
+      </p>
+
+      <div class="components-grid">
+        <!-- 1. Alerta de Conflito Amigável -->
+        <div class="component-box">
+          <h4>1. Conflito com seu Perfil (Não-Alarmista)</h4>
+          <p class="desc">Substitui expressões punitivas por avisos de sugestão e respeito à autonomia.</p>
+
+          <div class="conflict-card-refined">
+            <div class="conflict-header">
+              <div class="conflict-title">💡 Sugestão amigável com seu perfil</div>
+              <span class="origin-badge origin-nutri">Consulta Nutricionista</span>
+            </div>
+            <div class="conflict-body">
+              O item <strong>Iogurte Grego Tradicional</strong> possui teor de açúcar superior à meta sugerida pela Dra. Camila para o plano de outono.
+            </div>
+            <div class="conflict-actions">
+              <button class="btn btn-primary" style="padding: 6px 12px; font-size: 12px;" onclick="copiarToast('Substituído por Iogurte 2 Ingredientes!')">Trocar por Iogurte Natural</button>
+              <button class="btn btn-outline" style="padding: 6px 12px; font-size: 12px;" onclick="copiarToast('Você sempre pode revisar e editar regras!')">Você pode revisar e editar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Lembrete Acionável da Feira -->
+        <div class="component-box">
+          <h4>2. Lembrete de Compra Proativo & Acionável</h4>
+          <p class="desc">Avisos diretos que permitem incluir itens na lista com apenas um clique.</p>
+
+          <div class="reminder-banner">
+            <div>
+              <div style="font-weight: 800; color: #8C5A08; font-size: 14px;">🌾 Segunda é dia de Feira do Bairro</div>
+              <div style="font-size: 12.5px; color: var(--texto-escuro);">Bananas, rúcula e maçãs costumam acabar no início da semana.</div>
+            </div>
+            <button class="btn btn-primary" style="padding: 8px 14px; font-size: 13px;" onclick="copiarToast('4 itens de feira adicionados à sua lista!')">+ Adicionar à lista de hoje</button>
+          </div>
+        </div>
+
+        <!-- 3. Produto Personalizado & Marca Preferida -->
+        <div class="component-box">
+          <h4>3. Marcas Preferidas & Produtos da Família</h4>
+          <p class="desc">Destaque para os produtos reais que o usuário consome no dia a dia.</p>
+
+          <div class="product-spotlight">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span class="star-fav">★</span>
+              <div>
+                <div style="font-weight: 800; font-size: 14px;">Pão 100% Integral Nutrella</div>
+                <div style="font-size: 12px; color: var(--cinza-secundario);">Padaria • Marca Favorita Salva</div>
+              </div>
+            </div>
+            <span class="origin-badge origin-pref">Preferência Pessoal</span>
+          </div>
+
+          <div class="product-spotlight">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span class="star-fav">★</span>
+              <div>
+                <div style="font-weight: 800; font-size: 14px;">Azeite Extra Virgem Andorinha 0.2%</div>
+                <div style="font-size: 12px; color: var(--cinza-secundario);">Mercearia • Escolha Consciente</div>
+              </div>
+            </div>
+            <span class="origin-badge origin-manual">Manual</span>
+          </div>
+        </div>
+
+        <!-- 4. Estado Vazio Acolhedor -->
+        <div class="component-box">
+          <h4>4. Estado Vazio Encorajador (Empty State)</h4>
+          <p class="desc">Mensagens que convidam para ação sem passar sensação de erro ou cobrança.</p>
+
+          <div class="empty-state-card">
+            <div class="empty-state-icon">🧺</div>
+            <div style="font-weight: 800; color: var(--verde-escuro); font-size: 15px;">Sua despensa de temperos e grãos está vazia</div>
+            <p style="font-size: 13px; color: var(--cinza-secundario); margin: 6px 0 14px;">Que tal adicionar os itens básicos que nunca podem faltar na sua cozinha?</p>
+            <button class="btn btn-secondary" onclick="copiarToast('Abrindo sugestões básicas...')">+ Explorar Sugestões Básicas</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Paleta Refinada com Tokens Visíveis -->
+      <div style="margin-top: 32px; padding: 20px; background: var(--branco); border-radius: var(--radius-md); border: 1px solid var(--borda-suave);">
+        <h4 style="font-weight: 800; color: var(--verde-escuro); margin-bottom: 8px;">Paleta Cromática com Tokens Refinados:</h4>
+        <div class="swatches-bar">
+          <div class="swatch-chip" style="background: #1F5A42; color: white;" onclick="copiarToast('#1F5A42')">Verde Escuro (#1F5A42)</div>
+          <div class="swatch-chip" style="background: #2F7D5A; color: white;" onclick="copiarToast('#2F7D5A')">Verde Principal (#2F7D5A)</div>
+          <div class="swatch-chip" style="background: #DDF2E7; color: #1F5A42;" onclick="copiarToast('#DDF2E7')">Verde Claro (#DDF2E7)</div>
+          <div class="swatch-chip" style="background: #E7A93B; color: #3A2000;" onclick="copiarToast('#E7A93B')">Amarelo Destaque (#E7A93B)</div>
+          <div class="swatch-chip" style="background: #3B82F6; color: white;" onclick="copiarToast('#3B82F6')">Azul Suave (#3B82F6)</div>
+          <div class="swatch-chip" style="background: #7C3AED; color: white;" onclick="copiarToast('#7C3AED')">Roxo Nutri (#7C3AED)</div>
+          <div class="swatch-chip" style="background: #F7F9F6; color: #20302A; border: 1px solid var(--borda-suave);" onclick="copiarToast('#F7F9F6')">Fundo Branco Quente (#F7F9F6)</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer style="background: var(--verde-escuro); color: white; padding: 40px 0; text-align: center; margin-top: 60px;">
+    <div class="container">
+      <img src="/assets/svg/logo-mono-branco.svg" style="height: 36px; margin-bottom: 12px;" alt="CompraBem">
+      <div style="font-weight: 700;">Sua orientação aplicada às compras.</div>
+      <p style="opacity: 0.8; font-size: 13.5px; margin-top: 6px;">CompraBem Lista • CompraBem Nutri • CompraBem Lembretes • CompraBem para Profissionais</p>
+    </div>
+  </footer>
+
+  <script>
+    function copiarToast(msg) {
+      const toast = document.getElementById('toast');
+      toast.textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2200);
+    }
+
+    function filtrarAba(aba) {
+      copiarToast(`Aba-Mãe CompraBem ${aba.toUpperCase()} selecionada!`);
+    }
+  </script>
+  <script src="/nav-switcher.js"></script>
+</body>
+</html>

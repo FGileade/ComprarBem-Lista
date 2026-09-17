@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CompraBem - Autenticação e Acesso Seguro</title>
+<!-- Google Fonts: Plus Jakarta Sans & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "tertiary-fixed-dim": "#fcbb4c",
+            "on-surface": "#0f1f19",
+            "on-secondary-fixed-variant": "#135039",
+            "inverse-on-surface": "#e2f5ec",
+            "secondary-container": "#b3f0d0",
+            "on-secondary": "#ffffff",
+            "primary": "#0c6443",
+            "inverse-primary": "#89d6ad",
+            "on-primary-fixed-variant": "#005235",
+            "on-tertiary": "#ffffff",
+            "secondary-fixed-dim": "#98d3b5",
+            "surface-tint": "#196b4a",
+            "inverse-surface": "#24342e",
+            "error-container": "#ffdad6",
+            "on-background": "#0f1f19",
+            "surface-bright": "#ebfef4",
+            "primary-container": "#2f7d5a",
+            "secondary-fixed": "#b3f0d0",
+            "secondary": "#2f6950",
+            "on-primary-container": "#d0ffe3",
+            "outline": "#6f7a72",
+            "on-secondary-fixed": "#002114",
+            "on-tertiary-container": "#fff1e2",
+            "on-surface-variant": "#3f4943",
+            "on-tertiary-fixed-variant": "#604100",
+            "error": "#ba1a1a",
+            "surface-container-lowest": "#ffffff",
+            "surface": "#ebfef4",
+            "tertiary": "#754f00",
+            "primary-fixed-dim": "#89d6ad",
+            "primary-fixed": "#a4f3c8",
+            "on-secondary-container": "#366f56",
+            "surface-container": "#dff2e9",
+            "outline-variant": "#bfc9c0",
+            "surface-container-high": "#daede3",
+            "tertiary-fixed": "#ffdeae",
+            "on-error": "#ffffff",
+            "on-tertiary-fixed": "#281900",
+            "surface-dim": "#ccded5",
+            "surface-container-low": "#e5f8ee",
+            "background": "#ebfef4",
+            "on-primary-fixed": "#002113",
+            "surface-container-highest": "#d4e7de",
+            "tertiary-container": "#956600",
+            "on-primary": "#ffffff",
+            "surface-variant": "#d4e7de",
+            "on-error-container": "#93000a"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-sm": "0.5rem",
+            "gutter": "1rem",
+            "space-xs": "0.25rem",
+            "margin-desktop": "2.5rem",
+            "gutter-desktop": "1.5rem",
+            "space-lg": "1.5rem",
+            "space-md": "1rem",
+            "margin": "1rem",
+            "margin-tablet": "1.5rem",
+            "space-xl": "2.5rem"
+          },
+          "fontFamily": {
+            "headline-lg": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "body-sm": ["Inter"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "headline-xl-mobile": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "headline-xl": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "body-md": ["Inter"],
+            "body-lg": ["Inter"]
+          },
+          "fontSize": {
+            "headline-lg": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "600" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "headline-xl-mobile": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "headline-lg-mobile": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+          }
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-surface-bright text-on-surface font-body-md text-body-md min-h-full flex flex-col antialiased selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopNavBar (Shared Component Execution) -->
+<header class="bg-surface dark:bg-surface border-b border-outline-variant dark:border-outline-variant flat no shadows backdrop-blur-md sticky top-0 z-50">
+<div class="w-full max-w-7xl mx-auto px-margin md:px-margin-desktop py-space-sm flex items-center justify-between">
+<!-- Brand Logo Anchor -->
+<div class="flex items-center gap-space-sm">
+<img alt="CompraBem Logo Oficial" class="w-9 h-9 object-contain rounded-lg" src="https://lh3.googleusercontent.com/aida/AEtjO1XHEdgg_y8A4FdnD6Rs9kqv5LePmVEr08kBmPu_ysCJGKx_k0WEKb1fwfn4Wf-Mg91VJAjR1KnZgxWGZ-jfIgdnBFl9ZfupUvsuCAuVZa75f02jJbsw7kKxd2I-OB0B8isNoFA7tCVdxk78cdppi2d2tmBOYBkrUvH6u6lrU9JpVXFp0eUG64et_FbnRgGU4iYYrlit96nM6VKMhX9dQD6Jdh4GcqWrqsGvHSmF9goWZ35uz0NDN7lyFbs"/>
+<div>
+<span class="font-headline-lg text-headline-lg font-bold text-primary dark:text-inverse-primary tracking-tight block leading-tight">CompraBem</span>
+<span class="hidden sm:inline-block font-label-sm text-label-sm text-on-surface-variant font-medium tracking-wide">Sua orientação aplicada às compras.</span>
+</div>
+</div>
+<!-- Navigation Links (Shared Components JSON) -->
+<nav class="hidden md:flex items-center gap-space-lg">
+<a class="text-on-surface-variant dark:text-on-surface-variant font-label-lg text-label-lg hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">Help</a>
+<a class="text-primary dark:text-inverse-primary font-label-lg text-label-lg font-bold border-b-2 border-primary dark:border-inverse-primary pb-1" href="#">Security</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-label-lg text-label-lg hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">Privacy</a>
+</nav>
+<!-- Trailing Action & Security Icons -->
+<div class="flex items-center gap-space-md">
+<div class="hidden sm:flex items-center gap-1.5 px-space-sm py-1 bg-surface-container rounded-full text-primary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-base text-primary" data-icon="verified_user">verified_user</span>
+<span>SSL 256-bit • LGPD Seguro</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<button class="p-1.5 rounded-lg hover:text-primary dark:hover:text-inverse-primary hover:bg-surface-container transition-all duration-200" title="Language: Português">
+<span class="material-symbols-outlined" data-icon="language">language</span>
+</button>
+<a class="px-space-md py-1.5 rounded-lg bg-surface-container-highest text-primary font-label-md text-label-md font-semibold hover:bg-secondary-container transition-colors" href="#">
+            Support
+          </a>
+</div>
+</div>
+</div>
+</header>
+<!-- Interactive State Switcher Ribbon (Fast Demo Bar) -->
+<div class="bg-surface-container-high border-b border-outline-variant py-2 px-margin">
+<div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-2">
+<span class="inline-block w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Fluxo de Autenticação Segura:</span>
+</div>
+<!-- Flow Tabs Buttons -->
+<div class="inline-flex p-1 bg-surface-container-lowest rounded-xl border border-outline-variant shadow-sm" role="tablist">
+<button class="tab-btn active px-3.5 py-1.5 rounded-lg font-label-md text-label-md transition-all duration-150 bg-primary-container text-on-secondary font-bold shadow-xs" id="tab-login" onclick="switchState('login')">
+          1. Login
+        </button>
+<button class="tab-btn px-3.5 py-1.5 rounded-lg font-label-md text-label-md transition-all duration-150 text-on-surface-variant hover:text-primary" id="tab-register" onclick="switchState('register')">
+          2. Criar Conta (LGPD)
+        </button>
+<button class="tab-btn px-3.5 py-1.5 rounded-lg font-label-md text-label-md transition-all duration-150 text-on-surface-variant hover:text-primary" id="tab-recovery" onclick="switchState('recovery')">
+          3. Recuperar Senha
+        </button>
+<button class="tab-btn px-3.5 py-1.5 rounded-lg font-label-md text-label-md transition-all duration-150 text-on-surface-variant hover:text-primary" id="tab-profile" onclick="switchState('profile')">
+          4. Escolha de Perfil
+        </button>
+</div>
+</div>
+</div>
+<!-- Main Canvas Container (Split Layout Desktop) -->
+<main class="flex-1 w-full max-w-7xl mx-auto px-margin md:px-margin-desktop py-space-lg md:py-space-xl grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-start">
+<!-- Left Column: Trust Context, Security & Brand Value Presentation -->
+<section class="lg:col-span-5 flex flex-col justify-between space-y-space-lg">
+<div>
+<!-- Trust Badge -->
+<div class="inline-flex items-center gap-2 px-space-md py-1.5 bg-surface-container rounded-full text-secondary font-label-sm text-label-sm font-semibold mb-space-md border border-outline-variant">
+<span class="material-symbols-outlined text-sm text-primary" data-icon="lock" style="font-variation-settings: 'FILL' 1;">lock</span>
+<span>Ambiente Autenticado CompraBem</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface font-bold tracking-tight mb-space-sm">
+          Sua despensa e compras com <span class="text-primary-container">total serenidade</span>.
+        </h1>
+<p class="text-on-surface-variant font-body-lg text-body-lg mb-space-lg">
+          O CompraBem une organização doméstica inteligente, suporte a prescrições nutricionais e privacidade irrevogável para sua rotina de mercado.
+        </p>
+<!-- Trust Bento Highlights -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md mb-space-lg">
+<div class="bg-surface-container-lowest p-space-md rounded-xl border border-outline-variant shadow-xs">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary mb-2">
+<span class="material-symbols-outlined text-xl" data-icon="shield">shield</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-1">Criptografia AES-256</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Proteção nível bancário para listas, restrições e preferências alimentares.</p>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl border border-outline-variant shadow-xs">
+<div class="w-8 h-8 rounded-lg bg-secondary-container flex items-center justify-center text-primary mb-2">
+<span class="material-symbols-outlined text-xl" data-icon="policy">policy</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-1">Conformidade LGPD</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Zero compartilhamento ou venda de hábitos de consumo a redes varejistas.</p>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl border border-outline-variant shadow-xs">
+<div class="w-8 h-8 rounded-lg bg-tertiary-fixed flex items-center justify-center text-tertiary mb-2">
+<span class="material-symbols-outlined text-xl" data-icon="wifi_off">wifi_off</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-1">PWA 100% Offline</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Marque itens no subsolo do supermercado sem se preocupar com sinal 4G/5G.</p>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl border border-outline-variant shadow-xs">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary-container mb-2">
+<span class="material-symbols-outlined text-xl" data-icon="eco">eco</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-1">Sem Culpa ou Julgamentos</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Orientações amigáveis e substituições conscientes feitas com carinho.</p>
+</div>
+</div>
+</div>
+<!-- User Testimonial Card -->
+<div class="bg-surface-container-low p-space-md rounded-xl border border-outline-variant">
+<div class="flex items-center gap-space-sm mb-space-xs">
+<div class="w-9 h-9 rounded-full bg-primary-container text-on-primary font-bold flex items-center justify-center text-sm">
+            MR
+          </div>
+<div>
+<h3 class="font-label-md text-label-md text-on-surface font-bold">Mariana Ramos</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Usuária ativa CompraBem • São Paulo</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant italic">
+          "Foi a primeira vez que consegui seguir as orientações da minha nutricionista no mercado sem me perder e sem gastar a mais. A sensação de clareza é impagável!"
+        </p>
+</div>
+</section>
+<!-- Right Column: Elevated Central Interactive Card -->
+<section class="lg:col-span-7">
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-space-lg md:p-space-xl shadow-sm transition-all">
+<!-- ========================================== -->
+<!-- ESTADO 1: LOGIN -->
+<!-- ========================================== -->
+<div class="state-view" id="view-login">
+<!-- Card Brand Heading -->
+<div class="flex items-center gap-3 mb-space-md">
+<img alt="CompraBem Ícone Oficial" class="w-12 h-12 object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XHEdgg_y8A4FdnD6Rs9kqv5LePmVEr08kBmPu_ysCJGKx_k0WEKb1fwfn4Wf-Mg91VJAjR1KnZgxWGZ-jfIgdnBFl9ZfupUvsuCAuVZa75f02jJbsw7kKxd2I-OB0B8isNoFA7tCVdxk78cdppi2d2tmBOYBkrUvH6u6lrU9JpVXFp0eUG64et_FbnRgGU4iYYrlit96nM6VKMhX9dQD6Jdh4GcqWrqsGvHSmF9goWZ35uz0NDN7lyFbs"/>
+<div>
+<span class="font-headline-sm text-headline-sm text-primary font-bold tracking-tight block">CompraBem</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Sua orientação aplicada às compras.</p>
+</div>
+</div>
+<div class="mb-space-lg">
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">Bem-vindo(a) de volta</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Acesse suas listas inteligentes, orientações e despensa conectada.</p>
+</div>
+<form class="space-y-space-md" onsubmit="event.preventDefault(); switchState('profile');">
+<!-- Email Input -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1" for="login-email">E-mail cadastrado</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-outline text-xl" data-icon="mail">mail</span>
+<input class="w-full h-11 pl-10 pr-3 rounded-lg border border-outline-variant bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 outline-none transition-all placeholder:text-outline-variant" id="login-email" placeholder="nome@exemplo.com" required="" type="email"/>
+</div>
+<p class="mt-1 font-body-sm text-body-sm text-on-surface-variant">Utilize o e-mail da sua conta pessoal ou profissional.</p>
+</div>
+<!-- Password Input with Toggle -->
+<div>
+<div class="flex items-center justify-between mb-1">
+<label class="block font-label-md text-label-md text-on-surface" for="login-password">Senha de acesso</label>
+<button class="font-label-sm text-label-sm text-primary-container hover:text-primary hover:underline font-semibold" onclick="switchState('recovery')" type="button">
+                  Esqueci minha senha
+                </button>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-outline text-xl" data-icon="lock">lock</span>
+<input class="w-full h-11 pl-10 pr-10 rounded-lg border border-outline-variant bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 outline-none transition-all placeholder:text-outline-variant" id="login-password" placeholder="Sua senha secreta" required="" type="password"/>
+<button class="absolute right-3 top-2.5 text-outline hover:text-on-surface transition-colors" onclick="togglePasswordVisibility('login-password', this)" title="Mostrar senha" type="button">
+<span class="material-symbols-outlined text-xl" data-icon="visibility">visibility</span>
+</button>
+</div>
+</div>
+<!-- Remember Me Checkbox -->
+<div class="flex items-center gap-2 pt-1">
+<input class="w-4 h-4 rounded border-outline-variant text-primary-container focus:ring-primary-container" id="remember-me" type="checkbox"/>
+<label class="font-body-md text-body-md text-on-surface cursor-pointer select-none" for="remember-me">
+                Lembrar de mim neste dispositivo seguro
+              </label>
+</div>
+<!-- Primary Submit Button -->
+<button class="w-full h-11 bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg font-semibold rounded-lg flex items-center justify-center gap-2 transition-transform active:scale-[0.98] shadow-xs" type="submit">
+<span>Entrar no CompraBem</span>
+<span class="material-symbols-outlined text-lg" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</form>
+<!-- Divider -->
+<div class="relative my-space-lg">
+<div class="absolute inset-0 flex items-center"><div class="w-full border-t border-outline-variant"></div></div>
+<div class="relative flex justify-center text-body-sm font-body-sm"><span class="bg-surface-container-lowest px-3 text-on-surface-variant font-medium">ou continue com</span></div>
+</div>
+<!-- Social and Passkey Buttons -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm mb-space-md">
+<button class="h-11 px-4 border border-outline-variant rounded-lg font-label-md text-label-md text-on-surface hover:bg-surface-container flex items-center justify-center gap-2 transition-colors" type="button">
+<svg class="w-4 h-4" viewbox="0 0 24 24">
+<path d="M12 5c1.6 0 3 .6 4.1 1.6l3.1-3.1C17.3 1.8 14.8 1 12 1 7.5 1 3.7 3.6 1.9 7.3l3.7 2.9C6.5 7.4 9 5 12 5z" fill="#EA4335"></path>
+<path d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.6h6.5c-.3 1.5-1.1 2.8-2.4 3.7l3.7 2.9c2.2-2 3.7-5.1 3.7-8.9z" fill="#4285F4"></path>
+<path d="M5.6 14.8c-.2-.7-.4-1.5-.4-2.3s.2-1.6.4-2.3L1.9 7.3C.7 9.7 0 12 0 12s.7 2.3 1.9 4.7l3.7-2.9z" fill="#FBBC05"></path>
+<path d="M12 23c3.2 0 6-1.1 8-3l-3.7-2.9c-1.1.7-2.5 1.2-4.3 1.2-3 0-5.5-2.4-6.4-5.2L1.9 16C3.7 20.4 7.5 23 12 23z" fill="#34A853"></path>
+</svg>
+<span>Continuar com Google</span>
+</button>
+<button class="h-11 px-4 border border-outline-variant rounded-lg font-label-md text-label-md text-on-surface hover:bg-surface-container flex items-center justify-center gap-2 transition-colors" type="button">
+<svg class="w-4 h-4 fill-current" viewbox="0 0 24 24">
+<path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.38c.62-.75 1.04-1.8 0.92-2.85-.9.04-2 .6-2.64 1.35-.57.65-1.06 1.72-.93 2.74 1.01.08 2.03-.49 2.65-1.24z"></path>
+</svg>
+<span>Continuar com Apple</span>
+</button>
+</div>
+<!-- PWA Passkey Quick Option -->
+<div class="p-space-sm bg-surface-container-low rounded-lg border border-outline-variant flex items-center justify-between mb-space-lg">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="fingerprint">fingerprint</span>
+<span class="font-body-sm text-body-sm text-on-surface">Entrar com Biometria ou Chave de Acesso (Passkey)</span>
+</div>
+<button class="px-2.5 py-1 text-xs font-semibold bg-surface-container-lowest text-primary rounded border border-outline-variant hover:bg-surface-container" type="button">
+              Ativar
+            </button>
+</div>
+<!-- Switch to Register Link -->
+<div class="text-center pt-space-xs border-t border-outline-variant">
+<span class="font-body-md text-body-md text-on-surface-variant">Ainda não tem conta? </span>
+<button class="font-label-lg text-label-lg text-primary-container hover:text-primary font-bold hover:underline" onclick="switchState('register')">
+              Crie sua conta em 1 minuto
+            </button>
+</div>
+</div>
+<!-- ========================================== -->
+<!-- ESTADO 2: CRIAR CONTA (LGPD) -->
+<!-- ========================================== -->
+<div class="state-view hidden" id="view-register">
+<div class="mb-space-md">
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-fixed font-label-sm text-label-sm font-semibold">Novo Usuário</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight mt-1">Crie sua conta CompraBem</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Comece a organizar suas compras com clareza e sem complicação.</p>
+</div>
+<form class="space-y-space-md" onsubmit="event.preventDefault(); switchState('profile');">
+<!-- Full Name -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1" for="reg-name">Nome completo</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-outline text-xl" data-icon="person">person</span>
+<input class="w-full h-11 pl-10 pr-3 rounded-lg border border-outline-variant bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 outline-none transition-all placeholder:text-outline-variant" id="reg-name" placeholder="Como podemos te chamar?" required="" type="text"/>
+</div>
+</div>
+<!-- Email -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1" for="reg-email">E-mail principal</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-outline text-xl" data-icon="mail">mail</span>
+<input class="w-full h-11 pl-10 pr-3 rounded-lg border border-outline-variant bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 outline-none transition-all placeholder:text-outline-variant" id="reg-email" placeholder="seuemail@exemplo.com" required="" type="email"/>
+</div>
+</div>
+<!-- Create Password with Strength Indicator -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1" for="reg-password">Criar senha forte</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-outline text-xl" data-icon="lock">lock</span>
+<input class="w-full h-11 pl-10 pr-10 rounded-lg border border-outline-variant bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 outline-none transition-all placeholder:text-outline-variant" id="reg-password" oninput="updatePasswordStrength(this.value)" placeholder="Mínimo 8 caracteres e números" required="" type="password"/>
+<button class="absolute right-3 top-2.5 text-outline hover:text-on-surface transition-colors" onclick="togglePasswordVisibility('reg-password', this)" type="button">
+<span class="material-symbols-outlined text-xl" data-icon="visibility">visibility</span>
+</button>
+</div>
+<!-- Password Strength Bars -->
+<div class="mt-2 flex items-center gap-1.5">
+<div class="h-1.5 flex-1 rounded-full bg-surface-container transition-all" id="pwd-bar-1"></div>
+<div class="h-1.5 flex-1 rounded-full bg-surface-container transition-all" id="pwd-bar-2"></div>
+<div class="h-1.5 flex-1 rounded-full bg-surface-container transition-all" id="pwd-bar-3"></div>
+<div class="h-1.5 flex-1 rounded-full bg-surface-container transition-all" id="pwd-bar-4"></div>
+<span class="text-xs text-on-surface-variant font-label-sm ml-1" id="pwd-text">Mínimo 8 dígitos</span>
+</div>
+</div>
+<!-- Confirm Password -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1" for="reg-confirm-password">Confirmação de senha</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-outline text-xl" data-icon="verified">verified</span>
+<input class="w-full h-11 pl-10 pr-10 rounded-lg border border-outline-variant bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 outline-none transition-all placeholder:text-outline-variant" id="reg-confirm-password" placeholder="Repita sua senha" required="" type="password"/>
+<button class="absolute right-3 top-2.5 text-outline hover:text-on-surface transition-colors" onclick="togglePasswordVisibility('reg-confirm-password', this)" type="button">
+<span class="material-symbols-outlined text-xl" data-icon="visibility">visibility</span>
+</button>
+</div>
+</div>
+<!-- LGPD & Privacy Transparency Box -->
+<div class="bg-surface-container-low p-space-md rounded-xl border border-secondary-container space-y-space-sm">
+<div class="flex items-start gap-2.5">
+<input class="mt-1 w-4 h-4 rounded border-outline-variant text-primary-container focus:ring-primary-container" id="terms-agree" required="" type="checkbox"/>
+<label class="font-body-sm text-body-sm text-on-surface cursor-pointer select-none" for="terms-agree">
+                  Li e concordo com os <a class="text-primary-container font-semibold underline" href="#">Termos de Uso</a> e a <a class="text-primary-container font-semibold underline" href="#">Política de Privacidade</a> do CompraBem.
+                </label>
+</div>
+<div class="flex items-start gap-2.5">
+<input class="mt-1 w-4 h-4 rounded border-outline-variant text-primary-container focus:ring-primary-container" id="lgpd-agree" required="" type="checkbox"/>
+<label class="font-body-sm text-body-sm text-on-surface cursor-pointer select-none" for="lgpd-agree">
+                  Permito o processamento seguro de orientações alimentares para personalização das minhas listas (Lei 13.709/2018 - LGPD).
+                </label>
+</div>
+<div class="pt-2 border-t border-outline-variant/50 flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-base mt-0.5" data-icon="verified_user">verified_user</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-xs">
+<strong>Garantia Ética:</strong> Seus dados de saúde e preferências alimentares são criptografados de ponta a ponta e nunca serão vendidos para terceiros.
+                </p>
+</div>
+</div>
+<!-- Submit Register Button -->
+<button class="w-full h-11 bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg font-semibold rounded-lg flex items-center justify-center gap-2 transition-transform active:scale-[0.98] shadow-xs" type="submit">
+<span>Criar minha conta gratuita</span>
+<span class="material-symbols-outlined text-lg" data-icon="check_circle">check_circle</span>
+</button>
+</form>
+<!-- Back to Login Link -->
+<div class="text-center pt-space-md mt-space-sm border-t border-outline-variant">
+<span class="font-body-md text-body-md text-on-surface-variant">Já tem uma conta? </span>
+<button class="font-label-lg text-label-lg text-primary-container hover:text-primary font-bold hover:underline" onclick="switchState('login')">
+              Faça login
+            </button>
+</div>
+</div>
+<!-- ========================================== -->
+<!-- ESTADO 3: RECUPERAR SENHA -->
+<!-- ========================================== -->
+<div class="state-view hidden" id="view-recovery">
+<div class="text-center max-w-md mx-auto mb-space-lg">
+<!-- Gentle Illustrated Spark Icon -->
+<div class="w-16 h-16 rounded-full bg-secondary-container flex items-center justify-center text-primary mx-auto mb-space-sm relative">
+<span class="material-symbols-outlined text-3xl" data-icon="key">key</span>
+<span class="w-3.5 h-3.5 rounded-full bg-tertiary-fixed-dim absolute top-1 right-1 border-2 border-surface-container-lowest"></span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">Recuperação descomplicada</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+              Não se preocupe, acontece com todo mundo. Digite o e-mail cadastrado e enviaremos um link seguro para você redefinir sua senha.
+            </p>
+</div>
+<!-- Simulated Success Notification Banner -->
+<div class="hidden mb-space-md p-space-md rounded-xl bg-surface-container border border-primary-container/40" id="recovery-success-box">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="mark_email_read">mark_email_read</span>
+<div>
+<h3 class="font-label-md text-label-md text-on-surface font-bold">E-mail enviado com carinho!</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                  Verifique sua caixa de entrada em <strong class="text-on-surface" id="recovery-sent-email">contato@exemplo.com</strong> e clique no link para definir uma nova senha.
+                </p>
+<div class="mt-2 flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-outline">Não recebeu?</span>
+<button class="font-label-sm text-label-sm text-primary-container font-semibold hover:underline" type="button">
+                    Reenviar em 45s
+                  </button>
+</div>
+</div>
+</div>
+</div>
+<form class="space-y-space-md max-w-md mx-auto" id="recovery-form" onsubmit="handleRecoverySubmit(event)">
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1" for="recovery-email">E-mail cadastrado</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-outline text-xl" data-icon="mail">mail</span>
+<input class="w-full h-11 pl-10 pr-3 rounded-lg border border-outline-variant bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 outline-none transition-all" id="recovery-email" placeholder="nome@exemplo.com" required="" type="email"/>
+</div>
+</div>
+<button class="w-full h-11 bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg font-semibold rounded-lg flex items-center justify-center gap-2 transition-transform active:scale-[0.98] shadow-xs" type="submit">
+<span>Enviar link de recuperação</span>
+<span class="material-symbols-outlined text-lg" data-icon="send">send</span>
+</button>
+</form>
+<div class="text-center pt-space-lg mt-space-md border-t border-outline-variant">
+<button class="inline-flex items-center gap-1 font-label-lg text-label-lg text-on-surface-variant hover:text-primary font-semibold" onclick="switchState('login')">
+<span class="material-symbols-outlined text-lg" data-icon="arrow_back">arrow_back</span>
+<span>Voltar para a tela de Login</span>
+</button>
+</div>
+</div>
+<!-- ========================================== -->
+<!-- ESTADO 4: ESCOLHA DE PERFIL -->
+<!-- ========================================== -->
+<div class="state-view hidden" id="view-profile">
+<div class="text-center max-w-lg mx-auto mb-space-lg">
+<span class="px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold">Passo de Boas-Vindas</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight mt-1">Como você deseja utilizar o CompraBem?</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Personalize sua experiência para que possamos organizar as ferramentas ideais para a sua rotina.</p>
+</div>
+<!-- Dual Profile Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md mb-space-lg">
+<!-- Option 1: Consumidor / Usuário -->
+<div class="profile-card group cursor-pointer p-space-lg rounded-xl border-2 border-primary-container bg-surface-container-low hover:border-primary-container transition-all flex flex-col justify-between relative" id="card-user" onclick="selectProfile('user')">
+<div class="absolute top-3 right-3 text-primary-container" id="check-user">
+<span class="material-symbols-outlined text-2xl" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div>
+<div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-primary-container mb-space-md">
+<span class="material-symbols-outlined text-2xl" data-icon="shopping_basket">shopping_basket</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container text-primary font-semibold">Rotina Doméstica &amp; Família</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mt-1 mb-2">Sou Usuário / Consumidor</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">Para quem busca praticidade, despensa sob controle e economia no supermercado.</p>
+<ul class="space-y-2 mb-space-lg text-on-surface-variant font-body-sm text-body-sm">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-base text-primary" data-icon="check">check</span>
+<span>Organização de hortifrúti e despensa</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-base text-primary" data-icon="check">check</span>
+<span>Substituições inteligentes no mercado</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-base text-primary" data-icon="check">check</span>
+<span>Sincronização familiar e listas offline</span>
+</li>
+</ul>
+</div>
+<button class="w-full h-11 bg-primary-container text-on-primary font-label-md text-label-md font-semibold rounded-lg flex items-center justify-center gap-2 shadow-xs group-hover:bg-primary transition-colors" type="button">
+<span>Continuar como Consumidor</span>
+<span class="material-symbols-outlined text-base" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- Option 2: Nutricionista / Profissional -->
+<div class="profile-card group cursor-pointer p-space-lg rounded-xl border border-outline-variant bg-surface-container-lowest hover:border-tertiary-fixed-dim transition-all flex flex-col justify-between relative" id="card-nutri" onclick="selectProfile('nutri')">
+<div class="absolute top-3 right-3 text-outline hidden" id="check-nutri">
+<span class="material-symbols-outlined text-2xl" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div>
+<div class="w-12 h-12 rounded-xl bg-tertiary-fixed flex items-center justify-center text-tertiary mb-space-md">
+<span class="material-symbols-outlined text-2xl" data-icon="clinical_notes">clinical_notes</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-semibold">Prescrição &amp; Acompanhamento</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mt-1 mb-2">Sou Nutricionista / Profissional</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">Para profissionais que desejam guiar seus pacientes nas compras sem tom proibitivo.</p>
+<ul class="space-y-2 mb-space-lg text-on-surface-variant font-body-sm text-body-sm">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-base text-tertiary" data-icon="check">check</span>
+<span>Envio direto de listas guiadas para pacientes</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-base text-tertiary" data-icon="check">check</span>
+<span>Alertas de ingredientes sem tom punitivo</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-base text-tertiary" data-icon="check">check</span>
+<span>Gestão de múltiplos perfis e credenciamento CRN</span>
+</li>
+</ul>
+</div>
+<button class="w-full h-11 bg-surface-container-highest text-on-surface font-label-md text-label-md font-semibold rounded-lg flex items-center justify-center gap-2 group-hover:bg-tertiary-fixed group-hover:text-on-tertiary-fixed transition-colors" type="button">
+<span>Continuar como Profissional</span>
+<span class="material-symbols-outlined text-base" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Bottom Microcopy -->
+<div class="bg-surface-container-low p-space-sm rounded-lg text-center">
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              💡 Você poderá alternar, convidar nutricionistas ou familiares a qualquer momento através do menu de configurações da sua conta.
+            </p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer (Shared Component Execution) -->
+<footer class="bg-surface-container-low dark:bg-surface-container-low border-t border-outline-variant dark:border-outline-variant flat no shadows mt-auto">
+<div class="w-full max-w-7xl mx-auto px-margin md:px-margin-desktop py-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm font-bold text-primary dark:text-inverse-primary">CompraBem</span>
+<span class="text-on-surface-variant dark:text-on-surface-variant font-body-sm text-body-sm">
+          © 2024 CompraBem Inc. All rights reserved. Encrypted &amp; Secure
+        </span>
+</div>
+<div class="flex flex-wrap items-center gap-space-md">
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-sm text-body-sm hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">Terms of Service</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-sm text-body-sm hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-sm text-body-sm hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">Security Compliance</a>
+<a class="text-primary dark:text-inverse-primary font-semibold font-body-sm text-body-sm hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">Contact Trust Desk</a>
+</div>
+</div>
+</footer>
+<!-- Vanilla JavaScript Interactive Controller -->
+<script>
+    // State Navigation Switcher
+    function switchState(stateKey) {
+      // Hide all states
+      document.querySelectorAll('.state-view').forEach(view => {
+        view.classList.add('hidden');
+      });
+
+      // Remove active from all tabs
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('bg-primary-container', 'text-on-secondary', 'font-bold', 'shadow-xs');
+        btn.classList.add('text-on-surface-variant');
+      });
+
+      // Show selected state
+      const targetView = document.getElementById(`view-${stateKey}`);
+      if (targetView) {
+        targetView.classList.remove('hidden');
+      }
+
+      // Highlight active tab
+      const targetTab = document.getElementById(`tab-${stateKey}`);
+      if (targetTab) {
+        targetTab.classList.remove('text-on-surface-variant');
+        targetTab.classList.add('bg-primary-container', 'text-on-secondary', 'font-bold', 'shadow-xs');
+      }
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Toggle Password Visibility
+    function togglePasswordVisibility(inputId, triggerBtn) {
+      const input = document.getElementById(inputId);
+      const icon = triggerBtn.querySelector('.material-symbols-outlined');
+      if (input.type === 'password') {
+        input.type = 'text';
+        icon.textContent = 'visibility_off';
+      } else {
+        input.type = 'password';
+        icon.textContent = 'visibility';
+      }
+    }
+
+    // Password Strength Meter
+    function updatePasswordStrength(val) {
+      const b1 = document.getElementById('pwd-bar-1');
+      const b2 = document.getElementById('pwd-bar-2');
+      const b3 = document.getElementById('pwd-bar-3');
+      const b4 = document.getElementById('pwd-bar-4');
+      const text = document.getElementById('pwd-text');
+
+      const resetBars = () => {
+        b1.className = 'h-1.5 flex-1 rounded-full bg-surface-container transition-all';
+        b2.className = 'h-1.5 flex-1 rounded-full bg-surface-container transition-all';
+        b3.className = 'h-1.5 flex-1 rounded-full bg-surface-container transition-all';
+        b4.className = 'h-1.5 flex-1 rounded-full bg-surface-container transition-all';
+      };
+
+      resetBars();
+
+      if (!val || val.length < 3) {
+        text.textContent = 'Mínimo 8 dígitos';
+        return;
+      }
+
+      if (val.length < 6) {
+        b1.className = 'h-1.5 flex-1 rounded-full bg-error transition-all';
+        text.textContent = 'Fraca';
+      } else if (val.length < 8) {
+        b1.className = 'h-1.5 flex-1 rounded-full bg-tertiary-fixed-dim transition-all';
+        b2.className = 'h-1.5 flex-1 rounded-full bg-tertiary-fixed-dim transition-all';
+        text.textContent = 'Média';
+      } else if (val.length < 10) {
+        b1.className = 'h-1.5 flex-1 rounded-full bg-primary-container transition-all';
+        b2.className = 'h-1.5 flex-1 rounded-full bg-primary-container transition-all';
+        b3.className = 'h-1.5 flex-1 rounded-full bg-primary-container transition-all';
+        text.textContent = 'Boa';
+      } else {
+        b1.className = 'h-1.5 flex-1 rounded-full bg-primary-container transition-all';
+        b2.className = 'h-1.5 flex-1 rounded-full bg-primary-container transition-all';
+        b3.className = 'h-1.5 flex-1 rounded-full bg-primary-container transition-all';
+        b4.className = 'h-1.5 flex-1 rounded-full bg-primary-container transition-all';
+        text.textContent = 'Forte e segura';
+      }
+    }
+
+    // Recovery Link Handler
+    function handleRecoverySubmit(e) {
+      e.preventDefault();
+      const emailVal = document.getElementById('recovery-email').value;
+      document.getElementById('recovery-sent-email').textContent = emailVal;
+      document.getElementById('recovery-success-box').classList.remove('hidden');
+    }
+
+    // Profile Selector (User vs Nutri)
+    function selectProfile(type) {
+      const cardUser = document.getElementById('card-user');
+      const cardNutri = document.getElementById('card-nutri');
+      const checkUser = document.getElementById('check-user');
+      const checkNutri = document.getElementById('check-nutri');
+
+      if (type === 'user') {
+        cardUser.classList.remove('border-outline-variant', 'bg-surface-container-lowest');
+        cardUser.classList.add('border-primary-container', 'bg-surface-container-low');
+        checkUser.classList.remove('hidden');
+
+        cardNutri.classList.add('border-outline-variant', 'bg-surface-container-lowest');
+        cardNutri.classList.remove('border-primary-container', 'bg-surface-container-low');
+        checkNutri.classList.add('hidden');
+      } else {
+        cardNutri.classList.remove('border-outline-variant', 'bg-surface-container-lowest');
+        cardNutri.classList.add('border-primary-container', 'bg-surface-container-low');
+        checkNutri.classList.remove('hidden');
+        checkNutri.classList.remove('text-outline');
+        checkNutri.classList.add('text-primary-container');
+
+        cardUser.classList.add('border-outline-variant', 'bg-surface-container-lowest');
+        cardUser.classList.remove('border-primary-container', 'bg-surface-container-low');
+        checkUser.classList.add('hidden');
+      }
+    }
+  </script>
+  <script src="/nav-switcher.js"></script>
+</body></html>

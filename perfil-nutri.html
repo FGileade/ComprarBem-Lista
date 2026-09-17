@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CompraBem Nutri - Perfil Alimentar e Privacidade LGPD</title>
+<!-- Google Fonts: Plus Jakarta Sans & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with custom config -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary-container": "#366f56",
+            "primary-fixed": "#a4f3c8",
+            "inverse-on-surface": "#e2f5ec",
+            "on-primary-fixed": "#002113",
+            "inverse-surface": "#24342e",
+            "error-container": "#ffdad6",
+            "tertiary-fixed-dim": "#fcbb4c",
+            "primary-container": "#2f7d5a",
+            "on-error": "#ffffff",
+            "surface-container-low": "#e5f8ee",
+            "surface-container-highest": "#d4e7de",
+            "secondary-fixed": "#b3f0d0",
+            "secondary-container": "#b3f0d0",
+            "surface": "#ebfef4",
+            "tertiary": "#754f00",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary-fixed-variant": "#604100",
+            "on-tertiary": "#ffffff",
+            "secondary-fixed-dim": "#98d3b5",
+            "on-tertiary-container": "#fff1e2",
+            "on-primary": "#ffffff",
+            "surface-container-high": "#daede3",
+            "inverse-primary": "#89d6ad",
+            "background": "#ebfef4",
+            "tertiary-fixed": "#ffdeae",
+            "on-primary-container": "#d0ffe3",
+            "outline-variant": "#bfc9c0",
+            "on-primary-fixed-variant": "#005235",
+            "on-tertiary-fixed": "#281900",
+            "on-surface": "#0f1f19",
+            "on-secondary-fixed": "#002114",
+            "surface-variant": "#d4e7de",
+            "surface-tint": "#196b4a",
+            "outline": "#6f7a72",
+            "on-surface-variant": "#3f4943",
+            "error": "#ba1a1a",
+            "surface-dim": "#ccded5",
+            "on-error-container": "#93000a",
+            "on-secondary": "#ffffff",
+            "tertiary-container": "#956600",
+            "primary-fixed-dim": "#89d6ad",
+            "primary": "#0c6443",
+            "surface-bright": "#ebfef4",
+            "on-secondary-fixed-variant": "#135039",
+            "on-background": "#0f1f19",
+            "surface-container": "#dff2e9",
+            "secondary": "#2f6950"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "margin": "1rem",
+            "space-lg": "1.5rem",
+            "gutter-desktop": "1.5rem",
+            "space-md": "1rem",
+            "margin-desktop": "2.5rem",
+            "space-xl": "2.5rem",
+            "margin-tablet": "1.5rem",
+            "gutter": "1rem"
+          },
+          "fontFamily": {
+            "body-sm": ["Inter"],
+            "headline-xl-mobile": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "body-md": ["Inter"],
+            "body-lg": ["Inter"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "headline-xl": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+            "headline-xl-mobile": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "headline-lg-mobile": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "headline-lg": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "600" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-outlined.fill {
+      font-variation-settings: 'FILL' 1;
+    }
+    /* Ambient micro-glow for focused cards */
+    .nutri-glow {
+      box-shadow: 0 4px 20px -2px rgba(12, 100, 67, 0.08), 0 2px 8px -2px rgba(124, 58, 237, 0.05);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface antialiased min-h-screen flex flex-col font-body-md text-body-md">
+<!-- ================= TOP NAV BAR (Shared Component Execution) ================= -->
+<header class="bg-surface-container-lowest dark:bg-inverse-surface border-b border-outline-variant dark:border-outline sticky top-0 z-50">
+<div class="max-w-7xl mx-auto px-margin-desktop h-16 flex items-center justify-between gap-gutter-desktop">
+<!-- Brand & Badge -->
+<div class="flex items-center gap-space-md">
+<a class="flex items-center gap-space-sm group" href="#">
+<img alt="Logo CompraBem" class="w-9 h-9 object-contain group-hover:scale-105 transition-transform duration-150" src="https://lh3.googleusercontent.com/aida/AEtjO1XHEdgg_y8A4FdnD6Rs9kqv5LePmVEr08kBmPu_ysCJGKx_k0WEKb1fwfn4Wf-Mg91VJAjR1KnZgxWGZ-jfIgdnBFl9ZfupUvsuCAuVZa75f02jJbsw7kKxd2I-OB0B8isNoFA7tCVdxk78cdppi2d2tmBOYBkrUvH6u6lrU9JpVXFp0eUG64et_FbnRgGU4iYYrlit96nM6VKMhX9dQD6Jdh4GcqWrqsGvHSmF9goWZ35uz0NDN7lyFbs"/>
+<div class="flex items-baseline gap-1.5">
+<span class="font-headline-lg text-headline-lg font-bold text-primary dark:text-inverse-primary tracking-tight">CompraBem</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-purple-100 text-purple-800 border border-purple-200 font-bold tracking-wide uppercase">Nutri</span>
+</div>
+</a>
+</div>
+<!-- Desktop Navigation Links -->
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-on-surface-variant dark:text-outline-variant font-label-lg hover:text-on-surface dark:hover:text-inverse-on-surface transition-colors" href="#">CompraBem Lista</a>
+<!-- Active link determined via Context Hierarchy: CompraBem Nutri -->
+<a class="text-primary dark:text-inverse-primary font-bold border-b-2 border-primary dark:border-inverse-primary pb-1 flex items-center gap-1.5" href="#">
+<span>CompraBem Nutri</span>
+<span class="w-2 h-2 rounded-full bg-purple-600"></span>
+</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-label-lg hover:text-on-surface dark:hover:text-inverse-on-surface transition-colors" href="#">Despensa</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-label-lg hover:text-on-surface dark:hover:text-inverse-on-surface transition-colors" href="#">Lembretes</a>
+</nav>
+<!-- Right Trailing Actions & User Sync -->
+<div class="flex items-center gap-3">
+<!-- Quick Search pill -->
+<div class="hidden lg:flex items-center bg-surface-container-low border border-outline-variant rounded-lg px-3 py-1.5 gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-outline text-lg">search</span>
+<input class="bg-transparent border-none text-xs focus:ring-0 focus:outline-none w-36 text-on-surface placeholder:text-outline" placeholder="Buscar regra ou alimento..." type="text"/>
+</div>
+<!-- Trailing Action: Exportar Dados -->
+<button class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-surface-container border border-outline-variant text-primary hover:bg-primary hover:text-on-primary transition-all duration-150 scale-98 active:scale-95" title="Exportar dados do perfil alimentar">
+<span class="material-symbols-outlined text-sm">download</span>
+          Exportar Dados
+        </button>
+<!-- Notification action -->
+<button aria-label="Notificações" class="w-9 h-9 flex items-center justify-center rounded-lg hover:bg-surface-container text-on-surface-variant transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full ring-2 ring-surface-container-lowest"></span>
+</button>
+<!-- LGPD NutriShield Icon Status -->
+<div class="hidden sm:flex items-center gap-1 pl-2 border-l border-outline-variant text-purple-700" title="Criptografia de ponta a ponta ativa">
+<span class="material-symbols-outlined text-xl">shield_person</span>
+</div>
+<!-- Profile Linked to Nutri -->
+<div class="flex items-center gap-2 pl-1 cursor-pointer group">
+<img class="w-9 h-9 rounded-full object-cover border-2 border-primary-container group-hover:border-primary transition-colors" data-alt="Fotografia de rosto acolhedora e nítida de uma paciente sorridente em iluminação natural suave, em estilo portrait moderno com fundo verde menta sutil, expressando bem-estar, saúde equilibrada e segurança." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeVYybonrHSzAe3FB5HDlr9lihdmVd255HqLnhkWedSJm37-qiSPums0cXy5XJcV5DPLjqy83oj4fzYrj6CbPDkdUrD_j9OTiipnALmE04wP-dSvQtHkgNEID4JC-NRgUws3CvaQqKEQHtlFnAE0pv26cXtJpTHmwIegirjPwWCffWqF4mhBxmVTGe_RBUEWJv_Xp0gdfMaGnGjsB1HO0mGtfoFKic8tMljeuP9nJhXN9dlo0Us5TCbYn4bF0BDhMZOnuJpNBTXt0"/>
+<div class="hidden xl:block text-left leading-tight">
+<p class="font-label-md text-label-md text-on-surface font-semibold">Mariana Ramos</p>
+<p class="text-[10px] text-on-surface-variant">Vinculada à Dra. Camila</p>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- ================= SUB-HEADER / HERO SECTION ================= -->
+<main class="flex-grow max-w-7xl w-full mx-auto px-margin-desktop py-space-lg space-y-space-lg">
+<!-- Hero Header Banner with Dual-Partner Status -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-space-lg nutri-glow flex flex-col lg:flex-row lg:items-center justify-between gap-space-lg relative overflow-hidden">
+<!-- Background subtle decorative tint -->
+<div class="absolute -right-20 -top-24 w-80 h-80 bg-gradient-to-bl from-purple-100/60 via-primary-container/5 to-transparent rounded-full pointer-events-none"></div>
+<div class="space-y-2 z-10">
+<div class="flex flex-wrap items-center gap-2">
+<h1 class="font-headline-xl text-headline-xl font-bold text-primary tracking-tight">Meu Perfil Alimentar &amp; Orientações</h1>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-surface-container-low text-primary border border-primary/20 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-sm text-primary">verified_user</span>
+            Perfil Ativo &amp; Protegido
+          </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-purple-50 text-purple-700 border border-purple-200 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-xs">lock</span>
+            LGPD Art. 11 Sensível
+          </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+          Sua orientação nutricional aplicada diretamente aos corredores do supermercado. Itens sinalizados em tempo real de acordo com as prescrições clínicas da sua nutricionista.
+        </p>
+</div>
+<!-- Nutricionista Vinculada Card -->
+<div class="z-10 bg-surface-container-low/70 border border-purple-200/80 rounded-xl p-4 flex items-center gap-4 min-w-[340px] shadow-sm">
+<div class="relative">
+<img class="w-14 h-14 rounded-full object-cover border-2 border-purple-500/80" data-alt="Retrato profissional de Dra. Camila Silveira, nutricionista clínica usando jaleco branco discreto e estetoscópio estilizado com sorriso acolhedor e olhar empático, fundo neutro em clínica moderna com iluminação clara." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDo902Nsqb31jpMCLPBikzUPl7ra1xP_2qH7jw3wzaa91w6nzyUgC_GN9JyyWxrk6GXq2v1IBW6QzlJZEkaHWO1L7MJ-qpfxqPEmrX2Gzge9j6pLnzE8AJY_MSRGEWojLzF5NpPYWtdoduH8dR8ibnIwqBLwCCpPhRlI81Hyadw8t4nTYi0COPEpFqmAAbIXDlPgIFfPAcl1iVZNsPvLaAeRHrPnKBBe3RfbmTvvobtipBiLCFy1Xc4iJ3Gb3z20vq-sls8yrWzxoU"/>
+<span class="absolute -bottom-1 -right-1 w-5 h-5 bg-purple-600 rounded-full flex items-center justify-center text-white" title="Conexão Nutricional Verificada">
+<span class="material-symbols-outlined text-xs">local_hospital</span>
+</span>
+</div>
+<div class="flex-grow min-w-0">
+<div class="flex items-center justify-between gap-1">
+<p class="font-label-lg text-label-lg font-bold text-on-surface truncate">Dra. Camila Silveira</p>
+<span class="text-[10px] font-semibold text-purple-700 bg-purple-100 px-1.5 py-0.5 rounded">CRN-3 48.219</span>
+</div>
+<p class="text-xs text-on-surface-variant truncate">Nutrição Clínica &amp; Funcional</p>
+<div class="flex items-center gap-2 mt-1">
+<span class="text-[11px] text-outline font-medium">Atualizado há 4 dias</span>
+<span class="w-1 h-1 rounded-full bg-outline"></span>
+<span class="text-[11px] text-primary font-semibold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-xs">sync</span>
+              NutriShield™ Ativo
+            </span>
+</div>
+<div class="mt-2.5 flex items-center gap-2">
+<button class="text-xs font-semibold text-purple-700 bg-white hover:bg-purple-50 border border-purple-300 rounded px-2.5 py-1 transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">chat</span>
+              Mensagem
+            </button>
+<button class="text-xs font-semibold text-primary hover:text-on-primary-container transition-colors flex items-center gap-0.5">
+<span>Ver conduta</span>
+<span class="material-symbols-outlined text-xs">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- ================= NAVIGATION TABS & ACTION TOOLBAR ================= -->
+<div class="space-y-4">
+<!-- Tabs Bar -->
+<div class="flex items-center justify-between border-b border-outline-variant pb-px">
+<div class="flex gap-6 overflow-x-auto">
+<!-- Tab 1: Regras Ativas (Active) -->
+<button class="font-label-lg text-label-lg pb-3 font-bold text-primary border-b-2 border-primary flex items-center gap-2">
+<span>Regras Ativas</span>
+<span class="px-2 py-0.5 text-xs rounded-full bg-secondary-container text-on-secondary-container font-semibold">8 ativas</span>
+</button>
+<!-- Tab 2: Orientações Coladas -->
+<button class="font-label-lg text-label-lg pb-3 text-on-surface-variant hover:text-on-surface transition-colors flex items-center gap-2">
+<span>Orientações Coladas</span>
+<span class="px-1.5 py-0.2 text-[11px] rounded-full bg-purple-100 text-purple-800 font-medium">IA Nutri</span>
+</button>
+<!-- Tab 3: Privacidade & LGPD -->
+<button class="font-label-lg text-label-lg pb-3 text-on-surface-variant hover:text-on-surface transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-purple-600">verified</span>
+<span>Privacidade &amp; Consentimento LGPD</span>
+</button>
+</div>
+<div class="hidden sm:flex items-center gap-2 text-xs text-on-surface-variant">
+<span class="inline-block w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span>Sincronizado com Lista de Compras</span>
+</div>
+</div>
+<!-- Action & Filter Bar -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-3.5 flex flex-wrap items-center justify-between gap-3">
+<!-- Quick Action Buttons -->
+<div class="flex items-center flex-wrap gap-2.5">
+<!-- Primary action with subtle green gradient -->
+<button class="bg-primary hover:bg-secondary text-on-primary font-semibold text-xs md:text-sm px-4 py-2.5 rounded-lg flex items-center gap-1.5 shadow-sm transition-transform active:scale-98">
+<span class="material-symbols-outlined text-base">add</span>
+            + Adicionar Regra Manualmente
+          </button>
+<!-- Secondary highlighted purple action for clipboard intake -->
+<button class="bg-purple-50 hover:bg-purple-100 text-purple-900 border border-purple-300 font-semibold text-xs md:text-sm px-4 py-2.5 rounded-lg flex items-center gap-2 transition-all group relative" title="Interprete orientações enviadas por WhatsApp ou PDF com IA sem esforço">
+<span class="material-symbols-outlined text-purple-700 text-base group-hover:rotate-6 transition-transform">content_paste</span>
+<span>📋 Colar Nova Orientação</span>
+<span class="bg-purple-200 text-purple-900 text-[10px] px-1.5 py-0.5 rounded font-bold uppercase">IA</span>
+</button>
+</div>
+<!-- Filter Pills & Search -->
+<div class="flex items-center flex-wrap gap-2">
+<div class="flex items-center gap-1 text-xs text-on-surface-variant mr-1">
+<span class="material-symbols-outlined text-sm">filter_alt</span>
+<span class="font-semibold">Corredores:</span>
+</div>
+<!-- Filter chips -->
+<button class="px-2.5 py-1 text-xs rounded-full bg-secondary-container text-on-secondary-container border border-primary font-semibold">Todos (8)</button>
+<button class="px-2.5 py-1 text-xs rounded-full bg-white text-on-surface-variant border border-outline-variant hover:bg-surface-container-low transition-colors">Laticínios</button>
+<button class="px-2.5 py-1 text-xs rounded-full bg-white text-on-surface-variant border border-outline-variant hover:bg-surface-container-low transition-colors">Mercearia</button>
+<button class="px-2.5 py-1 text-xs rounded-full bg-white text-on-surface-variant border border-outline-variant hover:bg-surface-container-low transition-colors">Hortifrúti</button>
+<button class="px-2.5 py-1 text-xs rounded-full bg-white text-on-surface-variant border border-outline-variant hover:bg-surface-container-low transition-colors">Padaria</button>
+</div>
+</div>
+</div>
+<!-- ================= MAIN TWO-COLUMN WORKSPACE ================= -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT COLUMN: Active Food Rules Panel (8 cols) -->
+<div class="lg:col-span-8 space-y-space-md">
+<div class="flex items-center justify-between px-1">
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface flex items-center gap-2">
+<span>Regras Nutricionais Aplicadas</span>
+<span class="text-xs font-normal text-on-surface-variant">(Triagem inteligente nos carrinhos)</span>
+</h2>
+<span class="text-xs text-outline">Ordenado por severidade</span>
+</div>
+<!-- CARD 1: Evitar Lactose (Alta Severidade) -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-5 hover:border-primary transition-all duration-150 space-y-3.5 shadow-sm">
+<div class="flex items-start justify-between gap-4">
+<div class="space-y-1.5">
+<div class="flex flex-wrap items-center gap-2">
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Evitar Lactose</h3>
+<!-- Chip 1: Severidade Alta -->
+<span class="inline-flex items-center gap-1 text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-red-50 text-red-700 border border-red-200">
+<span class="material-symbols-outlined text-xs">error</span>
+                  Severidade Alta • Alerta Restritivo
+                </span>
+<!-- Chip 2: Origem Nutri -->
+<span class="inline-flex items-center gap-1 text-[11px] font-semibold px-2 py-0.5 rounded-full bg-purple-50 text-purple-700 border border-purple-200">
+<span class="material-symbols-outlined text-xs">clinical_notes</span>
+                  Dra. Camila
+                </span>
+<!-- Chip 3: Corredor -->
+<span class="text-[11px] text-outline font-medium px-2 py-0.5 rounded bg-surface-container">
+                  Corredor: Laticínios &amp; Derivados
+                </span>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+                Substituir leites integrais e queijos amarelos por versões zero lactose ou bebidas vegetais de amêndoas/aveia fortificadas.
+              </p>
+</div>
+<!-- Toggle Switch (Active) -->
+<label class="relative inline-flex items-center cursor-pointer flex-shrink-0" title="Ativar ou pausar regra">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+<!-- Bottom Meta & Actions -->
+<div class="pt-3 border-t border-outline-variant/60 flex flex-wrap items-center justify-between gap-2">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1 text-xs font-semibold text-error bg-red-50 px-2 py-1 rounded">
+<span class="material-symbols-outlined text-sm">warning</span>
+                4 produtos afetados na lista ativa
+              </span>
+<button class="text-xs font-medium text-primary hover:underline">Ver no carrinho</button>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-1.5 text-outline hover:text-primary transition-colors rounded hover:bg-surface-container" title="Editar detalhes da regra">
+<span class="material-symbols-outlined text-lg">edit</span>
+</button>
+<button class="p-1.5 text-outline hover:text-error transition-colors rounded hover:bg-surface-container" title="Excluir regra">
+<span class="material-symbols-outlined text-lg">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- CARD 2: Priorizar Fibras (Incentivo / Baixa Severidade) -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-5 hover:border-primary transition-all duration-150 space-y-3.5 shadow-sm">
+<div class="flex items-start justify-between gap-4">
+<div class="space-y-1.5">
+<div class="flex flex-wrap items-center gap-2">
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Priorizar Fibras</h3>
+<!-- Chip 1: Incentivo Saudável -->
+<span class="inline-flex items-center gap-1 text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200">
+<span class="material-symbols-outlined text-xs">trending_up</span>
+                  Severidade Baixa • Incentivo Saudável
+                </span>
+<!-- Chip 2: Cadastro Familiar -->
+<span class="inline-flex items-center gap-1 text-[11px] font-semibold px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant border border-outline-variant">
+<span class="material-symbols-outlined text-xs">home</span>
+                  Cadastro Manual da Família
+                </span>
+<!-- Chip 3: Corredor -->
+<span class="text-[11px] text-outline font-medium px-2 py-0.5 rounded bg-surface-container">
+                  Corredor: Mercearia &amp; Grãos
+                </span>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+                Buscar itens com mais de 3g de fibra por porção (aveia em flocos finos, psyllium, chia e pães 100% integrais).
+              </p>
+</div>
+<!-- Toggle Switch (Active) -->
+<label class="relative inline-flex items-center cursor-pointer flex-shrink-0">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+<!-- Bottom Meta & Actions -->
+<div class="pt-3 border-t border-outline-variant/60 flex flex-wrap items-center justify-between gap-2">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1 text-xs font-semibold text-primary bg-secondary-container px-2 py-1 rounded">
+<span class="material-symbols-outlined text-sm">lightbulb</span>
+                6 sugestões automáticas prontas para adicionar
+              </span>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-1.5 text-outline hover:text-primary transition-colors rounded hover:bg-surface-container">
+<span class="material-symbols-outlined text-lg">edit</span>
+</button>
+<button class="p-1.5 text-outline hover:text-error transition-colors rounded hover:bg-surface-container">
+<span class="material-symbols-outlined text-lg">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- CARD 3: Moderar Sódio (Média Severidade / Alerta) -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-5 hover:border-primary transition-all duration-150 space-y-3.5 shadow-sm">
+<div class="flex items-start justify-between gap-4">
+<div class="space-y-1.5">
+<div class="flex flex-wrap items-center gap-2">
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Moderar Sódio</h3>
+<!-- Chip 1: Alerta Sutil -->
+<span class="inline-flex items-center gap-1 text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-amber-50 text-amber-800 border border-amber-200">
+<span class="material-symbols-outlined text-xs">info</span>
+                  Severidade Média • Alerta Sutil
+                </span>
+<!-- Chip 2: Nutricionista -->
+<span class="inline-flex items-center gap-1 text-[11px] font-semibold px-2 py-0.5 rounded-full bg-purple-50 text-purple-700 border border-purple-200">
+<span class="material-symbols-outlined text-xs">clinical_notes</span>
+                  Nutricionista - Dra. Camila
+                </span>
+<!-- Chip 3: Corredor -->
+<span class="text-[11px] text-outline font-medium px-2 py-0.5 rounded bg-surface-container">
+                  Corredor: Mercearia &amp; Molhos
+                </span>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+                Evitar caldos prontos em cubos e temperos industrializados com glutamato monossódico. Priorizar ervas naturais e sal marinho.
+              </p>
+</div>
+<!-- Toggle Switch (Active) -->
+<label class="relative inline-flex items-center cursor-pointer flex-shrink-0">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+<!-- Bottom Meta & Actions -->
+<div class="pt-3 border-t border-outline-variant/60 flex flex-wrap items-center justify-between gap-2">
+<span class="text-xs text-outline">Alerta dispara se produto tiver &gt; 400mg de sódio por porção</span>
+<div class="flex items-center gap-2">
+<button class="p-1.5 text-outline hover:text-primary transition-colors rounded hover:bg-surface-container">
+<span class="material-symbols-outlined text-lg">edit</span>
+</button>
+<button class="p-1.5 text-outline hover:text-error transition-colors rounded hover:bg-surface-container">
+<span class="material-symbols-outlined text-lg">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- CARD 4: Sem Adição de Açúcar Oculto -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-5 hover:border-primary transition-all duration-150 space-y-3.5 shadow-sm">
+<div class="flex items-start justify-between gap-4">
+<div class="space-y-1.5">
+<div class="flex flex-wrap items-center gap-2">
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Sem Adição de Açúcar Oculto</h3>
+<!-- Chip 1: Redução inflamação -->
+<span class="inline-flex items-center gap-1 text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-amber-50 text-amber-800 border border-amber-200">
+<span class="material-symbols-outlined text-xs">bolt</span>
+                  Severidade Média • Redução de Inflamação
+                </span>
+<!-- Chip 2: Consulta -->
+<span class="inline-flex items-center gap-1 text-[11px] font-semibold px-2 py-0.5 rounded-full bg-purple-50 text-purple-700 border border-purple-200">
+<span class="material-symbols-outlined text-xs">history_edu</span>
+                  Consulta Presencial
+                </span>
+<!-- Chip 3: Corredor -->
+<span class="text-[11px] text-outline font-medium px-2 py-0.5 rounded bg-surface-container">
+                  Corredor: Biscoitos &amp; Doces
+                </span>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+                Alerta em produtos cujo rótulo indique açúcar (sacarose, xarope de milho, maltodextrina) entre os 3 primeiros ingredientes.
+              </p>
+</div>
+<!-- Toggle Switch (Active) -->
+<label class="relative inline-flex items-center cursor-pointer flex-shrink-0">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+<!-- Bottom Meta & Actions -->
+<div class="pt-3 border-t border-outline-variant/60 flex flex-wrap items-center justify-between gap-2">
+<span class="text-xs text-outline">Cruza sinônimos de glicose e xaropes artificiais</span>
+<div class="flex items-center gap-2">
+<button class="p-1.5 text-outline hover:text-primary transition-colors rounded hover:bg-surface-container">
+<span class="material-symbols-outlined text-lg">edit</span>
+</button>
+<button class="p-1.5 text-outline hover:text-error transition-colors rounded hover:bg-surface-container">
+<span class="material-symbols-outlined text-lg">delete</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: LGPD Governance & Health Consent Sidebar (4 cols) -->
+<div class="lg:col-span-4 space-y-space-md">
+<!-- LGPD Master Card -->
+<div class="bg-surface-container-lowest border border-purple-200 rounded-xl p-5 shadow-sm space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 text-purple-800">
+<span class="material-symbols-outlined text-2xl">privacy_tip</span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Governança LGPD</h3>
+</div>
+<span class="bg-purple-100 text-purple-800 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">Art. 11 Saúde</span>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+            Seus dados nutricionais e diretrizes alimentares são classificados como <strong>dados sensíveis de saúde</strong> pela Lei 13.709/2018 (LGPD).
+          </p>
+<div class="bg-surface-container-low rounded-lg p-3 space-y-2 border border-outline-variant/60 text-xs">
+<div class="flex items-start gap-2 text-primary font-semibold">
+<span class="material-symbols-outlined text-base">check_circle</span>
+<span>Finalidade Exclusiva:</span>
+</div>
+<p class="text-on-surface-variant pl-6">
+              Cruzar com a tabela nutricional dos produtos no seu carrinho no momento da compra. <strong>Jamais comercializamos ou compartilhamos</strong> seu perfil com supermercados, marcas ou anunciantes.
+            </p>
+</div>
+<!-- Granular Action Buttons -->
+<div class="space-y-2 pt-2">
+<p class="text-xs font-bold text-on-surface uppercase tracking-wide">Portabilidade &amp; Exportação</p>
+<button class="w-full py-2 px-3 text-xs font-semibold rounded-lg bg-surface-container hover:bg-primary-fixed text-primary border border-outline-variant flex items-center justify-between transition-colors">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">data_object</span>
+                Exportar meus dados em JSON
+              </span>
+<span class="material-symbols-outlined text-xs">download</span>
+</button>
+<button class="w-full py-2 px-3 text-xs font-semibold rounded-lg bg-surface-container hover:bg-primary-fixed text-primary border border-outline-variant flex items-center justify-between transition-colors">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">picture_as_pdf</span>
+                Baixar Relatório em PDF
+              </span>
+<span class="material-symbols-outlined text-xs">download</span>
+</button>
+</div>
+<!-- Revoke Consent CTA -->
+<div class="pt-3 border-t border-outline-variant/80 space-y-2">
+<button class="w-full py-2 px-3 text-xs font-semibold text-error hover:bg-red-50 rounded-lg border border-red-200 transition-colors flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-sm">cancel</span>
+              Revogar consentimento de saúde
+            </button>
+<p class="text-[10px] text-outline text-center">
+              Ao revogar, a triagem inteligente de alérgenos e alertas de corredor serão imediatamente desativados do carrinho.
+            </p>
+</div>
+</div>
+<!-- Card: Responsabilidade & Rótulos -->
+<div class="bg-amber-50/60 border border-amber-200 rounded-xl p-4 space-y-2 text-xs">
+<div class="flex items-center gap-2 text-amber-900 font-bold">
+<span class="material-symbols-outlined text-base">info</span>
+<span>Aviso de Leitura de Rótulos</span>
+</div>
+<p class="text-amber-950/80 leading-relaxed">
+            O CompraBem Nutri é uma ferramenta de apoio à rotina e não substitui a conferência da embalagem física pelo consumidor ou consultas clínicas regulares. Fabricantes podem alterar formulações sem aviso prévio.
+          </p>
+</div>
+<!-- Card: Histórico de Orientações Recebidas -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-4 space-y-3">
+<div class="flex items-center justify-between">
+<h4 class="font-label-lg text-label-lg font-bold text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-purple-600 text-lg">auto_awesome</span>
+              Últimas Orientações por IA
+            </h4>
+<span class="text-[11px] text-outline">2 importadas</span>
+</div>
+<div class="space-y-2">
+<div class="p-2.5 rounded-lg bg-surface-container-low border border-outline-variant/60 text-xs space-y-1">
+<div class="flex items-center justify-between text-on-surface font-semibold">
+<span>Dieta Anti-inflamatória Fase 2</span>
+<span class="text-[10px] text-outline">Via WhatsApp</span>
+</div>
+<p class="text-[11px] text-on-surface-variant truncate">"Mari, aumente folhas verde-escuras e corte condimentos..."</p>
+<div class="flex items-center justify-between text-[10px] pt-1 text-purple-700 font-medium">
+<span>3 regras geradas automaticamente</span>
+<span class="material-symbols-outlined text-xs">check</span>
+</div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low border border-outline-variant/60 text-xs space-y-1">
+<div class="flex items-center justify-between text-on-surface font-semibold">
+<span>Plano Alimentar Pós-Exames.pdf</span>
+<span class="text-[10px] text-outline">Via PDF</span>
+</div>
+<p class="text-[11px] text-on-surface-variant truncate">"Prescrição: Meta de fibras 28g/dia, evitar embutidos..."</p>
+<div class="flex items-center justify-between text-[10px] pt-1 text-purple-700 font-medium">
+<span>2 regras geradas automaticamente</span>
+<span class="material-symbols-outlined text-xs">check</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- ================= FOOTER (Shared Component Execution) ================= -->
+<footer class="bg-surface-container-low dark:bg-surface-container-highest border-t border-outline-variant dark:border-outline mt-space-xl">
+<div class="max-w-7xl mx-auto px-margin-desktop py-space-lg flex flex-col md:flex-row justify-between items-center gap-space-md">
+<!-- Brand anchor & LGPD compliance statement verbatim -->
+<div class="flex flex-col sm:flex-row items-center gap-3 text-center sm:text-left">
+<div class="flex items-center gap-2">
+<img alt="Logo CompraBem" class="w-6 h-6 object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XHEdgg_y8A4FdnD6Rs9kqv5LePmVEr08kBmPu_ysCJGKx_k0WEKb1fwfn4Wf-Mg91VJAjR1KnZgxWGZ-jfIgdnBFl9ZfupUvsuCAuVZa75f02jJbsw7kKxd2I-OB0B8isNoFA7tCVdxk78cdppi2d2tmBOYBkrUvH6u6lrU9JpVXFp0eUG64et_FbnRgGU4iYYrlit96nM6VKMhX9dQD6Jdh4GcqWrqsGvHSmF9goWZ35uz0NDN7lyFbs"/>
+<span class="font-headline-sm text-headline-sm font-semibold text-primary dark:text-inverse-primary">CompraBem Nutri</span>
+</div>
+<p class="text-on-surface-variant dark:text-outline font-body-sm text-body-sm max-w-xl">
+          © 2024 CompraBem Nutri • Plataforma em conformidade com a LGPD (Lei nº 13.709/2018) • CRN Dra. Camila Silveira 48219
+        </p>
+</div>
+<!-- Mandatory Footer Links -->
+<nav class="flex flex-wrap justify-center items-center gap-4">
+<a class="text-on-surface-variant dark:text-outline font-body-sm hover:text-primary dark:hover:text-inverse-primary transition-colors hover:underline" href="#">Privacidade e Termos LGPD</a>
+<a class="text-on-surface-variant dark:text-outline font-body-sm hover:text-primary dark:hover:text-inverse-primary transition-colors hover:underline" href="#">Segurança de Dados Médicos</a>
+<a class="text-on-surface-variant dark:text-outline font-body-sm hover:text-primary dark:hover:text-inverse-primary transition-colors hover:underline" href="#">Portal do Titular</a>
+<a class="text-on-surface-variant dark:text-outline font-body-sm hover:text-primary dark:hover:text-inverse-primary transition-colors hover:underline" href="#">Suporte Nutricional</a>
+</nav>
+</div>
+</footer>
+<!-- Microinteraction Script for quick demo feedback -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Toggle switches micro-feedback
+      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+      checkboxes.forEach(cb => {
+        cb.addEventListener('change', (e) => {
+          const card = e.target.closest('.rounded-xl');
+          if (card) {
+            if (!e.target.checked) {
+              card.classList.add('opacity-60');
+            } else {
+              card.classList.remove('opacity-60');
+            }
+          }
+        });
+      });
+    });
+  </script>
+  <script src="/nav-switcher.js"></script>
+</body></html>

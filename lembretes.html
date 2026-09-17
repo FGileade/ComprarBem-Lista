@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>CompraBem Lembretes</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-low": "#e5f8ee",
+            "on-background": "#0f1f19",
+            "surface-bright": "#ebfef4",
+            "surface-container-high": "#daede3",
+            "secondary-fixed": "#b3f0d0",
+            "on-tertiary": "#ffffff",
+            "error": "#ba1a1a",
+            "primary-fixed-dim": "#89d6ad",
+            "on-secondary-fixed-variant": "#135039",
+            "on-secondary": "#ffffff",
+            "on-error-container": "#93000a",
+            "inverse-surface": "#24342e",
+            "error-container": "#ffdad6",
+            "tertiary-container": "#956600",
+            "surface-container": "#dff2e9",
+            "surface": "#ebfef4",
+            "on-secondary-fixed": "#002114",
+            "inverse-primary": "#89d6ad",
+            "on-tertiary-container": "#fff1e2",
+            "on-primary": "#ffffff",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary-fixed": "#281900",
+            "surface-tint": "#196b4a",
+            "on-surface-variant": "#3f4943",
+            "background": "#ebfef4",
+            "on-primary-fixed": "#002113",
+            "on-primary-container": "#d0ffe3",
+            "on-secondary-container": "#366f56",
+            "tertiary-fixed": "#ffdeae",
+            "surface-variant": "#d4e7de",
+            "surface-dim": "#ccded5",
+            "surface-container-highest": "#d4e7de",
+            "secondary-fixed-dim": "#98d3b5",
+            "on-primary-fixed-variant": "#005235",
+            "primary": "#0c6443",
+            "on-error": "#ffffff",
+            "on-surface": "#0f1f19",
+            "outline-variant": "#bfc9c0",
+            "tertiary-fixed-dim": "#fcbb4c",
+            "secondary": "#2f6950",
+            "outline": "#6f7a72",
+            "primary-container": "#2f7d5a",
+            "inverse-on-surface": "#e2f5ec",
+            "tertiary": "#754f00",
+            "secondary-container": "#b3f0d0",
+            "primary-fixed": "#a4f3c8",
+            "on-tertiary-fixed-variant": "#604100"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "gutter-desktop": "1.5rem",
+            "margin-desktop": "2.5rem",
+            "margin": "1rem",
+            "space-md": "1rem",
+            "margin-tablet": "1.5rem",
+            "space-lg": "1.5rem",
+            "space-xl": "2.5rem",
+            "gutter": "1rem"
+          },
+          "fontFamily": {
+            "headline-xl-mobile": ["Plus Jakarta Sans"],
+            "body-md": ["Inter"],
+            "body-lg": ["Inter"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "headline-xl": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "body-sm": ["Inter"]
+          },
+          "fontSize": {
+            "headline-xl-mobile": ["30px", {"lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "700"}],
+            "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+            "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "headline-lg-mobile": ["22px", {"lineHeight": "28px", "fontWeight": "600"}],
+            "headline-lg": ["28px", {"lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+            "headline-xl": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+            "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "600"}],
+            "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+            "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    /* Hide scrollbars for clean carousel preview */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md antialiased min-h-screen flex justify-center selection:bg-secondary-container">
+<!-- Mobile Screen Container -->
+<div class="w-full max-w-[440px] bg-background min-h-screen flex flex-col relative shadow-2xl pb-24 overflow-x-hidden">
+<!-- TopAppBar (from Shared Components JSON) -->
+<header class="fixed top-0 left-0 w-full z-40 flex items-center justify-between px-space-md h-14 bg-surface-container-lowest dark:bg-inverse-surface border-b border-outline-variant dark:border-outline shadow-sm max-w-[440px] mx-auto right-0">
+<div class="flex items-center space-x-space-sm">
+<img alt="CompraBem Logo" class="w-8 h-8 rounded-lg object-contain bg-surface-container-low p-0.5 border border-outline-variant" src="https://lh3.googleusercontent.com/aida/AEtjO1XHEdgg_y8A4FdnD6Rs9kqv5LePmVEr08kBmPu_ysCJGKx_k0WEKb1fwfn4Wf-Mg91VJAjR1KnZgxWGZ-jfIgdnBFl9ZfupUvsuCAuVZa75f02jJbsw7kKxd2I-OB0B8isNoFA7tCVdxk78cdppi2d2tmBOYBkrUvH6u6lrU9JpVXFp0eUG64et_FbnRgGU4iYYrlit96nM6VKMhX9dQD6Jdh4GcqWrqsGvHSmF9goWZ35uz0NDN7lyFbs"/>
+<div class="flex flex-col">
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-primary dark:text-inverse-primary leading-none font-bold tracking-tight">CompraBem Lembretes</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center mt-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary inline-block mr-1"></span>
+            Casa Silva • PWA Ativo
+          </span>
+</div>
+</div>
+<div class="flex items-center space-x-1">
+<div class="flex items-center bg-surface-container-low text-primary px-2 py-0.5 rounded-full mr-1 border border-primary-fixed-dim">
+<span class="material-symbols-outlined text-[16px] mr-1" data-icon="cloud_done">cloud_done</span>
+<span class="font-label-sm text-[10px]">Sync</span>
+</div>
+<button class="p-1.5 rounded-full hover:bg-surface-container text-on-surface-variant active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px]" data-icon="notifications">notifications</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 px-space-md pt-16 space-y-space-md">
+<!-- Header Boas-Vindas & Dica de Feira -->
+<section class="mt-2 rounded-xl bg-surface-container-lowest border border-outline-variant p-space-md relative overflow-hidden">
+<div class="absolute -right-4 -bottom-4 w-24 h-24 bg-tertiary-fixed rounded-full opacity-30 pointer-events-none"></div>
+<div class="flex items-start justify-between relative z-10">
+<div class="space-y-1">
+<div class="inline-flex items-center space-x-1 px-2 py-0.5 bg-tertiary-fixed text-on-tertiary-fixed-variant rounded-full font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]" data-icon="energy_savings_leaf">energy_savings_leaf</span>
+<span>Sua rotina de frescor no tempo certo</span>
+</div>
+<h1 class="font-headline-sm text-headline-sm text-on-surface font-bold">Lembretes para feira e despensa</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Lembretes inteligentes para feiras locais, hortifrúti fresco e itens recorrentes da despensa sem esquecimentos e desperdício.
+            </p>
+</div>
+</div>
+</section>
+<!-- Calendário Semanal Horizontal -->
+<section class="space-y-space-xs">
+<div class="flex items-center justify-between">
+<h2 class="font-label-lg text-label-lg text-on-surface font-bold flex items-center">
+<span class="material-symbols-outlined mr-1 text-primary text-[18px]" data-icon="calendar_month">calendar_month</span>
+            Ciclo Semanal de Abastecimento
+          </h2>
+<span class="font-label-sm text-label-sm text-primary font-bold">Outubro, Semana 2</span>
+</div>
+<div class="flex space-x-2 overflow-x-auto no-scrollbar py-1">
+<!-- Segunda (Hoje - Feira) -->
+<button class="flex-shrink-0 w-20 py-2.5 px-2 rounded-xl bg-secondary-container border-2 border-primary text-center flex flex-col items-center shadow-sm">
+<span class="font-label-sm text-label-sm text-on-secondary-container font-bold">SEG</span>
+<span class="font-headline-sm text-headline-sm text-on-secondary-container font-bold my-0.5">13</span>
+<span class="px-1.5 py-0.5 bg-tertiary-container text-on-tertiary-container rounded-full text-[9px] font-bold">Hoje</span>
+<div class="mt-1 flex items-center text-[10px] text-on-secondary-container font-medium">
+<span class="material-symbols-outlined text-[14px] mr-0.5" data-icon="local_florist">local_florist</span>
+              Feira
+            </div>
+</button>
+<!-- Terça -->
+<button class="flex-shrink-0 w-16 py-2 px-1.5 rounded-xl bg-surface-container-lowest border border-outline-variant text-center flex flex-col items-center opacity-80">
+<span class="font-label-sm text-label-sm text-on-surface-variant">TER</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold my-0.5">14</span>
+<span class="text-[9px] text-on-surface-variant mt-2">Livre</span>
+</button>
+<!-- Quarta (Hortifruti) -->
+<button class="flex-shrink-0 w-20 py-2 px-1.5 rounded-xl bg-surface-container-lowest border border-outline-variant text-center flex flex-col items-center">
+<span class="font-label-sm text-label-sm text-primary font-bold">QUA</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold my-0.5">15</span>
+<span class="px-1.5 py-0.2 bg-surface-container-low text-primary rounded-full text-[9px] font-bold">Ofertas</span>
+<div class="mt-1 flex items-center text-[10px] text-on-surface-variant font-medium">
+<span class="material-symbols-outlined text-[13px] mr-0.5" data-icon="shopping_cart">shopping_cart</span>
+              Mercado
+            </div>
+</button>
+<!-- Quinta -->
+<button class="flex-shrink-0 w-16 py-2 px-1.5 rounded-xl bg-surface-container-lowest border border-outline-variant text-center flex flex-col items-center opacity-80">
+<span class="font-label-sm text-label-sm text-on-surface-variant">QUI</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold my-0.5">16</span>
+<span class="text-[9px] text-on-surface-variant mt-2">Horta</span>
+</button>
+<!-- Sexta -->
+<button class="flex-shrink-0 w-16 py-2 px-1.5 rounded-xl bg-surface-container-lowest border border-outline-variant text-center flex flex-col items-center opacity-80">
+<span class="font-label-sm text-label-sm text-on-surface-variant">SEX</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold my-0.5">17</span>
+<span class="text-[9px] text-on-surface-variant mt-2">Peixes</span>
+</button>
+<!-- Sábado (Açougue & Padaria) -->
+<button class="flex-shrink-0 w-20 py-2 px-1.5 rounded-xl bg-surface-container-lowest border border-outline-variant text-center flex flex-col items-center">
+<span class="font-label-sm text-label-sm text-tertiary font-bold">SÁB</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold my-0.5">18</span>
+<span class="px-1.5 py-0.2 bg-tertiary-fixed text-on-tertiary-fixed rounded-full text-[9px] font-bold">Padaria</span>
+<div class="mt-1 flex items-center text-[10px] text-on-surface-variant font-medium">
+<span class="material-symbols-outlined text-[13px] mr-0.5" data-icon="bakery_dining">bakery_dining</span>
+              Açougue
+            </div>
+</button>
+<!-- Domingo -->
+<button class="flex-shrink-0 w-16 py-2 px-1.5 rounded-xl bg-surface-container-lowest border border-outline-variant text-center flex flex-col items-center opacity-80">
+<span class="font-label-sm text-label-sm text-on-surface-variant">DOM</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold my-0.5">19</span>
+<span class="text-[9px] text-on-surface-variant mt-2">Fechado</span>
+</button>
+</div>
+</section>
+<!-- Seção Lembretes Ativos -->
+<section class="space-y-space-sm">
+<div class="flex items-center justify-between">
+<h2 class="font-label-lg text-label-lg text-on-surface font-bold">Lembretes Ativos</h2>
+<span class="font-label-sm text-label-sm bg-surface-container text-on-secondary-container px-2 py-0.5 rounded-full font-bold">3 pendentes</span>
+</div>
+<!-- Card 1: Feira de Hoje (Destaque Principal) -->
+<article class="bg-surface-container-lowest border-2 border-primary rounded-xl p-space-md relative overflow-hidden shadow-sm">
+<div class="flex items-start justify-between">
+<div class="flex items-center space-x-2">
+<span class="p-2 rounded-lg bg-surface-container-low text-primary">
+<span class="material-symbols-outlined text-[24px]" data-icon="storefront">storefront</span>
+</span>
+<div>
+<span class="font-label-sm text-label-sm text-primary font-bold tracking-wider">SEGUNDA • 08:00</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Melancia e bananas na feira</h3>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-[10px] font-bold">
+              Semanal
+            </span>
+</div>
+<!-- Metadados e Localização -->
+<div class="mt-3 space-y-1.5 border-l-2 border-primary pl-3 text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-center text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-primary mr-1" data-icon="pin_drop">pin_drop</span>
+<span class="font-medium">Feira Livre da Vila Mariana</span>
+<span class="text-[11px] text-on-surface-variant ml-1">(a 400m de casa)</span>
+</div>
+<p class="text-on-surface-variant italic text-body-sm">
+              “Banana prata climatizada e melancia no ponto ideal para a semana inteira.”
+            </p>
+</div>
+<!-- Freshness Gauge Indicator -->
+<div class="mt-3 bg-surface-container-high rounded-full h-1.5 overflow-hidden">
+<div class="bg-primary h-full rounded-full w-4/5"></div>
+</div>
+<div class="flex justify-between items-center mt-1 text-[11px] font-label-sm text-on-surface-variant">
+<span>Reposição semanal recomendada</span>
+<span class="font-bold text-primary">Frescor Máximo</span>
+</div>
+<!-- Ações do Card -->
+<div class="mt-4 pt-3 border-t border-outline-variant flex items-center justify-between gap-2">
+<button class="flex-1 flex items-center justify-center py-2.5 px-3 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md font-bold hover:bg-primary active:scale-95 transition-all shadow-sm">
+<span class="material-symbols-outlined text-[18px] mr-1.5" data-icon="add_shopping_cart">add_shopping_cart</span>
+              + Adicionar à lista de hoje
+            </button>
+<button class="p-2 rounded-lg border border-outline-variant text-on-surface-variant hover:bg-surface-container active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[18px]" data-icon="schedule">schedule</span>
+</button>
+<button class="p-2 rounded-lg border border-outline-variant text-on-surface-variant hover:bg-surface-container active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[18px]" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</article>
+<!-- Card 2: Sabão Líquido e Amaciante (Recorrência Despensa) -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl p-space-md shadow-sm">
+<div class="flex items-start justify-between">
+<div class="flex items-center space-x-2">
+<span class="p-2 rounded-lg bg-surface-container text-secondary">
+<span class="material-symbols-outlined text-[22px]" data-icon="local_laundry_service">local_laundry_service</span>
+</span>
+<div>
+<span class="font-label-sm text-label-sm text-secondary font-bold">A CADA 15 DIAS</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Sabão líquido e amaciante</h3>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-[10px] font-bold">
+              Despensa
+            </span>
+</div>
+<div class="mt-3 space-y-1 text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-center">
+<span class="material-symbols-outlined text-[16px] text-tertiary mr-1" data-icon="inventory_2">inventory_2</span>
+<span>Restam aprox. <strong>3 doses</strong> na lavanderia</span>
+</div>
+<p class="text-error font-medium text-[12px] flex items-center">
+<span class="material-symbols-outlined text-[14px] mr-1" data-icon="warning">warning</span>
+              Previsão de término em 4 dias • Próxima data: Qua, 15 de Outubro
+            </p>
+</div>
+<div class="mt-3 pt-3 border-t border-outline-variant flex items-center justify-between gap-2">
+<button class="flex-1 py-2 px-3 rounded-lg border border-primary text-primary font-label-md text-label-md font-semibold hover:bg-surface-container-low transition-colors">
+              Ver despensa
+            </button>
+<button class="flex-1 py-2 px-3 rounded-lg bg-surface-container text-on-secondary-container font-label-md text-label-md font-bold hover:bg-secondary-container transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px] mr-1" data-icon="playlist_add">playlist_add</span>
+              Na Lista
+            </button>
+</div>
+</article>
+<!-- Card 3: Rápido Folhas Verdes -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-2">
+<span class="p-2 rounded-lg bg-surface-container-low text-primary">
+<span class="material-symbols-outlined text-[20px]" data-icon="eco">eco</span>
+</span>
+<div>
+<span class="font-label-sm text-label-sm text-primary font-bold">QUINTA-FEIRA</span>
+<h4 class="font-label-lg text-label-lg text-on-surface font-semibold">Folhas verdes e rúcula hidropônica</h4>
+<p class="text-[11px] text-on-surface-variant">Reposição rápida para durar até o fim de semana</p>
+</div>
+</div>
+<button class="p-2 rounded-full hover:bg-surface-container text-primary">
+<span class="material-symbols-outlined text-[20px]" data-icon="add_circle">add_circle</span>
+</button>
+</div>
+</article>
+</section>
+<!-- Preview Interativo / Bottom Sheet: Configuração de Novo Lembrete -->
+<section class="mt-6 border-2 border-primary-fixed-dim bg-surface-container-lowest rounded-2xl p-space-md shadow-lg space-y-3 relative">
+<div class="w-12 h-1 bg-outline-variant rounded-full mx-auto mb-1"></div>
+<div class="flex items-center justify-between pb-2 border-b border-outline-variant">
+<div class="flex items-center space-x-1.5">
+<span class="material-symbols-outlined text-primary text-[22px]" data-icon="edit_calendar">edit_calendar</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Configurar Novo Lembrete Recorrente</h3>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined text-[20px]" data-icon="close">close</span>
+</button>
+</div>
+<!-- Formulário do Lembrete -->
+<div class="space-y-3">
+<!-- Produto / Categoria -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface font-semibold mb-1">Item ou Categoria</label>
+<div class="relative">
+<input class="w-full h-11 px-3 py-2 rounded-lg border border-outline-variant bg-surface-container-lowest font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none" type="text" value="Ovos Caipiras e Iogurte Natural"/>
+<span class="material-symbols-outlined absolute right-3 top-3 text-on-surface-variant text-[18px]" data-icon="search">search</span>
+</div>
+</div>
+<!-- Frequência (Chips de Seleção) -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface font-semibold mb-1">Frequência da Compra</label>
+<div class="grid grid-cols-4 gap-1.5">
+<button class="py-1.5 px-2 rounded-lg bg-surface-container text-on-secondary-container border border-primary font-label-sm text-label-sm font-bold text-center">
+                Semanal
+              </button>
+<button class="py-1.5 px-2 rounded-lg bg-surface-container-lowest text-on-surface-variant border border-outline-variant font-label-sm text-label-sm text-center hover:bg-surface-container-low">
+                Quinzenal
+              </button>
+<button class="py-1.5 px-2 rounded-lg bg-surface-container-lowest text-on-surface-variant border border-outline-variant font-label-sm text-label-sm text-center hover:bg-surface-container-low">
+                Mensal
+              </button>
+<button class="py-1.5 px-2 rounded-lg bg-surface-container-lowest text-on-surface-variant border border-outline-variant font-label-sm text-label-sm text-center hover:bg-surface-container-low">
+                Ajustável
+              </button>
+</div>
+</div>
+<!-- Dias da Semana Seletores -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface font-semibold mb-1">Dias Preferidos</label>
+<div class="flex justify-between items-center">
+<!-- Seg (Selected) -->
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm font-bold flex items-center justify-center shadow-xs">S</div>
+<div class="w-8 h-8 rounded-full bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm flex items-center justify-center">T</div>
+<div class="w-8 h-8 rounded-full bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm flex items-center justify-center">Q</div>
+<div class="w-8 h-8 rounded-full bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm flex items-center justify-center">Q</div>
+<!-- Sex (Selected) -->
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm font-bold flex items-center justify-center shadow-xs">S</div>
+<div class="w-8 h-8 rounded-full bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm flex items-center justify-center">S</div>
+<div class="w-8 h-8 rounded-full bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm flex items-center justify-center">D</div>
+</div>
+</div>
+<!-- Local de Compra -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface font-semibold mb-1">Local de Compra Sugerido</label>
+<div class="flex flex-wrap gap-1.5">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container border border-primary font-label-sm text-[11px] font-bold">
+<span class="material-symbols-outlined text-[14px] mr-1" data-icon="storefront">storefront</span>
+                Feira de rua
+              </span>
+<span class="inline-flex items-center px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface-variant border border-outline-variant font-label-sm text-[11px]">
+<span class="material-symbols-outlined text-[14px] mr-1" data-icon="shopping_basket">shopping_basket</span>
+                Supermercado
+              </span>
+<span class="inline-flex items-center px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface-variant border border-outline-variant font-label-sm text-[11px]">
+<span class="material-symbols-outlined text-[14px] mr-1" data-icon="local_florist">local_florist</span>
+                Feira orgânica
+              </span>
+</div>
+</div>
+<!-- Notificação PWA Toggle -->
+<div class="p-2.5 bg-surface-container-low rounded-xl border border-primary-fixed-dim flex items-center justify-between">
+<div class="flex items-start space-x-2">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5" data-icon="notifications_active">notifications_active</span>
+<div>
+<p class="font-label-md text-label-md font-bold text-on-surface">Alerta push PWA 2h antes da feira</p>
+<p class="text-[10px] text-on-surface-variant leading-tight">Funciona mesmo sem internet ou com o app fechado</p>
+</div>
+</div>
+<div class="w-10 h-5 bg-primary rounded-full relative p-0.5 flex items-center cursor-pointer">
+<div class="w-4 h-4 rounded-full bg-on-primary ml-auto shadow-sm"></div>
+</div>
+</div>
+<!-- Botões Modal -->
+<div class="flex items-center space-x-2 pt-2">
+<button class="w-1/3 py-2.5 rounded-lg border border-outline-variant text-on-surface-variant font-label-md text-label-md font-semibold hover:bg-surface-container transition-all">
+              Cancelar
+            </button>
+<button class="w-2/3 py-2.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-bold hover:bg-primary-container transition-all flex items-center justify-center space-x-1 shadow-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="check_circle">check_circle</span>
+<span>Salvar Lembrete</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- FAB Contextual: Novo Lembrete -->
+<div class="fixed bottom-20 right-4 z-40 max-w-[440px] pointer-events-auto">
+<button class="flex items-center space-x-1.5 px-4 py-3 rounded-full bg-primary text-on-primary shadow-lg border-2 border-tertiary-fixed-dim active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px] text-tertiary-fixed-dim" data-icon="alarm_add">alarm_add</span>
+<span class="font-label-md text-label-md font-bold tracking-wide">+ Novo Lembrete</span>
+</button>
+</div>
+<!-- BottomNavBar (from Shared Components JSON) -->
+<!-- Active state logic: The screen's primary topic is "Lembretes", matching index 0 of label_texts: ["Lembretes", "Lista", "Despensa", "Feiras"] -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-space-sm py-space-xs bg-surface-container-lowest dark:bg-inverse-surface border-t border-outline-variant dark:border-outline max-w-[440px] mx-auto right-0">
+<!-- Lembretes (Active) -->
+<a class="flex flex-col items-center justify-center bg-secondary-container dark:bg-primary-container text-on-secondary-container dark:text-on-primary-container rounded-xl px-space-md py-space-xs active:scale-95 transition-transform duration-100" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="event_repeat">event_repeat</span>
+<span class="font-label-sm text-label-sm font-bold mt-0.5">Lembretes</span>
+</a>
+<!-- Lista (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-space-md py-space-xs hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-colors duration-150 active:scale-95 transition-transform duration-100" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="shopping_basket">shopping_basket</span>
+<span class="font-label-sm text-label-sm mt-0.5">Lista</span>
+</a>
+<!-- Despensa (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-space-md py-space-xs hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-colors duration-150 active:scale-95 transition-transform duration-100" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="kitchen">kitchen</span>
+<span class="font-label-sm text-label-sm mt-0.5">Despensa</span>
+</a>
+<!-- Feiras (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-space-md py-space-xs hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-colors duration-150 active:scale-95 transition-transform duration-100" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="local_florist">local_florist</span>
+<span class="font-label-sm text-label-sm mt-0.5">Feiras</span>
+</a>
+</nav>
+</div>
+  <script src="/nav-switcher.js"></script>
+</body></html>

@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>CompraBem Lista • Despensa</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "tertiary-fixed-dim": "#fcbb4c",
+            "on-tertiary": "#ffffff",
+            "on-error-container": "#93000a",
+            "surface-container": "#dff2e9",
+            "primary": "#0c6443",
+            "on-tertiary-container": "#fff1e2",
+            "on-secondary-fixed": "#002114",
+            "outline": "#6f7a72",
+            "on-primary-fixed-variant": "#005235",
+            "inverse-surface": "#24342e",
+            "secondary-fixed-dim": "#98d3b5",
+            "secondary-fixed": "#b3f0d0",
+            "on-secondary-container": "#366f56",
+            "on-secondary-fixed-variant": "#135039",
+            "on-secondary": "#ffffff",
+            "primary-container": "#2f7d5a",
+            "on-primary-container": "#d0ffe3",
+            "on-primary-fixed": "#002113",
+            "surface-variant": "#d4e7de",
+            "on-primary": "#ffffff",
+            "error-container": "#ffdad6",
+            "on-tertiary-fixed": "#281900",
+            "surface-tint": "#196b4a",
+            "surface-container-low": "#e5f8ee",
+            "tertiary-container": "#956600",
+            "tertiary-fixed": "#ffdeae",
+            "on-surface": "#0f1f19",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-highest": "#d4e7de",
+            "surface-bright": "#ebfef4",
+            "secondary-container": "#b3f0d0",
+            "inverse-on-surface": "#e2f5ec",
+            "outline-variant": "#bfc9c0",
+            "background": "#ebfef4",
+            "surface": "#ebfef4",
+            "on-tertiary-fixed-variant": "#604100",
+            "surface-dim": "#ccded5",
+            "secondary": "#2f6950",
+            "tertiary": "#754f00",
+            "surface-container-high": "#daede3",
+            "primary-fixed-dim": "#89d6ad",
+            "error": "#ba1a1a",
+            "on-error": "#ffffff",
+            "primary-fixed": "#a4f3c8",
+            "inverse-primary": "#89d6ad",
+            "on-background": "#0f1f19",
+            "on-surface-variant": "#3f4943"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter": "1rem",
+            "space-xl": "2.5rem",
+            "gutter-desktop": "1.5rem",
+            "space-lg": "1.5rem",
+            "margin": "1rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "margin-tablet": "1.5rem",
+            "space-xs": "0.25rem",
+            "margin-desktop": "2.5rem"
+          },
+          "fontFamily": {
+            "label-lg": ["Plus Jakarta Sans", "sans-serif"],
+            "headline-lg": ["Plus Jakarta Sans", "sans-serif"],
+            "headline-xl": ["Plus Jakarta Sans", "sans-serif"],
+            "body-md": ["Inter", "sans-serif"],
+            "headline-xl-mobile": ["Plus Jakarta Sans", "sans-serif"],
+            "body-sm": ["Inter", "sans-serif"],
+            "label-sm": ["Plus Jakarta Sans", "sans-serif"],
+            "body-lg": ["Inter", "sans-serif"],
+            "label-md": ["Plus Jakarta Sans", "sans-serif"],
+            "headline-sm": ["Plus Jakarta Sans", "sans-serif"],
+            "headline-lg-mobile": ["Plus Jakarta Sans", "sans-serif"]
+          },
+          "fontSize": {
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "headline-lg": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-xl-mobile": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "headline-lg-mobile": ["22px", { "lineHeight": "28px", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-outlined.fill-icon {
+      font-variation-settings: 'FILL' 1, 'wght' 600;
+    }
+    /* Hide scrollbar for tabs navigation */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface antialiased min-h-screen pb-24 selection:bg-surface-container selection:text-primary">
+<!-- ================= TOP APP BAR (Shared Component Anchor) ================= -->
+<header class="bg-surface dark:bg-inverse-surface border-b border-outline-variant dark:border-outline flex justify-between items-center w-full px-gutter h-14 fixed top-0 left-0 z-50 shadow-none backdrop-blur-md bg-opacity-95">
+<div class="flex items-center space-x-2">
+<!-- Brand Logo / Leading Icon -->
+<div class="w-8 h-8 rounded-xl bg-primary-container flex items-center justify-center text-on-primary shadow-sm">
+<span class="material-symbols-outlined fill-icon text-on-primary text-[20px]" data-icon="eco">eco</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center space-x-1.5">
+<span class="font-headline-sm text-headline-sm text-primary dark:text-primary-fixed leading-tight tracking-tight font-extrabold">CompraBem Lista</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-semibold bg-surface-container text-primary">Despensa</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+          Offline Ready • 100% Sincronizado
+        </span>
+</div>
+</div>
+<!-- Quick Actions in App Bar -->
+<div class="flex items-center space-x-1.5">
+<!-- Barcode Scanner -->
+<button class="w-9 h-9 flex items-center justify-center rounded-xl bg-surface-container-lowest text-primary border border-outline-variant hover:bg-surface-container active:scale-98 transition-transform" title="Escanear Código de Barras">
+<span class="material-symbols-outlined text-[20px]" data-icon="barcode_scanner">barcode_scanner</span>
+</button>
+<!-- Quick Add Item -->
+<button class="w-9 h-9 flex items-center justify-center rounded-xl bg-primary text-on-primary hover:bg-primary-container active:scale-98 transition-transform shadow-sm" title="Adicionar à Despensa">
+<span class="material-symbols-outlined text-[20px]" data-icon="add">add</span>
+</button>
+<!-- Trailing Sync Icon -->
+<div class="text-primary dark:text-inverse-primary pl-1" title="Sincronizado na Nuvem">
+<span class="material-symbols-outlined fill-icon text-[20px]" data-icon="cloud_done">cloud_done</span>
+</div>
+</div>
+</header>
+<!-- ================= MAIN CONTENT WRAPPER ================= -->
+<main class="pt-16 max-w-lg mx-auto px-4 space-y-4">
+<!-- Subtitle Banner with Brand Identity -->
+<div class="flex items-center justify-between pt-1">
+<div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-on-surface leading-tight">Despensa Doméstica</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Sua orientação aplicada às compras e consumo consciente.</p>
+</div>
+<div class="w-10 h-10 rounded-2xl bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined fill-icon text-[24px]" data-icon="kitchen">kitchen</span>
+</div>
+</div>
+<!-- ================= DASHBOARD RESUMO DA DESPENSA (Bento Compacto) ================= -->
+<section class="bg-surface-container-lowest rounded-2xl border border-outline-variant p-3.5 space-y-2.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-1.5">
+<span class="material-symbols-outlined text-primary text-[18px]" data-icon="inventory_2">inventory_2</span>
+<h2 class="font-label-lg text-label-lg text-on-surface">Status do Estoque Doméstico</h2>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Atualizado hoje</span>
+</div>
+<!-- Métricas em 3 Badges Tonal Cards -->
+<div class="grid grid-cols-3 gap-2">
+<!-- 34 em Estoque -->
+<div class="bg-surface-container rounded-xl p-2.5 border border-primary-container/20 flex flex-col items-center text-center">
+<span class="font-headline-sm text-headline-sm font-bold text-primary">34</span>
+<span class="font-label-sm text-label-sm text-on-secondary-container mt-0.5">Em Estoque</span>
+<span class="inline-block w-full h-1 bg-primary rounded-full mt-1.5 opacity-60"></span>
+</div>
+<!-- 3 Vencendo Logo (Alerta Âmbar) -->
+<div class="bg-[#FEF7EB] rounded-xl p-2.5 border border-[#E7A93B]/40 flex flex-col items-center text-center">
+<span class="font-headline-sm text-headline-sm font-bold text-[#8C5A08]">3</span>
+<span class="font-label-sm text-label-sm text-[#8C5A08] mt-0.5">Vencem logo</span>
+<span class="inline-block w-full h-1 bg-[#E7A93B] rounded-full mt-1.5"></span>
+</div>
+<!-- 5 Nível Baixo (Alerta Reposição) -->
+<div class="bg-[#FDF2F2] rounded-xl p-2.5 border border-[#D64545]/30 flex flex-col items-center text-center">
+<span class="font-headline-sm text-headline-sm font-bold text-[#D64545]">5</span>
+<span class="font-label-sm text-label-sm text-[#BA1A1A] mt-0.5">Nível Baixo</span>
+<span class="inline-block w-full h-1 bg-[#D64545] rounded-full mt-1.5"></span>
+</div>
+</div>
+</section>
+<!-- ================= FILTROS POR LOCAL DE ARMAZENAMENTO ================= -->
+<section>
+<div class="flex items-center space-x-2 overflow-x-auto no-scrollbar py-1 text-nowrap">
+<!-- Chip: Todos -->
+<button class="px-3 py-1.5 rounded-full bg-surface-container border border-primary text-primary font-label-md text-label-md font-bold flex items-center space-x-1 shadow-sm">
+<span>Todos</span>
+<span class="bg-primary text-on-primary text-[10px] px-1.5 py-0.2 rounded-full ml-1">34</span>
+</button>
+<!-- Chip: Geladeira -->
+<button class="px-3 py-1.5 rounded-full bg-surface-container-lowest border border-outline-variant text-on-surface-variant font-label-md text-label-md hover:bg-surface-container hover:text-primary transition-colors flex items-center space-x-1">
+<span class="material-symbols-outlined text-[15px]" data-icon="ac_unit">ac_unit</span>
+<span>Geladeira</span>
+<span class="text-outline text-[11px] font-semibold ml-0.5">(12)</span>
+</button>
+<!-- Chip: Freezer -->
+<button class="px-3 py-1.5 rounded-full bg-surface-container-lowest border border-outline-variant text-on-surface-variant font-label-md text-label-md hover:bg-surface-container hover:text-primary transition-colors flex items-center space-x-1">
+<span class="material-symbols-outlined text-[15px]" data-icon="severe_cold">severe_cold</span>
+<span>Freezer</span>
+<span class="text-outline text-[11px] font-semibold ml-0.5">(6)</span>
+</button>
+<!-- Chip: Armário Seco -->
+<button class="px-3 py-1.5 rounded-full bg-surface-container-lowest border border-outline-variant text-on-surface-variant font-label-md text-label-md hover:bg-surface-container hover:text-primary transition-colors flex items-center space-x-1">
+<span class="material-symbols-outlined text-[15px]" data-icon="shelves">shelves</span>
+<span>Armário Seco</span>
+<span class="text-outline text-[11px] font-semibold ml-0.5">(11)</span>
+</button>
+<!-- Chip: Limpeza -->
+<button class="px-3 py-1.5 rounded-full bg-surface-container-lowest border border-outline-variant text-on-surface-variant font-label-md text-label-md hover:bg-surface-container hover:text-primary transition-colors flex items-center space-x-1">
+<span class="material-symbols-outlined text-[15px]" data-icon="cleaning_services">cleaning_services</span>
+<span>Limpeza</span>
+<span class="text-outline text-[11px] font-semibold ml-0.5">(5)</span>
+</button>
+</div>
+</section>
+<!-- ================= CARD ESPECIAL: SUGESTÃO CONSCIENTE ANTI-DESPERDÍCIO ================= -->
+<section class="bg-gradient-to-br from-[#FEF7EB] to-[#FFF9F0] border border-[#E7A93B]/50 rounded-2xl p-4 shadow-sm relative overflow-hidden">
+<div class="absolute -right-6 -bottom-6 opacity-10 text-[#754f00] pointer-events-none">
+<span class="material-symbols-outlined text-[120px]" data-icon="nest_eco_leaf">nest_eco_leaf</span>
+</div>
+<div class="flex items-start space-x-3">
+<div class="w-10 h-10 rounded-xl bg-[#FEF7EB] border border-[#E7A93B] text-[#754f00] flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined fill-icon text-[22px]" data-icon="outdoor_garden">outdoor_garden</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center space-x-1.5">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-[#ffdeae] text-[#604100]">
+              Anti-desperdício
+            </span>
+<span class="font-label-sm text-label-sm text-[#754f00] font-semibold">Dica Inteligente</span>
+</div>
+<h3 class="font-label-lg text-label-lg text-on-surface font-bold mt-1">Sugestão Consciente Anti-desperdício</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+            Suas bananas estão bem maduras e você tem aveia em flocos e canela na despensa. Que tal preparar um <strong class="text-on-surface font-semibold">Bolo de Caneca de Banana &amp; Aveia</strong> sem açúcar adicionado?
+          </p>
+<div class="mt-3 flex flex-wrap items-center gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md flex items-center space-x-1.5 shadow-sm active:scale-98 transition-transform">
+<span class="material-symbols-outlined text-[16px]" data-icon="menu_book">menu_book</span>
+<span>Ver receita rápida (5 min)</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest border border-outline-variant text-on-surface font-label-md text-label-md hover:bg-surface-container active:scale-98 transition-all">
+              Marcar ingredientes utilizados
+            </button>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= SEÇÃO 1: ATENÇÃO E VENCIMENTO PRÓXIMO ================= -->
+<section class="space-y-2.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-[#E7A93B]"></span>
+<h2 class="font-label-lg text-label-lg font-bold text-on-surface">Atenção e Vencimento Próximo</h2>
+</div>
+<span class="font-label-sm text-label-sm text-[#8C5A08] font-semibold">Consumo prioritário</span>
+</div>
+<!-- Item 1: Rúcula Hidropônica (Vencendo Hoje - Alerta Vermelho) -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-2xl p-3.5 shadow-sm space-y-2.5">
+<div class="flex items-start justify-between">
+<div class="flex items-center space-x-3">
+<div class="w-12 h-12 rounded-xl bg-[#FDF2F2] border border-[#ffdad6] flex items-center justify-center text-[#D64545] shrink-0">
+<span class="material-symbols-outlined text-[26px]" data-icon="eco">eco</span>
+</div>
+<div>
+<div class="flex items-center space-x-1.5">
+<span class="font-headline-sm text-[16px] font-bold text-on-surface">Rúcula Hidropônica</span>
+<span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-[#ffdad6] text-[#ba1a1a]">
+                  Vence Hoje
+                </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Maço 200g • Geladeira (Gaveta de Folhas)</p>
+</div>
+</div>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">1 un</span>
+</div>
+<!-- Indicador de Frescor / Barra de Urgência (Vermelho) -->
+<div class="space-y-1">
+<div class="flex justify-between text-[11px] font-medium text-on-surface-variant">
+<span>Frescor: Urgente</span>
+<span class="text-[#ba1a1a] font-bold">Validade: 28/Out (Hoje)</span>
+</div>
+<div class="w-full bg-[#ffdad6] rounded-full h-1.5 overflow-hidden">
+<div class="bg-[#ba1a1a] h-1.5 rounded-full w-[95%]"></div>
+</div>
+</div>
+<!-- Ação Rápida -->
+<div class="flex items-center justify-between pt-1 border-t border-outline-variant/40">
+<span class="font-body-sm text-[11px] text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-[#ba1a1a]" data-icon="warning">warning</span>
+            Consumir na próxima refeição
+          </span>
+<button class="px-3 py-1 rounded-lg bg-surface-container text-primary font-label-md text-label-md font-semibold hover:bg-primary hover:text-on-primary active:scale-98 transition-all flex items-center space-x-1">
+<span class="material-symbols-outlined text-[15px]" data-icon="check_circle">check_circle</span>
+<span>Marcar consumido</span>
+</button>
+</div>
+</div>
+<!-- Item 2: Iogurte Natural Desnatado (Consumir em 2 dias - Alerta Âmbar) -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-2xl p-3.5 shadow-sm space-y-2.5">
+<div class="flex items-start justify-between">
+<div class="flex items-center space-x-3">
+<div class="w-12 h-12 rounded-xl bg-[#FEF7EB] border border-[#ffdeae] flex items-center justify-center text-[#754f00] shrink-0">
+<span class="material-symbols-outlined text-[26px]" data-icon="breakfast_dining">breakfast_dining</span>
+</div>
+<div>
+<div class="flex items-center space-x-1.5">
+<span class="font-headline-sm text-[16px] font-bold text-on-surface">Iogurte Natural Desnatado</span>
+<span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-[#ffdeae] text-[#604100]">
+                  2 dias
+                </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Pote 170g • Geladeira (Prateleira 1)</p>
+</div>
+</div>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">1 un</span>
+</div>
+<!-- Indicador de Frescor (Âmbar) -->
+<div class="space-y-1">
+<div class="flex justify-between text-[11px] font-medium text-on-surface-variant">
+<span>Frescor: Atenção</span>
+<span class="text-[#754f00] font-bold">Validade: 30/Out</span>
+</div>
+<div class="w-full bg-[#ffdeae] rounded-full h-1.5 overflow-hidden">
+<div class="bg-[#fcbb4c] h-1.5 rounded-full w-[75%]"></div>
+</div>
+</div>
+<!-- Ação Rápida -->
+<div class="flex items-center justify-between pt-1 border-t border-outline-variant/40">
+<span class="font-body-sm text-[11px] text-on-surface-variant">1 un restante no lote</span>
+<div class="flex space-x-1.5">
+<button class="px-2.5 py-1 rounded-lg bg-surface-container-highest text-on-surface-variant font-label-md text-label-md hover:bg-surface-container hover:text-primary transition-colors">
+              Prorrogar
+            </button>
+<button class="px-3 py-1 rounded-lg bg-surface-container text-primary font-label-md text-label-md font-semibold hover:bg-primary hover:text-on-primary transition-all flex items-center space-x-1">
+<span class="material-symbols-outlined text-[15px]" data-icon="done">done</span>
+<span>Consumir</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= SEÇÃO 2: ESTOQUE ESGOTADO / REPOSIÇÃO IMEDIATA ================= -->
+<section class="space-y-2.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-[#ba1a1a]"></span>
+<h2 class="font-label-lg text-label-lg font-bold text-on-surface">Estoque Esgotado / Reposição Imediata</h2>
+</div>
+<span class="font-label-sm text-label-sm text-[#ba1a1a] font-semibold">Repor na lista</span>
+</div>
+<!-- Item Reposição 1: Aveia em Flocos Finos -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-2xl p-3.5 shadow-sm space-y-3">
+<div class="flex items-start justify-between">
+<div class="flex items-center space-x-3">
+<div class="w-12 h-12 rounded-xl bg-surface-variant/60 flex items-center justify-center text-outline shrink-0">
+<span class="material-symbols-outlined text-[24px]" data-icon="grain">grain</span>
+</div>
+<div>
+<span class="font-headline-sm text-[16px] font-bold text-on-surface">Aveia em Flocos Finos</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Pacote 500g • Armário Seco</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-error-container text-on-error-container text-[11px] font-bold">
+            0 un
+          </span>
+</div>
+<!-- Botão de Ação Direta em Destaque -->
+<button class="w-full py-2.5 px-3 bg-primary text-on-primary rounded-xl font-label-md text-label-md font-semibold flex items-center justify-center space-x-2 shadow-sm hover:bg-primary-container active:scale-98 transition-all">
+<span class="material-symbols-outlined text-[18px]" data-icon="add_shopping_cart">add_shopping_cart</span>
+<span>Reenviar para lista de compras</span>
+</button>
+</div>
+<!-- Item Reposição 2: Detergente Ecológico -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-2xl p-3.5 shadow-sm space-y-3">
+<div class="flex items-start justify-between">
+<div class="flex items-center space-x-3">
+<div class="w-12 h-12 rounded-xl bg-surface-variant/60 flex items-center justify-center text-outline shrink-0">
+<span class="material-symbols-outlined text-[24px]" data-icon="soap">soap</span>
+</div>
+<div>
+<span class="font-headline-sm text-[16px] font-bold text-on-surface">Detergente Ecológico Neutro</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Frasco 500ml • Armário de Limpeza</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-error-container text-on-error-container text-[11px] font-bold">
+            0 un
+          </span>
+</div>
+<!-- Botão de Ação Direta em Destaque -->
+<button class="w-full py-2.5 px-3 bg-primary text-on-primary rounded-xl font-label-md text-label-md font-semibold flex items-center justify-center space-x-2 shadow-sm hover:bg-primary-container active:scale-98 transition-all">
+<span class="material-symbols-outlined text-[18px]" data-icon="add_shopping_cart">add_shopping_cart</span>
+<span>Reenviar para lista de compras</span>
+</button>
+</div>
+</section>
+<!-- ================= SEÇÃO 3: EM ESTOQUE NORMAL ================= -->
+<section class="space-y-2.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<h2 class="font-label-lg text-label-lg font-bold text-on-surface">Em Estoque Normal</h2>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Consumo seguro</span>
+</div>
+<!-- Card Estoque 1: Azeite de Oliva Extra Virgem (80% fresco) -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-2xl p-3.5 shadow-sm space-y-2.5">
+<div class="flex items-start justify-between">
+<div class="flex items-center space-x-3">
+<div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[24px]" data-icon="water_drop">water_drop</span>
+</div>
+<div>
+<div class="flex items-center space-x-1.5">
+<span class="font-headline-sm text-[16px] font-bold text-on-surface">Azeite Extra Virgem</span>
+<span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-surface-container text-primary">Seguro</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Garrafa 500ml • Armário Seco</p>
+</div>
+</div>
+<div class="text-right">
+<span class="font-headline-sm text-[15px] font-bold text-primary">2 un</span>
+<p class="text-[11px] text-on-surface-variant">~80% cheio</p>
+</div>
+</div>
+<!-- Barra de Nível de Estoque (80%) -->
+<div class="space-y-1">
+<div class="flex justify-between text-[11px] font-medium text-on-surface-variant">
+<span>Nível atual do recipiente</span>
+<span class="text-primary font-semibold">Validade: Dez/2025</span>
+</div>
+<div class="w-full bg-surface-variant rounded-full h-1.5 overflow-hidden">
+<div class="bg-primary h-1.5 rounded-full w-[80%]"></div>
+</div>
+</div>
+<!-- Stepper e Ações Rápidas -->
+<div class="flex items-center justify-between pt-1 border-t border-outline-variant/40">
+<div class="flex items-center space-x-1.5">
+<button class="w-7 h-7 rounded-lg bg-surface-container text-primary flex items-center justify-center font-bold hover:bg-primary hover:text-on-primary active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[16px]" data-icon="remove">remove</span>
+</button>
+<span class="font-label-md text-label-md px-1 font-bold text-on-surface">2</span>
+<button class="w-7 h-7 rounded-lg bg-surface-container text-primary flex items-center justify-center font-bold hover:bg-primary hover:text-on-primary active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[16px]" data-icon="add">add</span>
+</button>
+</div>
+<button class="px-2.5 py-1 rounded-lg bg-surface-container-low text-primary font-label-md text-label-md hover:bg-surface-container transition-colors flex items-center space-x-1">
+<span class="material-symbols-outlined text-[15px]" data-icon="local_dining">local_dining</span>
+<span>Gastar porção</span>
+</button>
+</div>
+</div>
+<!-- Card Estoque 2: Queijo Lac-Free Recém Aberto (50% consumo) -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-2xl p-3.5 shadow-sm space-y-2.5">
+<div class="flex items-start justify-between">
+<div class="flex items-center space-x-3">
+<div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[24px]" data-icon="lunch_dining">lunch_dining</span>
+</div>
+<div>
+<div class="flex items-center space-x-1.5">
+<span class="font-headline-sm text-[16px] font-bold text-on-surface">Queijo Muçarela Lac-Free</span>
+<span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-surface-container text-primary">Aberto há 1d</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Fatiado 300g • Geladeira</p>
+</div>
+</div>
+<div class="text-right">
+<span class="font-headline-sm text-[15px] font-bold text-primary">1 un</span>
+<p class="text-[11px] text-on-surface-variant">~50% restante</p>
+</div>
+</div>
+<!-- Barra de Nível de Estoque (50%) -->
+<div class="space-y-1">
+<div class="flex justify-between text-[11px] font-medium text-on-surface-variant">
+<span>Nível atual do recipiente</span>
+<span class="text-primary font-semibold">Consumir em 5 dias</span>
+</div>
+<div class="w-full bg-surface-variant rounded-full h-1.5 overflow-hidden">
+<div class="bg-secondary h-1.5 rounded-full w-[50%]"></div>
+</div>
+</div>
+<!-- Stepper e Ações Rápidas -->
+<div class="flex items-center justify-between pt-1 border-t border-outline-variant/40">
+<div class="flex items-center space-x-1.5">
+<button class="w-7 h-7 rounded-lg bg-surface-container text-primary flex items-center justify-center font-bold hover:bg-primary hover:text-on-primary active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[16px]" data-icon="remove">remove</span>
+</button>
+<span class="font-label-md text-label-md px-1 font-bold text-on-surface">1</span>
+<button class="w-7 h-7 rounded-lg bg-surface-container text-primary flex items-center justify-center font-bold hover:bg-primary hover:text-on-primary active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[16px]" data-icon="add">add</span>
+</button>
+</div>
+<button class="px-2.5 py-1 rounded-lg bg-surface-container-low text-primary font-label-md text-label-md hover:bg-surface-container transition-colors flex items-center space-x-1">
+<span class="material-symbols-outlined text-[15px]" data-icon="local_dining">local_dining</span>
+<span>Gastar porção</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Rodapé de Apoio / Dica de Organização -->
+<div class="text-center py-2">
+<p class="font-label-sm text-label-sm text-outline">Dica CompraBem: Mantenha os produtos com validade mais curta na frente das prateleiras.</p>
+</div>
+</main>
+<!-- ================= BOTTOM NAVIGATION BAR (Shared Component Anchor) ================= -->
+<!-- Contextual State: Despensa is ACTIVE (exact match with screen context) -->
+<nav class="bg-surface dark:bg-inverse-surface border-t border-outline-variant dark:border-outline fixed bottom-0 w-full z-50 flex justify-around items-center px-space-xs py-space-xs h-16 shadow-none backdrop-blur-md bg-opacity-95">
+<!-- Destino 1: Lista (Inativo) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-3 py-1 hover:bg-surface-container dark:hover:bg-surface-dim hover:text-primary dark:hover:text-primary-fixed active:scale-98 transition-all duration-150" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-label-sm text-label-sm mt-0.5">Lista</span>
+</a>
+<!-- Destino 2: Despensa (ATIVO OBRIGATÓRIO POR REGRAS DO PROMPT E JSON) -->
+<a class="flex flex-col items-center justify-center bg-secondary-container dark:bg-primary-container text-on-secondary-container dark:text-on-primary-container rounded-xl px-3 py-1 hover:bg-surface-container dark:hover:bg-surface-dim hover:text-primary dark:hover:text-primary-fixed active:scale-98 transition-all duration-150 font-bold shadow-sm" href="#">
+<span class="material-symbols-outlined fill-icon text-[22px]" data-icon="kitchen">kitchen</span>
+<span class="font-label-sm text-label-sm mt-0.5 font-bold">Despensa</span>
+</a>
+<!-- Destino 3: Receitas (Inativo) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-3 py-1 hover:bg-surface-container dark:hover:bg-surface-dim hover:text-primary dark:hover:text-primary-fixed active:scale-98 transition-all duration-150" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="menu_book">menu_book</span>
+<span class="font-label-sm text-label-sm mt-0.5">Receitas</span>
+</a>
+<!-- Destino 4: Histórico (Inativo) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-3 py-1 hover:bg-surface-container dark:hover:bg-surface-dim hover:text-primary dark:hover:text-primary-fixed active:scale-98 transition-all duration-150" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="history">history</span>
+<span class="font-label-sm text-label-sm mt-0.5">Histórico</span>
+</a>
+</nav>
+<!-- Micro-interactions Script -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Feedback suave ao clicar em botões de ação rápida
+      const actionButtons = document.querySelectorAll('button');
+      actionButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          if (btn.innerText.includes('Reenviar para lista')) {
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<span class="material-symbols-outlined text-[18px]">check</span><span>Adicionado à lista!</span>';
+            btn.classList.add('bg-secondary');
+            setTimeout(() => {
+              btn.innerHTML = originalText;
+              btn.classList.remove('bg-secondary');
+            }, 1800);
+          }
+        });
+      });
+    });
+  </script>
+  <script src="/nav-switcher.js"></script>
+</body></html>

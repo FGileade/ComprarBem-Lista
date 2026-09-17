@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CompraBem Lista • Sua orientação aplicada às compras</title>
+<!-- Google Fonts: Plus Jakarta Sans & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration verbatim as required -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-lowest": "#ffffff",
+            "on-primary": "#ffffff",
+            "error": "#ba1a1a",
+            "error-container": "#ffdad6",
+            "surface-variant": "#d4e7de",
+            "tertiary-fixed-dim": "#fcbb4c",
+            "primary-fixed": "#a4f3c8",
+            "on-secondary": "#ffffff",
+            "tertiary": "#754f00",
+            "surface-tint": "#196b4a",
+            "surface": "#ebfef4",
+            "surface-container-highest": "#d4e7de",
+            "outline-variant": "#bfc9c0",
+            "inverse-on-surface": "#e2f5ec",
+            "on-error-container": "#93000a",
+            "inverse-primary": "#89d6ad",
+            "primary-fixed-dim": "#89d6ad",
+            "inverse-surface": "#24342e",
+            "surface-container-high": "#daede3",
+            "on-secondary-fixed": "#002114",
+            "on-tertiary-fixed": "#281900",
+            "background": "#ebfef4",
+            "secondary-fixed-dim": "#98d3b5",
+            "on-primary-fixed-variant": "#005235",
+            "secondary": "#2f6950",
+            "tertiary-fixed": "#ffdeae",
+            "surface-bright": "#ebfef4",
+            "outline": "#6f7a72",
+            "on-tertiary": "#ffffff",
+            "surface-dim": "#ccded5",
+            "on-error": "#ffffff",
+            "on-tertiary-fixed-variant": "#604100",
+            "on-secondary-fixed-variant": "#135039",
+            "on-background": "#0f1f19",
+            "surface-container": "#dff2e9",
+            "on-surface-variant": "#3f4943",
+            "secondary-container": "#b3f0d0",
+            "primary": "#0c6443",
+            "on-tertiary-container": "#fff1e2",
+            "on-secondary-container": "#366f56",
+            "on-primary-fixed": "#002113",
+            "primary-container": "#2f7d5a",
+            "secondary-fixed": "#b3f0d0",
+            "on-surface": "#0f1f19",
+            "tertiary-container": "#956600",
+            "surface-container-low": "#e5f8ee",
+            "on-primary-container": "#d0ffe3"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "space-lg": "1.5rem",
+            "space-xl": "2.5rem",
+            "gutter": "1rem",
+            "gutter-desktop": "1.5rem",
+            "margin": "1rem",
+            "margin-tablet": "1.5rem",
+            "margin-desktop": "2.5rem"
+          },
+          "fontFamily": {
+            "label-lg": ["Plus Jakarta Sans"],
+            "headline-xl": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "body-md": ["Inter"],
+            "label-md": ["Plus Jakarta Sans"],
+            "headline-xl-mobile": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "body-sm": ["Inter"],
+            "body-lg": ["Inter"]
+          },
+          "fontSize": {
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "headline-xl-mobile": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "600" }],
+            "headline-lg": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-lg-mobile": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-outlined.fill-1 {
+      font-variation-settings: 'FILL' 1;
+    }
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f7f3;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #bfc9c0;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #6f7a72;
+    }
+  </style>
+</head>
+<body class="bg-surface-container-low text-on-surface font-body-md antialiased min-h-screen flex flex-col selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- Top Global Header (Shared Component Anchored) -->
+<header class="bg-surface-container-lowest/95 dark:bg-inverse-surface/95 backdrop-blur-md docked full-width top-0 sticky z-50 border-b border-outline-variant/30 dark:border-outline/20">
+<div class="flex justify-between items-center w-full px-gutter md:px-margin-desktop max-w-[1200px] mx-auto h-16">
+<!-- Brand Lockup -->
+<div class="flex items-center gap-3">
+<!-- Logo SVG Icon based on provided user asset -->
+<div class="w-9 h-9 rounded-xl bg-primary flex items-center justify-center shadow-sm relative overflow-hidden flex-shrink-0">
+<svg class="w-6 h-6 text-on-primary" fill="none" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+<path d="M35 34 C35 22, 65 22, 65 34" stroke="currentColor" stroke-linecap="round" stroke-width="7"></path>
+<path d="M26 36 C24 50, 27 78, 38 80 C49 82, 51 82, 62 80 C73 78, 76 50, 74 36 Z" fill="currentColor"></path>
+<path d="M36 55 L46 66 L64 45" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"></path>
+<circle cx="67" cy="41" fill="#fcbb4c" r="5"></circle>
+<path d="M50 22 C62 20, 64 27, 50 27 Z" fill="#d0ffe3" opacity="0.9"></path>
+</svg>
+</div>
+<div class="flex flex-col">
+<span class="text-headline-sm font-headline-sm text-primary dark:text-primary-fixed font-bold tracking-tight leading-none">CompraBem Lista</span>
+<span class="text-label-sm font-label-sm text-outline hidden sm:inline-block">Sua orientação aplicada às compras</span>
+</div>
+</div>
+<!-- Navigation Links from Shared Components JSON -->
+<nav aria-label="Navegação Principal" class="hidden md:flex items-center gap-6">
+<a class="text-primary dark:text-primary-fixed border-b-2 border-primary dark:border-primary-fixed font-semibold pb-1 text-label-lg font-label-lg" href="#visao-geral">Visão Geral</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-medium hover:text-on-surface dark:hover:text-inverse-on-surface transition-colors text-label-lg font-label-lg" href="#logotipos">Logotipos</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-medium hover:text-on-surface dark:hover:text-inverse-on-surface transition-colors text-label-lg font-label-lg" href="#paleta-cores">Paleta & Cores</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-medium hover:text-on-surface dark:hover:text-inverse-on-surface transition-colors text-label-lg font-label-lg" href="#tipografia">Tipografia</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-medium hover:text-on-surface dark:hover:text-inverse-on-surface transition-colors text-label-lg font-label-lg" href="#pwa-previews">PWA Previews</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-medium hover:text-on-surface dark:hover:text-inverse-on-surface transition-colors text-label-lg font-label-lg" href="#downloads">Downloads</a>
+</nav>
+<!-- Trailing Action Buttons -->
+<div class="flex items-center gap-2">
+<button class="hidden lg:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-outline-variant/50 text-on-surface hover:bg-surface-container transition-colors text-label-md font-label-md">
+<span class="material-symbols-outlined text-[16px]">token</span>
+          Copy Brand Tokens
+        </button>
+<button class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary transition-all duration-150 active:scale-95 shadow-sm text-label-md font-label-md">
+<span class="material-symbols-outlined text-[16px]">download</span>
+          Download Assets
+        </button>
+</div>
+</div>
+</header>
+<!-- Main Multi-Pane Ecosystem Container -->
+<div class="flex-1 w-full max-w-[1200px] mx-auto px-gutter md:px-margin-desktop py-space-lg flex flex-col lg:flex-row gap-space-lg">
+<!-- 1. LEFT SIDEBAR NAVIGATION -->
+<aside aria-label="Menu Lateral CompraBem" class="w-full lg:w-64 flex-shrink-0 flex flex-col gap-space-md">
+<!-- Brand Ecosystem Card -->
+<div class="bg-surface-container-lowest border border-outline-variant/40 rounded-xl p-space-md shadow-sm">
+<div class="flex items-center gap-2.5 pb-space-sm mb-space-sm border-b border-outline-variant/30">
+<div class="w-8 h-8 rounded-lg bg-secondary-container text-on-secondary-fixed flex items-center justify-center font-headline-sm font-bold text-[14px]">
+            CB
+          </div>
+<div>
+<h2 class="text-label-lg font-label-lg text-on-surface leading-tight">Ecossistema</h2>
+<p class="text-label-sm font-label-sm text-outline">Modo Família Conectado</p>
+</div>
+</div>
+<!-- Mother Tabs Navigation -->
+<nav aria-label="Módulos Centrais" class="space-y-1.5">
+<!-- CompraBem Lista (ACTIVE) -->
+<a class="flex items-center justify-between px-3 py-2.5 rounded-lg bg-secondary-container/60 text-primary font-label-lg font-semibold border-l-4 border-primary transition-all" href="#">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined fill-1 text-[20px] text-primary">shopping_basket</span>
+<span class="text-body-md font-semibold">CompraBem Lista</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-primary text-on-primary text-label-sm font-label-sm">3 ativas</span>
+</a>
+<!-- CompraBem Nutri -->
+<a class="flex items-center justify-between px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors group" href="#">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[20px] text-secondary group-hover:scale-105 transition-transform">nutrition</span>
+<span class="text-body-md font-medium">CompraBem Nutri</span>
+</div>
+<span class="text-label-sm font-label-sm text-outline">Metas</span>
+</a>
+<!-- CompraBem Lembretes -->
+<a class="flex items-center justify-between px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors group" href="#">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[20px] text-tertiary-container group-hover:scale-105 transition-transform">event_repeat</span>
+<span class="text-body-md font-medium">CompraBem Lembretes</span>
+</div>
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span>
+</a>
+<!-- CompraBem Para Profissionais -->
+<a class="flex items-center justify-between px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors group" href="#">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[20px] text-[#7C3AED] group-hover:scale-105 transition-transform">clinical_notes</span>
+<span class="text-body-md font-medium">Para Profissionais</span>
+</div>
+<span class="px-1.5 py-0.5 rounded bg-[#F3E8FF] text-[#6B21A8] text-label-sm font-label-sm font-medium">Nutris</span>
+</a>
+</nav>
+<!-- Divider -->
+<div class="my-space-md border-t border-outline-variant/30"></div>
+<!-- Secondary Section -->
+<div class="space-y-1">
+<p class="text-label-sm font-label-sm uppercase tracking-wider text-outline px-3 mb-1">Módulos Auxiliares</p>
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-body-sm font-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">kitchen</span>
+            Despensa & Estoque
+          </a>
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-body-sm font-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">query_stats</span>
+            Histórico de Preços
+          </a>
+<a class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-body-sm font-body-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">settings</span>
+            Configurações da Casa
+          </a>
+</div>
+</div>
+<!-- Household Profile & PWA Sync Status Widget -->
+<div class="bg-surface-container-lowest border border-outline-variant/40 rounded-xl p-3.5 shadow-sm mt-auto">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high border-2 border-primary/30 flex items-center justify-center text-primary font-bold">
+<span class="material-symbols-outlined text-[20px]">diversity_1</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-label-md font-label-md text-on-surface truncate">Família Silva</p>
+<p class="text-body-sm font-body-sm text-outline truncate">3 membros ativos</p>
+</div>
+<span class="material-symbols-outlined text-outline text-[18px]">expand_more</span>
+</div>
+<div class="mt-3 pt-2.5 border-t border-outline-variant/20 flex items-center justify-between text-label-sm font-label-sm">
+<span class="flex items-center gap-1.5 text-secondary font-medium">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+            PWA Offline-Ready
+          </span>
+<span class="text-outline">Sync OK</span>
+</div>
+</div>
+</aside>
+<!-- 2 & 3. MAIN DASHBOARD CONTENT AREA -->
+<main class="flex-1 min-w-0 flex flex-col gap-space-md" id="visao-geral">
+<!-- TOP SEARCH & ACTIONS STRIP -->
+<section class="bg-surface-container-lowest border border-outline-variant/40 rounded-xl p-space-sm sm:p-3.5 flex flex-col sm:flex-row items-center gap-3 shadow-sm">
+<!-- Search Input -->
+<div class="relative w-full flex-1">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[20px]">search</span>
+<input class="w-full pl-9 pr-12 py-2 rounded-lg bg-surface-container-low border border-outline-variant/40 focus:bg-surface-container-lowest focus:border-primary focus:ring-2 focus:ring-primary/20 text-body-md font-body-md placeholder:text-outline text-on-surface transition-all outline-none" placeholder="Buscar itens, marcas preferidas ou orientações..." type="text"/>
+<kbd class="hidden sm:inline-block absolute right-3 top-1/2 -translate-y-1/2 px-1.5 py-0.5 rounded border border-outline-variant/60 bg-surface-container text-label-sm font-label-sm text-outline">⌘K</kbd>
+</div>
+<!-- Quick Filters -->
+<div class="flex items-center gap-2 w-full sm:w-auto overflow-x-auto pb-1 sm:pb-0">
+<button class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-surface-container-high text-primary hover:bg-secondary-container transition-colors text-label-sm font-label-sm font-medium">
+            Mercado Semanal
+          </button>
+<button class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-colors text-label-sm font-label-sm font-medium">
+            Hortifrúti & Feira
+          </button>
+<button class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-colors text-label-sm font-label-sm font-medium">
+            Farmácia & Higiene
+          </button>
+</div>
+<!-- High-Contrast Primary CTA -->
+<button class="w-full sm:w-auto flex-shrink-0 inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-lg font-semibold shadow-sm transition-all duration-150 active:scale-95">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+<span>+ Nova Lista Inteligente</span>
+</button>
+</section>
+<!-- HERO / SUMMARY BANNER (Friendly Warm Greeting) -->
+<section class="bg-gradient-to-r from-surface-container-low via-secondary-container/20 to-surface-container-lowest border border-secondary-container/80 rounded-xl p-space-md sm:p-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+<div class="flex items-start gap-3.5">
+<div class="w-12 h-12 rounded-xl bg-primary-container text-on-primary flex items-center justify-center flex-shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[28px]">eco</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h1 class="text-headline-sm font-headline-sm text-on-surface font-bold">Bom dia, Mariana!</h1>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-secondary text-label-sm font-label-sm font-medium">Semana de Compras Saudáveis</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant mt-0.5">
+              Sua lista semanal está <strong class="text-primary font-semibold">65% concluída</strong> com foco em frescor e economia balanceada.
+            </p>
+</div>
+</div>
+<div class="flex items-center gap-3 w-full md:w-auto self-end md:self-center">
+<div class="text-right hidden sm:block">
+<span class="text-label-sm font-label-sm text-outline">Meta Familiar</span>
+<p class="text-label-md font-label-md text-secondary font-bold">85% Comida de Verdade</p>
+</div>
+<button class="px-3.5 py-1.5 rounded-lg border border-primary text-primary hover:bg-primary/10 transition-colors text-label-md font-label-md font-semibold w-full md:w-auto text-center">
+            Ver Balanço
+          </button>
+</div>
+</section>
+<!-- SECTION 1: Active Shopping Lists (Listas Ativas) Bento Row -->
+<section aria-labelledby="heading-listas-ativas">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">checklist</span>
+<h2 class="text-headline-sm font-headline-sm text-on-surface font-bold" id="heading-listas-ativas">Listas Ativas em Andamento</h2>
+</div>
+<a class="text-label-md font-label-md text-primary hover:underline flex items-center gap-0.5" href="#">
+            Ver todas (6)
+            <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Card 1: Supermercado Mensal - Despensa -->
+<div class="bg-surface-container-lowest border border-outline-variant/40 hover:border-primary/50 rounded-xl p-space-md shadow-sm transition-all duration-150 flex flex-col justify-between group">
+<div>
+<div class="flex items-start justify-between gap-2 mb-2">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant text-label-sm font-label-sm font-medium">Mensal</span>
+<span class="text-label-md font-label-md font-bold text-secondary">Est. R$ 342,00</span>
+</div>
+<h3 class="text-label-lg font-label-lg text-on-surface font-bold group-hover:text-primary transition-colors">
+                Supermercado Mensal - Despensa
+              </h3>
+<p class="text-body-sm font-body-sm text-outline mt-0.5">Grãos, azeites, massas integrais e congelados</p>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/20">
+<div class="flex justify-between items-center text-label-sm font-label-sm mb-1.5">
+<span class="text-on-surface font-medium">18 de 24 itens comprados</span>
+<span class="text-primary font-bold">75%</span>
+</div>
+<!-- Progress Bar -->
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-primary rounded-full transition-all duration-500" style="width: 75%"></div>
+</div>
+<div class="mt-3 flex items-center justify-between">
+<span class="text-label-sm font-label-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> Hoje, 18:30
+                </span>
+<button class="px-2.5 py-1 rounded bg-secondary-container text-on-secondary-container hover:bg-secondary-fixed text-label-sm font-label-sm font-semibold transition-colors">
+                  Abrir Lista
+                </button>
+</div>
+</div>
+</div>
+<!-- Card 2: Feira Fresca de Quarta -->
+<div class="bg-surface-container-lowest border border-outline-variant/40 hover:border-primary/50 rounded-xl p-space-md shadow-sm transition-all duration-150 flex flex-col justify-between group">
+<div>
+<div class="flex items-start justify-between gap-2 mb-2">
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed/40 text-tertiary text-label-sm font-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] fill-1">potted_plant</span>
+                  Safra da Semana
+                </span>
+<span class="text-label-md font-label-md font-bold text-secondary">Est. R$ 48,50</span>
+</div>
+<h3 class="text-label-lg font-label-lg text-on-surface font-bold group-hover:text-primary transition-colors">
+                Feira Fresca de Quarta
+              </h3>
+<p class="text-body-sm font-body-sm text-outline mt-0.5">Verduras orgânicas, banana prata e abacate</p>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/20">
+<div class="flex justify-between items-center text-label-sm font-label-sm mb-1.5">
+<span class="text-on-surface font-medium">4 de 8 itens comprados</span>
+<span class="text-primary font-bold">50%</span>
+</div>
+<!-- Progress Bar -->
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-primary rounded-full transition-all duration-500" style="width: 50%"></div>
+</div>
+<div class="mt-3 flex items-center justify-between">
+<span class="text-label-sm font-label-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">local_shipping</span> Amanhã cedo
+                </span>
+<button class="px-2.5 py-1 rounded bg-secondary-container text-on-secondary-container hover:bg-secondary-fixed text-label-sm font-label-sm font-semibold transition-colors">
+                  Abrir Lista
+                </button>
+</div>
+</div>
+</div>
+<!-- Card 3: Higiene & Cuidados da Casa -->
+<div class="bg-surface-container-lowest border border-outline-variant/40 hover:border-primary/50 rounded-xl p-space-md shadow-sm transition-all duration-150 flex flex-col justify-between group">
+<div>
+<div class="flex items-start justify-between gap-2 mb-2">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant text-label-sm font-label-sm font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">update</span>
+                  A cada 15 dias
+                </span>
+<span class="text-label-sm font-label-sm text-outline">Recorrente</span>
+</div>
+<h3 class="text-label-lg font-label-lg text-on-surface font-bold group-hover:text-primary transition-colors">
+                Higiene & Cuidados da Casa
+              </h3>
+<p class="text-body-sm font-body-sm text-outline mt-0.5">Detergente ecológico, papel toalha e refis</p>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/20">
+<div class="flex justify-between items-center text-label-sm font-label-sm mb-1.5">
+<span class="text-on-surface font-medium">6 itens pendentes</span>
+<span class="text-outline font-semibold">Reposição</span>
+</div>
+<!-- Progress Bar -->
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-outline rounded-full transition-all duration-500" style="width: 15%"></div>
+</div>
+<div class="mt-3 flex items-center justify-between">
+<span class="text-label-sm font-label-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">notifications_active</span> Em 3 dias
+                </span>
+<button class="px-2.5 py-1 rounded bg-secondary-container text-on-secondary-container hover:bg-secondary-fixed text-label-sm font-label-sm font-semibold transition-colors">
+                  Abrir Lista
+                </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: SMART NON-ALARMIST CONFLICT ALERT ('Orientação Positiva') -->
+<section aria-label="Orientação Nutricional Positiva" class="bg-surface-container-lowest border-2 border-primary/20 rounded-xl p-space-md sm:p-5 shadow-sm relative overflow-hidden">
+<div class="absolute top-0 right-0 w-24 h-24 bg-secondary-container/30 rounded-bl-full pointer-events-none"></div>
+<div class="flex flex-col sm:flex-row items-start gap-4">
+<!-- Friendly indicator mark -->
+<div class="w-11 h-11 rounded-xl bg-secondary-container text-primary flex items-center justify-center flex-shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[24px]">balance</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex flex-wrap items-center gap-2 mb-1.5">
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-container text-primary font-label-sm font-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">lightbulb</span>
+                Conflito amigável com seu perfil
+              </span>
+<span class="px-2 py-0.5 rounded-md bg-[#F3E8FF] text-[#6B21A8] font-label-sm font-label-sm font-medium border border-[#E9D5FF]">
+                [Orientação Profissional - Dra. Camila]
+              </span>
+</div>
+<p class="text-body-md font-body-md text-on-surface leading-relaxed">
+              O item <strong class="text-on-surface font-semibold underline decoration-tertiary/60">Iogurte Grego Tradicional</strong> possui teor de açúcar acima da sua meta cadastrada pela nutricionista.
+            </p>
+<div class="mt-2.5 p-3 rounded-lg bg-surface-container-low border border-outline-variant/30 flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] flex-shrink-0 mt-0.5">verified</span>
+<div>
+<p class="text-label-md font-label-md text-on-surface font-semibold">Sugestão amigável da Dra. Camila:</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+<strong>Iogurte Natural Desnatado 2 ingredientes</strong> (sem espessantes ou açúcar adicionado). Você mantém a cremosidade e preserva sua meta de bem-estar.
+                </p>
+</div>
+</div>
+<!-- Clear Accessible Action Buttons (Non punitive) -->
+<div class="mt-4 flex flex-wrap items-center gap-3">
+<button class="px-4 py-2 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md font-label-md font-semibold transition-all duration-150 active:scale-95 shadow-sm flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">swap_horiz</span>
+                Substituir por Iogurte Natural
+              </button>
+<button class="px-3.5 py-2 rounded-lg border border-outline-variant text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md font-label-md font-medium transition-colors">
+                Você pode revisar e editar
+              </button>
+<button class="px-3 py-2 rounded-lg text-outline hover:text-on-surface font-label-sm font-label-sm transition-colors ml-auto">
+                Manter na lista original
+              </button>
+</div>
+</div>
+</div>
+</section>
+<!-- TWO-COLUMN ASYMMETRIC GRID: Routine Reminder & Favorite Spotlight -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md">
+<!-- SECTION 3: ACTIONABLE ROUTINE REMINDER (7 Cols) -->
+<section class="lg:col-span-7 bg-surface-container-lowest border border-outline-variant/40 rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<span class="w-8 h-8 rounded-lg bg-tertiary-fixed/60 text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">event_upcoming</span>
+</span>
+<h3 class="text-headline-sm font-headline-sm text-on-surface font-bold">Segunda-feira na Feira</h3>
+</div>
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed/40 text-tertiary font-label-sm font-label-sm font-bold">Lembrete Automático</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant">
+              Com base no consumo da sua casa: <strong>rúcula hidropônica, maçã gala e bananas</strong> costumam acabar na terça-feira.
+            </p>
+<div class="mt-3.5 space-y-2">
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low border border-outline-variant/30 text-body-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">grass</span>
+<span class="font-medium text-on-surface">Rúcula Hidropônica</span>
+<span class="text-outline text-label-sm">(1 maço)</span>
+</div>
+<span class="text-label-sm font-label-sm text-secondary font-semibold">Reposição recomendada</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low border border-outline-variant/30 text-body-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-[18px]">nutrition</span>
+<span class="font-medium text-on-surface">Maçã Gala e Bananas Prata</span>
+<span class="text-outline text-label-sm">(1kg cada)</span>
+</div>
+<span class="text-label-sm font-label-sm text-tertiary font-semibold">Acaba amanhã</span>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/20 flex items-center justify-between">
+<span class="text-label-sm font-label-sm text-outline">Garante preço de feira fresca</span>
+<button class="px-3.5 py-2 rounded-lg bg-tertiary-container hover:bg-tertiary text-on-primary font-label-md font-label-md font-bold transition-all duration-150 active:scale-95 shadow-sm flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+              + Adicionar à lista de hoje
+            </button>
+</div>
+</section>
+<!-- SECTION 4: CUSTOM BRAND & PREFERRED PRODUCTS SPOTLIGHT (5 Cols) -->
+<section class="lg:col-span-5 bg-surface-container-lowest border border-outline-variant/40 rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<span class="w-8 h-8 rounded-lg bg-secondary-container text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px] fill-1">star</span>
+</span>
+<h3 class="text-headline-sm font-headline-sm text-on-surface font-bold">Produtos Favoritos</h3>
+</div>
+<span class="text-label-sm font-label-sm text-outline">Marcas da Família</span>
+</div>
+<!-- Spotlight Card 1 -->
+<div class="p-3 rounded-xl border border-secondary-container bg-surface-container-low/60 mb-2.5">
+<div class="flex items-start justify-between">
+<div>
+<span class="px-1.5 py-0.5 rounded bg-secondary-container text-primary text-label-sm font-label-sm font-semibold">
+                    Marca Favorita Salva
+                  </span>
+<h4 class="text-label-lg font-label-lg text-on-surface font-bold mt-1">Pão 100% Integral • Nutrella</h4>
+<p class="text-body-sm font-body-sm text-outline">Fatias grossas, fermentação natural</p>
+</div>
+<button class="p-2 rounded-lg bg-surface-container hover:bg-secondary-container text-primary transition-colors" title="Repor Estoque">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+</div>
+<!-- Spotlight Card 2 -->
+<div class="p-3 rounded-xl border border-outline-variant/30 bg-surface-container-lowest">
+<div class="flex items-start justify-between">
+<div>
+<span class="px-1.5 py-0.5 rounded bg-tertiary-fixed/40 text-tertiary text-label-sm font-label-sm font-semibold">
+                    Escolha Consciente
+                  </span>
+<h4 class="text-label-lg font-label-lg text-on-surface font-bold mt-1">Azeite Extra Virgem (Acidez 0.2%)</h4>
+<p class="text-body-sm font-body-sm text-outline">Prensagem a frio • 500ml</p>
+</div>
+<button class="p-2 rounded-lg bg-surface-container hover:bg-secondary-container text-primary transition-colors" title="Repor Estoque">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+</div>
+</div>
+<button class="mt-3 w-full py-2 rounded-lg border border-outline-variant text-on-surface-variant hover:bg-surface-container text-label-sm font-label-sm font-semibold transition-colors text-center">
+            Gerenciar marcas de confiança
+          </button>
+</section>
+</div>
+<!-- SECTION 5: PROFESSIONAL NUTRI BRIDGE (Clinical Collaboration Banner) -->
+<section class="bg-gradient-to-r from-[#FAF5FF] via-surface-container-lowest to-[#F5F3FF] border border-[#E9D5FF] rounded-xl p-space-md sm:p-5 shadow-sm">
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+<div class="flex items-start gap-3.5">
+<div class="w-12 h-12 rounded-xl bg-[#7C3AED] text-white flex items-center justify-center flex-shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[26px]">medical_services</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="text-label-sm font-label-sm uppercase tracking-wider text-[#6B21A8] font-bold">Ponte Profissional</span>
+<span class="w-1.5 h-1.5 rounded-full bg-[#7C3AED]"></span>
+<span class="text-label-sm font-label-sm text-outline">Consulta em 18 de Maio</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface font-bold mt-0.5">
+                Dra. Camila Soares atualizou seu guia de compras para o outono
+              </h3>
+<p class="text-body-md font-body-md text-on-surface-variant mt-1 max-w-3xl">
+                O planejamento inclui foco em <strong>alimentos anti-inflamatórios e sazonais</strong> (cúrcuma, sementes de abóbora tostadas, gengibre e folhas verde-escuras).
+              </p>
+</div>
+</div>
+<div class="flex items-center gap-2 flex-shrink-0 w-full md:w-auto">
+<button class="w-full md:w-auto px-4 py-2.5 rounded-lg bg-[#7C3AED] hover:bg-[#6D28D9] text-white font-label-md font-label-md font-semibold transition-all duration-150 active:scale-95 shadow-sm flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">assignment_turned_in</span>
+              Ver Recomendações da Nutri
+            </button>
+</div>
+</div>
+</section>
+<!-- SECTION 6: WELCOMING ONBOARDING & EMPTY STATE CARD -->
+<section class="bg-surface-container-lowest border border-dashed border-outline-variant rounded-xl p-space-md text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="flex flex-col sm:flex-row items-center gap-3.5">
+<div class="w-10 h-10 rounded-full bg-surface-container text-secondary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">shelves</span>
+</div>
+<div>
+<h4 class="text-label-lg font-label-lg text-on-surface font-bold">
+              Sua despensa de temperos e grãos ainda não tem itens cadastrados
+            </h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+              Que tal adicionar o que não pode faltar na sua cozinha para alertas preventivos automáticos?
+            </p>
+</div>
+</div>
+<button class="px-4 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-label-md font-label-md font-semibold transition-colors flex-shrink-0 whitespace-nowrap">
+          + Explorar Sugestões Básicas
+        </button>
+</section>
+</main>
+</div>
+<!-- Global Footer (Shared Component Anchored) -->
+<footer class="bg-surface-container-lowest dark:bg-inverse-surface border-t border-outline-variant/30 dark:border-outline/20 mt-auto docked full-width bottom">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-gutter md:px-margin-desktop max-w-[1200px] mx-auto py-8 gap-4">
+<!-- Brand Copyright Text -->
+<div class="flex flex-col sm:flex-row items-center gap-2 text-center sm:text-left">
+<span class="text-headline-sm font-headline-sm text-primary dark:text-primary-fixed font-bold">CompraBem</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant dark:text-outline-variant">
+          © 2024 CompraBem Lista Design System • v1.4.0 • Sua orientação aplicada às compras.
+        </span>
+</div>
+<!-- Footer Links from JSON -->
+<div aria-label="Links de Rodapé" class="flex flex-wrap items-center justify-center gap-6">
+<a class="text-on-surface-variant dark:text-outline-variant text-body-sm font-body-sm hover:text-on-surface dark:hover:text-inverse-on-surface transition-colors duration-150" href="#wcag">WCAG AAA Tokens</a>
+<a class="text-on-surface-variant dark:text-outline-variant text-body-sm font-body-sm hover:text-on-surface dark:hover:text-inverse-on-surface transition-colors duration-150" href="#manifest">W3C Manifest</a>
+<a class="text-on-surface-variant dark:text-outline-variant text-body-sm font-body-sm hover:text-on-surface dark:hover:text-inverse-on-surface transition-colors duration-150" href="#guia">Guia de Marca</a>
+<a class="text-on-surface-variant dark:text-outline-variant text-body-sm font-body-sm hover:text-on-surface dark:hover:text-inverse-on-surface transition-colors duration-150" href="#github">GitHub</a>
+</div>
+</div>
+</footer>
+<!-- Micro-Interactions Script -->
+<script>
+    // Smooth micro-interactions for keyboard shortcut ⌘K / Ctrl+K focus
+    document.addEventListener('keydown', (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        const searchInput = document.querySelector('input[type="text"]');
+        if (searchInput) {
+          searchInput.focus();
+        }
+      }
+    });
+  </script>
+  <script src="/nav-switcher.js"></script>
+</body></html>

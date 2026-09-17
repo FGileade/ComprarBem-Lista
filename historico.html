@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Histórico &amp; Métricas - CompraBem Lista</title>
+<!-- Material Symbols Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Nunito & Plus Jakarta Sans & Inter Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Nunito:wght@500;600;700;800;900&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config as specified -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary-container": "#d0ffe3",
+            "on-primary": "#ffffff",
+            "on-tertiary-container": "#fff1e2",
+            "surface-tint": "#196b4a",
+            "on-tertiary-fixed-variant": "#604100",
+            "tertiary-fixed-dim": "#fcbb4c",
+            "on-secondary-container": "#366f56",
+            "primary-fixed": "#a4f3c8",
+            "tertiary": "#754f00",
+            "surface": "#ebfef4",
+            "on-surface": "#0f1f19",
+            "on-error-container": "#93000a",
+            "primary": "#0c6443",
+            "on-tertiary": "#ffffff",
+            "inverse-primary": "#89d6ad",
+            "tertiary-fixed": "#ffdeae",
+            "secondary-fixed-dim": "#98d3b5",
+            "error": "#ba1a1a",
+            "error-container": "#ffdad6",
+            "on-primary-fixed-variant": "#005235",
+            "tertiary-container": "#956600",
+            "on-secondary-fixed": "#002114",
+            "on-error": "#ffffff",
+            "primary-container": "#2f7d5a",
+            "on-surface-variant": "#3f4943",
+            "outline-variant": "#bfc9c0",
+            "surface-dim": "#ccded5",
+            "background": "#ebfef4",
+            "secondary": "#2f6950",
+            "inverse-on-surface": "#e2f5ec",
+            "primary-fixed-dim": "#89d6ad",
+            "on-secondary-fixed-variant": "#135039",
+            "surface-variant": "#d4e7de",
+            "surface-bright": "#ebfef4",
+            "on-tertiary-fixed": "#281900",
+            "inverse-surface": "#24342e",
+            "surface-container-high": "#daede3",
+            "on-primary-fixed": "#002113",
+            "secondary-fixed": "#b3f0d0",
+            "secondary-container": "#b3f0d0",
+            "surface-container": "#dff2e9",
+            "on-background": "#0f1f19",
+            "surface-container-highest": "#d4e7de",
+            "outline": "#6f7a72",
+            "surface-container-low": "#e5f8ee",
+            "on-secondary": "#ffffff",
+            "surface-container-lowest": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "1rem",
+            "margin-desktop": "2.5rem",
+            "gutter-desktop": "1.5rem",
+            "space-lg": "1.5rem",
+            "space-xl": "2.5rem",
+            "margin-tablet": "1.5rem",
+            "space-sm": "0.5rem",
+            "margin": "1rem",
+            "space-xs": "0.25rem",
+            "gutter": "1rem"
+          },
+          "fontFamily": {
+            "label-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "headline-xl": ["Plus Jakarta Sans"],
+            "body-lg": ["Inter"],
+            "headline-xl-mobile": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "body-md": ["Inter"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "body-sm": ["Inter"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "nunito": ["Nunito", "sans-serif"]
+          },
+          "fontSize": {
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "headline-lg": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-xl-mobile": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "headline-lg-mobile": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      font-family: 'Nunito', sans-serif;
+      background-color: #F7F9F6;
+      color: #0f1f19;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .chart-segment {
+      transition: stroke-width 0.25s ease, opacity 0.2s ease;
+      cursor: pointer;
+    }
+    .chart-segment:hover {
+      stroke-width: 28;
+      opacity: 0.95;
+    }
+  </style>
+</head>
+<body class="bg-[#F7F9F6] text-on-surface antialiased min-h-screen flex flex-col selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TOP NAV BAR (Shared Component Execution from JSON) -->
+<header class="w-full sticky top-0 z-50 bg-surface-container-lowest dark:bg-inverse-surface border-b border-outline-variant dark:border-outline shadow-sm">
+<div class="max-w-7xl mx-auto px-margin-desktop py-space-sm flex justify-between items-center">
+<!-- Brand & Identity with https://lh3.googleusercontent.com/aida/AEtjO1XHEdgg_y8A4FdnD6Rs9kqv5LePmVEr08kBmPu_ysCJGKx_k0WEKb1fwfn4Wf-Mg91VJAjR1KnZgxWGZ-jfIgdnBFl9ZfupUvsuCAuVZa75f02jJbsw7kKxd2I-OB0B8isNoFA7tCVdxk78cdppi2d2tmBOYBkrUvH6u6lrU9JpVXFp0eUG64et_FbnRgGU4iYYrlit96nM6VKMhX9dQD6Jdh4GcqWrqsGvHSmF9goWZ35uz0NDN7lyFbs -->
+<div class="flex items-center gap-3">
+<a class="flex items-center gap-3 group" href="#">
+<img alt="CompraBem Lista Logo" class="w-10 h-10 object-contain rounded-lg transition-transform group-hover:scale-105 duration-200" src="https://lh3.googleusercontent.com/aida/AEtjO1XHEdgg_y8A4FdnD6Rs9kqv5LePmVEr08kBmPu_ysCJGKx_k0WEKb1fwfn4Wf-Mg91VJAjR1KnZgxWGZ-jfIgdnBFl9ZfupUvsuCAuVZa75f02jJbsw7kKxd2I-OB0B8isNoFA7tCVdxk78cdppi2d2tmBOYBkrUvH6u6lrU9JpVXFp0eUG64et_FbnRgGU4iYYrlit96nM6VKMhX9dQD6Jdh4GcqWrqsGvHSmF9goWZ35uz0NDN7lyFbs"/>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm font-bold text-primary dark:text-primary-fixed tracking-tight">CompraBem Lista</span>
+<span class="text-[11px] text-primary/80 font-nunito font-semibold -mt-1 hidden sm:block">Sua orientação aplicada às compras.</span>
+</div>
+</a>
+</div>
+<!-- Navigation Links Desktop -->
+<nav class="hidden md:flex items-center space-x-6">
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary font-label-lg text-label-lg transition-colors pb-1" href="#">
+          Minha Lista
+        </a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary font-label-lg text-label-lg transition-colors pb-1" href="#">
+          Despensa
+        </a>
+<!-- ACTIVE TAB: Histórico & Métricas -->
+<a class="border-b-2 border-primary dark:border-inverse-primary text-primary dark:text-inverse-primary font-label-lg text-label-lg pb-1 font-semibold" href="#">
+          Histórico &amp; Métricas
+        </a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary font-label-lg text-label-lg transition-colors pb-1" href="#">
+          Orientações Nutricionais
+        </a>
+</nav>
+<!-- Trailing Primary Action & Icon Actions -->
+<div class="flex items-center gap-3">
+<!-- Sync Action Button -->
+<button class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-surface-container-low text-primary hover:bg-surface-container transition-colors duration-150 active:scale-95 text-body-sm font-label-md font-semibold border border-outline-variant/60" type="button">
+<span class="material-symbols-outlined text-[18px]">sync</span>
+<span>Sincronizar</span>
+</button>
+<div class="flex items-center gap-1">
+<button class="p-2 rounded-full text-on-surface-variant hover:bg-surface-container-low transition-colors duration-150 active:scale-95" title="Família Conectada" type="button">
+<span class="material-symbols-outlined text-[20px]">family_restroom</span>
+</button>
+<button class="p-2 rounded-full text-on-surface-variant hover:bg-surface-container-low transition-colors duration-150 active:scale-95 relative" title="Notificações" type="button">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-tertiary-fixed-dim rounded-full"></span>
+</button>
+</div>
+<!-- Profile Avatar -->
+<div class="flex items-center pl-2 border-l border-outline-variant">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary font-bold flex items-center justify-center text-xs shadow-sm ring-2 ring-primary-fixed" title="Avatar de Perfil Familiar">
+            CS
+          </div>
+</div>
+</div>
+</div>
+</header>
+<!-- MAIN CANVAS -->
+<main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-margin-desktop py-space-lg space-y-8">
+<!-- 1. CABEÇALHO DE BOAS-VINDAS E RESUMO DO PERÍODO -->
+<section class="bg-surface-container-lowest border border-[#E2E8F0] rounded-xl p-6 shadow-sm">
+<div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+<div class="space-y-2 max-w-3xl">
+<div class="flex flex-wrap items-center gap-2.5">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#DDF2E7] text-[#1F5A42] border border-[#2F7D5A]/30">
+<span class="w-2 h-2 rounded-full bg-[#2F7D5A] animate-pulse"></span>
+              Sincronizado PWA • Nuvem Familiar Conectada
+            </span>
+<span class="text-xs text-[#667085] flex items-center gap-1 font-medium">
+<span class="material-symbols-outlined text-sm text-[#2F7D5A]">verified</span>
+              Diretrizes de Nutrição: Dra. Camila Soares
+            </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight font-bold">
+            Histórico de Compras e Métricas de Economia Consciente
+          </h1>
+<p class="font-body-md text-body-md text-[#667085] leading-relaxed">
+            Acompanhe a evolução das suas escolhas saudáveis, o controle do orçamento familiar e o impacto positivo contra o desperdício alimentar.
+          </p>
+</div>
+<!-- Controls: Period Filter & Export -->
+<div class="flex flex-wrap items-center gap-3 self-start lg:self-center">
+<div class="relative inline-block">
+<select aria-label="Seletor de Período" class="appearance-none bg-surface-container-lowest border border-[#E2E8F0] text-on-surface font-label-md text-label-md rounded-lg py-2.5 pl-3.5 pr-9 font-semibold hover:border-primary focus:outline-none focus:ring-2 focus:ring-[#2F7D5A]/20 cursor-pointer transition-colors shadow-sm">
+<option selected="">Outubro de 2024 (Mês Atual)</option>
+<option>Últimos 3 meses (Ago - Out)</option>
+<option>Semestre (Mai - Out 2024)</option>
+<option>Ano Completo de 2024</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 text-[#667085] text-lg">
+              expand_more
+            </span>
+</div>
+<button class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-surface-container-lowest hover:bg-[#DDF2E7] text-primary border border-[#2F7D5A] font-label-md text-label-md font-semibold transition-all duration-150 active:scale-95 shadow-sm" type="button">
+<span class="material-symbols-outlined text-lg">download</span>
+<span>Exportar Relatório PDF / CSV</span>
+</button>
+</div>
+</div>
+</section>
+<!-- 2. SEÇÃO 1: INDICADORES DO MÊS (KPI CARDS EM DESTAQUE) -->
+<section>
+<div class="flex items-center justify-between mb-4">
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-[#2F7D5A]">insights</span>
+          Indicadores de Impacto • Outubro 2024
+        </h2>
+<span class="text-xs text-[#667085] font-medium hidden sm:inline-block">Baseado em 5 compras consolidadas</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+<!-- Card 1: Taxa de Adesão às Orientações -->
+<div class="bg-surface-container-lowest border border-[#E2E8F0] rounded-xl p-5 hover:border-[#2F7D5A]/50 transition-all duration-200 shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-semibold text-[#1F5A42] bg-[#DDF2E7] px-2.5 py-1 rounded-md flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-[#2F7D5A]">eco</span>
+                Saúde &amp; Nutrição
+              </span>
+<span class="text-xs font-bold text-[#2F7D5A] bg-primary-fixed/30 px-2 py-0.5 rounded-full flex items-center gap-0.5">
+<span class="material-symbols-outlined text-sm">trending_up</span> +6% vs mês anterior
+              </span>
+</div>
+<h3 class="font-headline-sm text-base text-on-surface font-semibold mb-1">
+              Adesão às Orientações
+            </h3>
+<div class="flex items-baseline gap-2 mb-2">
+<span class="text-3xl font-extrabold font-headline-lg text-[#2F7D5A]">84%</span>
+<span class="text-xs text-[#667085] font-medium">alinhamento com diretrizes</span>
+</div>
+<!-- Progress Bar -->
+<div class="w-full bg-[#E2E8F0] h-2.5 rounded-full overflow-hidden mb-3">
+<div class="bg-[#2F7D5A] h-2.5 rounded-full transition-all duration-500" style="width: 84%"></div>
+</div>
+</div>
+<div class="pt-3 border-t border-[#E2E8F0] mt-1 text-xs text-on-surface-variant space-y-1">
+<p class="font-medium text-[#20302A]">
+<strong>42 de 50 produtos</strong> respeitaram metas de fibras e redução de açúcares ocultos estipuladas pela nutricionista.
+            </p>
+</div>
+</div>
+<!-- Card 2: Economia Financeira Estimada -->
+<div class="bg-surface-container-lowest border border-[#E2E8F0] rounded-xl p-5 hover:border-[#3B82F6]/50 transition-all duration-200 shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-semibold text-[#1E40AF] bg-[#DBEAFE] px-2.5 py-1 rounded-md flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-[#3B82F6]">account_balance_wallet</span>
+                Orçamento Consciente
+              </span>
+<span class="text-xs font-bold text-[#1E40AF] bg-[#BFDBFE]/60 px-2 py-0.5 rounded-full">
+                Consumo planejado vs impulsivo
+              </span>
+</div>
+<h3 class="font-headline-sm text-base text-on-surface font-semibold mb-1">
+              Economia Financeira Estimada
+            </h3>
+<div class="flex items-baseline gap-2 mb-2">
+<span class="text-3xl font-extrabold font-headline-lg text-[#3B82F6]">+18.4%</span>
+<span class="text-xs text-[#667085] font-medium">sem desperdício</span>
+</div>
+<div class="bg-[#EFF6FF] text-[#1E40AF] rounded-lg p-2 text-xs font-semibold mb-3 flex items-center justify-between">
+<span>Valor Poupado no Mês:</span>
+<span class="text-sm font-bold text-[#2563EB]">R$ 342,80</span>
+</div>
+</div>
+<div class="pt-3 border-t border-[#E2E8F0] mt-1 text-xs text-on-surface-variant">
+<p class="font-medium text-[#20302A]">
+              Graças ao reaproveitamento de itens da despensa e compra na safra semanal de hortifrúti fresco.
+            </p>
+</div>
+</div>
+<!-- Card 3: Desperdício Evitado -->
+<div class="bg-surface-container-lowest border border-[#E2E8F0] rounded-xl p-5 hover:border-[#E7A93B]/50 transition-all duration-200 shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-semibold text-[#8C5A08] bg-[#FEF7EB] px-2.5 py-1 rounded-md flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-[#E7A93B]">nest_eco_leaf</span>
+                Sustentabilidade
+              </span>
+<span class="text-xs font-bold text-[#8C5A08] bg-[#FED7AA]/40 px-2 py-0.5 rounded-full">
+                Eficiência doméstica exemplar
+              </span>
+</div>
+<h3 class="font-headline-sm text-base text-on-surface font-semibold mb-1">
+              Desperdício Evitado
+            </h3>
+<div class="flex items-baseline gap-2 mb-2">
+<span class="text-3xl font-extrabold font-headline-lg text-[#0c6443]">96.2%</span>
+<span class="text-xs text-[#667085] font-medium">aproveitamento integral</span>
+</div>
+<div class="flex items-center gap-2 mb-3">
+<div class="flex-1 bg-[#E2E8F0] h-2.5 rounded-full overflow-hidden">
+<div class="bg-[#0c6443] h-2.5 rounded-full" style="width: 96.2%"></div>
+</div>
+<span class="text-xs font-bold text-[#0c6443]">2 itens descartados</span>
+</div>
+</div>
+<div class="pt-3 border-t border-[#E2E8F0] mt-1 text-xs text-on-surface-variant">
+<p class="font-medium text-[#20302A]">
+              Redução histórica de <strong>75%</strong> comparado ao início da rotina. Alimentos consumidos pontualmente antes do vencimento.
+            </p>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. SEÇÃO 2: GRÁFICO EM ROSCA DE GASTOS POR CATEGORIA & INSIGHT CONSCIENTE -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Donut Chart & Category Breakdown (8 cols) -->
+<div class="lg:col-span-8 bg-surface-container-lowest border border-[#E2E8F0] rounded-xl p-6 shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-[#E2E8F0] gap-2 mb-6">
+<div>
+<h3 class="font-headline-sm text-lg font-bold text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-[#2F7D5A]">pie_chart</span>
+              Distribuição de Gastos Conscientes por Categoria
+            </h3>
+<p class="text-xs text-[#667085] mt-0.5">Total consolidado no mês: <strong class="text-on-surface">R$ 1.620,00</strong></p>
+</div>
+<span class="inline-flex items-center gap-1 text-xs font-bold px-3 py-1 rounded-full bg-[#DDF2E7] text-[#1F5A42] self-start sm:self-center">
+<span class="material-symbols-outlined text-sm">task_alt</span>
+            Meta de orçamento respeitada
+          </span>
+</div>
+<div class="flex flex-col md:flex-row items-center justify-center gap-8">
+<!-- Modern SVG Donut Chart -->
+<div class="relative w-56 h-56 flex-shrink-0 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 200 200">
+<!-- Background Circle -->
+<circle cx="100" cy="100" fill="transparent" r="70" stroke="#F1F5F9" stroke-width="24"></circle>
+<!-- Segment 1: Hortifrúti Fresco (32%) - 2 * pi * 70 = 439.82. 32% = 140.74 -->
+<circle class="chart-segment" cx="100" cy="100" fill="transparent" r="70" stroke="#2F7D5A" stroke-dasharray="140.74 439.82" stroke-dashoffset="0" stroke-width="24"></circle>
+<!-- Segment 2: Mercearia & Grãos (28%) - 28% = 123.15 -->
+<circle class="chart-segment" cx="100" cy="100" fill="transparent" r="70" stroke="#3B82F6" stroke-dasharray="123.15 439.82" stroke-dashoffset="-140.74" stroke-width="24"></circle>
+<!-- Segment 3: Açougue & Proteínas (20%) - 20% = 87.96 -->
+<circle class="chart-segment" cx="100" cy="100" fill="transparent" r="70" stroke="#E7A93B" stroke-dasharray="87.96 439.82" stroke-dashoffset="-263.89" stroke-width="24"></circle>
+<!-- Segment 4: Limpeza & Cuidados (12%) - 12% = 52.78 -->
+<circle class="chart-segment" cx="100" cy="100" fill="transparent" r="70" stroke="#60A5FA" stroke-dasharray="52.78 439.82" stroke-dashoffset="-351.85" stroke-width="24"></circle>
+<!-- Segment 5: Outros & Padaria Funcional (8%) - 8% = 35.19 -->
+<circle class="chart-segment" cx="100" cy="100" fill="transparent" r="70" stroke="#86EFAC" stroke-dasharray="35.19 439.82" stroke-dashoffset="-404.63" stroke-width="24"></circle>
+</svg>
+<!-- Center Text of Donut -->
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none">
+<span class="text-xs uppercase tracking-wider text-[#667085] font-semibold">Total</span>
+<span class="font-headline-lg text-xl font-bold text-on-surface">R$ 1.620</span>
+<span class="text-[11px] font-bold text-[#2F7D5A]">63 Itens</span>
+</div>
+</div>
+<!-- Interactive Legend List -->
+<div class="flex-1 w-full space-y-2.5">
+<!-- Item 1 -->
+<div class="flex items-center justify-between p-2 rounded-lg hover:bg-surface-container-low transition-colors duration-150">
+<div class="flex items-center gap-2.5">
+<span class="w-3.5 h-3.5 rounded-sm bg-[#2F7D5A] flex-shrink-0"></span>
+<div>
+<div class="text-xs font-bold text-on-surface">Hortifrúti Fresco (32%)</div>
+<div class="text-[11px] text-[#667085]">Feiras de rua, orgânicos da época, folhosos</div>
+</div>
+</div>
+<div class="text-right">
+<div class="text-xs font-bold text-[#2F7D5A]">R$ 518,40</div>
+<div class="text-[11px] text-[#667085]">24 itens</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex items-center justify-between p-2 rounded-lg hover:bg-surface-container-low transition-colors duration-150">
+<div class="flex items-center gap-2.5">
+<span class="w-3.5 h-3.5 rounded-sm bg-[#3B82F6] flex-shrink-0"></span>
+<div>
+<div class="text-xs font-bold text-on-surface">Mercearia &amp; Grãos (28%)</div>
+<div class="text-[11px] text-[#667085]">Aveia integral, azeite extra virgem, castanhas</div>
+</div>
+</div>
+<div class="text-right">
+<div class="text-xs font-bold text-[#3B82F6]">R$ 453,60</div>
+<div class="text-[11px] text-[#667085]">18 itens</div>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="flex items-center justify-between p-2 rounded-lg hover:bg-surface-container-low transition-colors duration-150">
+<div class="flex items-center gap-2.5">
+<span class="w-3.5 h-3.5 rounded-sm bg-[#E7A93B] flex-shrink-0"></span>
+<div>
+<div class="text-xs font-bold text-on-surface">Açougue &amp; Proteínas (20%)</div>
+<div class="text-[11px] text-[#667085]">Ovos caipiras, peixes frescos, frango orgânico</div>
+</div>
+</div>
+<div class="text-right">
+<div class="text-xs font-bold text-[#754f00]">R$ 324,00</div>
+<div class="text-[11px] text-[#667085]">9 itens</div>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="flex items-center justify-between p-2 rounded-lg hover:bg-surface-container-low transition-colors duration-150">
+<div class="flex items-center gap-2.5">
+<span class="w-3.5 h-3.5 rounded-sm bg-[#60A5FA] flex-shrink-0"></span>
+<div>
+<div class="text-xs font-bold text-on-surface">Limpeza &amp; Cuidados da Casa (12%)</div>
+<div class="text-[11px] text-[#667085]">Detergentes ecológicos, refis biodegradáveis</div>
+</div>
+</div>
+<div class="text-right">
+<div class="text-xs font-bold text-[#1E40AF]">R$ 194,40</div>
+<div class="text-[11px] text-[#667085]">7 itens</div>
+</div>
+</div>
+<!-- Item 5 -->
+<div class="flex items-center justify-between p-2 rounded-lg hover:bg-surface-container-low transition-colors duration-150">
+<div class="flex items-center gap-2.5">
+<span class="w-3.5 h-3.5 rounded-sm bg-[#86EFAC] border border-[#2F7D5A]/40 flex-shrink-0"></span>
+<div>
+<div class="text-xs font-bold text-on-surface">Outros &amp; Padaria Funcional (8%)</div>
+<div class="text-[11px] text-[#667085]">Pães de fermentação natural, sementes</div>
+</div>
+</div>
+<div class="text-right">
+<div class="text-xs font-bold text-[#0c6443]">R$ 129,60</div>
+<div class="text-[11px] text-[#667085]">5 itens</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Insight Consciente & Pantry Synergy Card (4 cols) -->
+<div class="lg:col-span-4 flex flex-col gap-4">
+<!-- Weekly Conscious Insight -->
+<div class="bg-gradient-to-br from-[#FEF7EB] to-[#FFFBEB] border border-[#E7A93B]/40 rounded-xl p-5 shadow-sm relative overflow-hidden flex-1 flex flex-col justify-between">
+<div class="absolute -right-3 -top-3 w-20 h-20 rounded-full bg-[#E7A93B]/10 pointer-events-none"></div>
+<div>
+<div class="flex items-center gap-2 text-tertiary font-bold text-xs mb-3">
+<span class="material-symbols-outlined text-[#E7A93B] text-lg">lightbulb</span>
+              Insight Consciente da Semana
+            </div>
+<h4 class="font-headline-sm text-base font-bold text-on-surface mb-2">
+              Comida de verdade mais barata
+            </h4>
+<p class="text-xs text-[#604100] leading-relaxed mb-4">
+              "Ao priorizar <strong>hortifrúti na safra</strong> e comprar <strong>grãos a granel</strong> na feira, o custo médio por quilo de comida de verdade caiu <span class="bg-[#FED7AA] px-1 py-0.5 rounded font-bold text-[#754f00]">14%</span> neste mês."
+            </p>
+</div>
+<div class="pt-3 border-t border-[#E7A93B]/30 flex items-center justify-between text-xs text-[#754f00]">
+<span class="flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-sm">agriculture</span>
+              Safra de Outubro ativa
+            </span>
+<a class="underline font-bold hover:text-on-surface transition-colors" href="#">Ver alimentos da época</a>
+</div>
+</div>
+<!-- Complementary Metric: Nutrição em Foco -->
+<div class="bg-surface-container-lowest border border-[#E2E8F0] rounded-xl p-5 shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<span class="text-xs font-bold text-[#2F7D5A] uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">verified_user</span> Alimentos In Natura
+            </span>
+<span class="text-xs font-bold text-[#2F7D5A]">72% da cesta</span>
+</div>
+<p class="text-xs text-[#667085] leading-normal mb-3">
+            Excelente proporção entre alimentos frescos e minimamente processados vs ultraprocessados (apenas 4%).
+          </p>
+<div class="w-full bg-[#E2E8F0] h-2 rounded-full overflow-hidden flex">
+<div class="bg-[#2F7D5A] h-2" style="width: 72%" title="In Natura: 72%"></div>
+<div class="bg-[#3B82F6] h-2" style="width: 24%" title="Minimamente Processados: 24%"></div>
+<div class="bg-[#E7A93B] h-2" style="width: 4%" title="Ultraprocessados: 4%"></div>
+</div>
+<div class="flex justify-between text-[10px] text-[#667085] mt-1.5 font-medium">
+<span>In natura (72%)</span>
+<span>Processados (24%)</span>
+<span>Ultra (4%)</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. SEÇÃO 3: LINHA DO TEMPO (TIMELINE) DE COMPRAS FINALIZADAS -->
+<section class="space-y-4">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-2">
+<div>
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-[#2F7D5A]">history</span>
+            Linha do Tempo de Compras Finalizadas
+          </h2>
+<p class="text-xs text-[#667085]">Listas executadas e arquivadas prontas para reutilização ágil com 1 clique</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-xs text-[#667085]">Ordenar por:</span>
+<span class="text-xs font-bold text-primary bg-[#DDF2E7] px-2.5 py-1 rounded-md">Mais Recente</span>
+</div>
+</div>
+<!-- Timeline Container -->
+<div class="space-y-4 relative before:absolute before:inset-0 before:left-6 md:before:left-8 before:w-0.5 before:bg-[#E2E8F0] before:hidden md:before:block">
+<!-- COMPRA 1: Ontem -->
+<div class="relative flex flex-col md:flex-row items-start gap-4 md:gap-6 bg-surface-container-lowest border border-[#E2E8F0] rounded-xl p-5 sm:p-6 shadow-sm hover:border-[#2F7D5A]/40 transition-colors">
+<!-- Timeline Indicator Icon -->
+<div class="hidden md:flex w-8 h-8 rounded-full bg-[#2F7D5A] text-on-primary items-center justify-center font-bold text-sm shadow-sm flex-shrink-0 z-10 ring-4 ring-[#F7F9F6]">
+<span class="material-symbols-outlined text-base">shopping_bag</span>
+</div>
+<!-- Main Content -->
+<div class="flex-1 w-full space-y-3">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-base sm:text-lg font-bold text-on-surface">
+                    Supermercado Semanal &amp; Feira Livre
+                  </h3>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-bold bg-[#DDF2E7] text-[#1F5A42]">
+                    Ontem • 14 de Outubro, 11:30
+                  </span>
+</div>
+<p class="text-xs text-[#667085] flex items-center gap-1.5 mt-1 font-medium">
+<span class="material-symbols-outlined text-sm text-[#2F7D5A]">storefront</span>
+                  Carrefour Bairro + Feira da Vila Mariana
+                  <span class="text-[#CBD5E1]">•</span>
+<span class="text-on-surface font-semibold">16 itens comprados</span>
+</p>
+</div>
+<!-- Price Badge -->
+<div class="text-left sm:text-right">
+<div class="text-xs text-[#667085]">Total Pago</div>
+<div class="text-xl font-headline-lg font-bold text-on-surface">R$ 184,20</div>
+</div>
+</div>
+<!-- Tags -->
+<div class="flex flex-wrap gap-2 pt-1">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-semibold bg-[#DDF2E7] text-[#1F5A42] border border-[#2F7D5A]/30">
+<span class="material-symbols-outlined text-sm text-[#2F7D5A]">check_circle</span>
+                100% das orientações seguidas
+              </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-semibold bg-[#FEF7EB] text-[#8C5A08] border border-[#E7A93B]/40">
+<span class="material-symbols-outlined text-sm text-[#E7A93B]">spa</span>
+                Safra aproveitada
+              </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-semibold bg-[#EFF6FF] text-[#1E40AF] border border-[#BFDBFE]">
+<span class="material-symbols-outlined text-sm text-[#3B82F6]">kitchen</span>
+                Despensa abastecida
+              </span>
+</div>
+<!-- Actions -->
+<div class="flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-[#E2E8F0]">
+<div class="text-xs text-[#667085] flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-[#2F7D5A]">sentiment_satisfied</span>
+                Economia calculada nesta viagem: <strong class="text-on-surface">R$ 38,50</strong>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-lg border border-[#E2E8F0] text-xs font-semibold text-on-surface hover:bg-surface-container-low transition-colors duration-150" type="button">
+                  Ver cupom &amp; itens detalhados
+                </button>
+<button class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-[#2F7D5A] hover:bg-[#1F5A42] text-on-primary text-xs font-semibold shadow-sm transition-all duration-150 active:scale-95" type="button">
+<span class="material-symbols-outlined text-sm">content_copy</span>
+<span>Reutilizar esta lista</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- COMPRA 2: 07 de Outubro -->
+<div class="relative flex flex-col md:flex-row items-start gap-4 md:gap-6 bg-surface-container-lowest border border-[#E2E8F0] rounded-xl p-5 sm:p-6 shadow-sm hover:border-[#2F7D5A]/40 transition-colors">
+<div class="hidden md:flex w-8 h-8 rounded-full bg-[#DDF2E7] text-[#1F5A42] items-center justify-center font-bold text-sm shadow-sm flex-shrink-0 z-10 ring-4 ring-[#F7F9F6]">
+<span class="material-symbols-outlined text-base">nutrition</span>
+</div>
+<div class="flex-1 w-full space-y-3">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-base sm:text-lg font-bold text-on-surface">
+                    Reposição de Hortifrúti e Feira Fresca
+                  </h3>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-surface-container text-[#667085]">
+                    07 de Outubro
+                  </span>
+</div>
+<p class="text-xs text-[#667085] flex items-center gap-1.5 mt-1 font-medium">
+<span class="material-symbols-outlined text-sm text-[#2F7D5A]">storefront</span>
+                  Feira Orgânica de Quarta
+                  <span class="text-[#CBD5E1]">•</span>
+<span class="text-on-surface font-semibold">7 itens comprados</span>
+</p>
+</div>
+<div class="text-left sm:text-right">
+<div class="text-xs text-[#667085]">Total Pago</div>
+<div class="text-xl font-headline-lg font-bold text-on-surface">R$ 68,50</div>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 pt-1">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-semibold bg-surface-container-low text-on-surface-variant border border-outline-variant/40">
+<span class="material-symbols-outlined text-sm text-[#2F7D5A]">local_florist</span>
+                Rúcula, bananas prata e ovos caipiras
+              </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-semibold bg-[#DDF2E7] text-[#1F5A42] border border-[#2F7D5A]/30">
+<span class="material-symbols-outlined text-sm text-[#2F7D5A]">recycling</span>
+                Zero desperdício
+              </span>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-[#E2E8F0]">
+<div class="text-xs text-[#667085]">
+                Todos os itens frescos integrados ao monitor de validade da despensa.
+              </div>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-lg border border-[#E2E8F0] text-xs font-semibold text-on-surface hover:bg-surface-container-low transition-colors duration-150" type="button">
+                  Ver cupom &amp; itens
+                </button>
+<button class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-[#2F7D5A] hover:bg-[#1F5A42] text-on-primary text-xs font-semibold shadow-sm transition-all duration-150 active:scale-95" type="button">
+<span class="material-symbols-outlined text-sm">content_copy</span>
+<span>Reutilizar esta lista</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- COMPRA 3: 01 de Outubro -->
+<div class="relative flex flex-col md:flex-row items-start gap-4 md:gap-6 bg-surface-container-lowest border border-[#E2E8F0] rounded-xl p-5 sm:p-6 shadow-sm hover:border-[#2F7D5A]/40 transition-colors">
+<div class="hidden md:flex w-8 h-8 rounded-full bg-[#DDF2E7] text-[#1F5A42] items-center justify-center font-bold text-sm shadow-sm flex-shrink-0 z-10 ring-4 ring-[#F7F9F6]">
+<span class="material-symbols-outlined text-base">inventory_2</span>
+</div>
+<div class="flex-1 w-full space-y-3">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-base sm:text-lg font-bold text-on-surface">
+                    Compras Mensais de Mercearia e Limpeza
+                  </h3>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-surface-container text-[#667085]">
+                    01 de Outubro
+                  </span>
+</div>
+<p class="text-xs text-[#667085] flex items-center gap-1.5 mt-1 font-medium">
+<span class="material-symbols-outlined text-sm text-[#2F7D5A]">storefront</span>
+                  Mercado Central
+                  <span class="text-[#CBD5E1]">•</span>
+<span class="text-on-surface font-semibold">28 itens comprados</span>
+</p>
+</div>
+<div class="text-left sm:text-right">
+<div class="text-xs text-[#667085]">Total Pago</div>
+<div class="text-xl font-headline-lg font-bold text-on-surface">R$ 412,90</div>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 pt-1">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-semibold bg-[#EFF6FF] text-[#1E40AF] border border-[#BFDBFE]">
+<span class="material-symbols-outlined text-sm text-[#3B82F6]">cleaning_services</span>
+                Refis ecológicos
+              </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-semibold bg-[#FEF7EB] text-[#8C5A08] border border-[#E7A93B]/40">
+<span class="material-symbols-outlined text-sm text-[#E7A93B]">grain</span>
+                Azeites e cereais integrais
+              </span>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-[#E2E8F0]">
+<div class="text-xs text-[#667085]">
+                Itens de despensa básica com validade longa garantida (&gt; 6 meses).
+              </div>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-lg border border-[#E2E8F0] text-xs font-semibold text-on-surface hover:bg-surface-container-low transition-colors duration-150" type="button">
+                  Ver cupom &amp; itens
+                </button>
+<button class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-[#2F7D5A] hover:bg-[#1F5A42] text-on-primary text-xs font-semibold shadow-sm transition-all duration-150 active:scale-95" type="button">
+<span class="material-symbols-outlined text-sm">content_copy</span>
+<span>Reutilizar esta lista</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- BANNER DE REFORÇO CONSCIENTE -->
+<section class="bg-gradient-to-r from-[#DDF2E7] via-surface-container to-[#EFF6FF] border border-[#2F7D5A]/20 rounded-xl p-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full bg-primary-container text-on-primary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-2xl">family_star</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-sm font-bold text-on-surface">Planejando a próxima ida ao mercado?</h4>
+<p class="text-xs text-on-surface-variant">Sua despensa possui 12 itens frescos que devem ser consumidos antes de quinta-feira.</p>
+</div>
+</div>
+<a class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[#2F7D5A] text-on-primary text-xs font-bold hover:bg-[#1F5A42] transition-colors shadow-sm self-stretch sm:self-auto justify-center" href="#">
+<span>Auditar Despensa Agora</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</section>
+</main>
+<!-- FOOTER (Shared Component Execution from JSON) -->
+<footer class="w-full bg-surface-container-low dark:bg-surface-container border-t border-outline-variant dark:border-outline mt-12">
+<div class="max-w-7xl mx-auto px-margin-desktop py-space-lg flex flex-col md:flex-row justify-between items-center gap-space-md">
+<!-- Brand in Footer -->
+<div class="flex flex-col items-center md:items-start text-center md:text-left gap-1">
+<div class="flex items-center gap-2">
+<img alt="CompraBem Lista Logo" class="w-6 h-6 object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XHEdgg_y8A4FdnD6Rs9kqv5LePmVEr08kBmPu_ysCJGKx_k0WEKb1fwfn4Wf-Mg91VJAjR1KnZgxWGZ-jfIgdnBFl9ZfupUvsuCAuVZa75f02jJbsw7kKxd2I-OB0B8isNoFA7tCVdxk78cdppi2d2tmBOYBkrUvH6u6lrU9JpVXFp0eUG64et_FbnRgGU4iYYrlit96nM6VKMhX9dQD6Jdh4GcqWrqsGvHSmF9goWZ35uz0NDN7lyFbs"/>
+<span class="font-headline-sm text-headline-sm font-bold text-primary dark:text-primary-fixed">CompraBem Lista</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-md">
+          © 2024 CompraBem Lista - Todos os direitos reservados. Conformidade LGPD rigorosa e segurança de dados familiares.
+        </p>
+</div>
+<!-- Links defined in JSON -->
+<div class="flex flex-wrap justify-center md:justify-end items-center gap-x-6 gap-y-2">
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary font-label-md text-label-md transition-colors" href="#">
+          Privacidade &amp; LGPD
+        </a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary font-label-md text-label-md transition-colors" href="#">
+          Termos de Uso
+        </a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary font-label-md text-label-md transition-colors" href="#">
+          Segurança dos Dados
+        </a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary font-label-md text-label-md transition-colors" href="#">
+          Suporte Familiar
+        </a>
+<a class="text-primary dark:text-inverse-primary font-label-md text-label-md underline hover:text-primary-container transition-colors" href="#">
+          Exportar Histórico
+        </a>
+</div>
+</div>
+</footer>
+  <script src="/nav-switcher.js"></script>
+</body></html>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <style>
+      .cb-symbol { transform-origin: center; }
+    </style>
+  </defs>
+  
+    <g class="cb-symbol">
+      <!-- Handle -->
+      <path d="M 68 86 V 56 C 68 38, 132 38, 132 56 V 86" 
+            fill="none" 
+            stroke="#2F7D5A" 
+            stroke-width="14" 
+            stroke-linecap="round" />
+      
+      <!-- Leaf Accent on Shoulder -->
+      <path d="M 132 56 C 138 38, 162 38, 162 58 C 162 74, 142 78, 132 56 Z" 
+            fill="#E7A93B" />
+      
+      <!-- Basket / Bag Body -->
+      <rect x="42" y="86" width="116" height="90" rx="26" ry="26" 
+            fill="none" 
+            stroke="#2F7D5A" 
+            stroke-width="14" />
+      
+      <!-- Checklist / Checkmark -->
+      <path d="M 74 130 L 92 148 L 126 110" 
+            fill="none" 
+            stroke="#2F7D5A" 
+            stroke-width="14" 
+            stroke-linecap="round" 
+            stroke-linejoin="round" />
+    </g>
+  
+</svg>

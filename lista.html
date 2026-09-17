@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>CompraBem Lista - Supermercado Semanal</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-highest": "#d4e7de",
+            "error": "#ba1a1a",
+            "surface": "#ebfef4",
+            "on-primary-fixed-variant": "#005235",
+            "secondary-fixed-dim": "#98d3b5",
+            "primary": "#0c6443",
+            "on-tertiary-container": "#fff1e2",
+            "outline": "#6f7a72",
+            "on-tertiary": "#ffffff",
+            "on-error-container": "#93000a",
+            "background": "#ebfef4",
+            "error-container": "#ffdad6",
+            "tertiary-container": "#956600",
+            "on-secondary-fixed-variant": "#135039",
+            "on-primary-container": "#d0ffe3",
+            "surface-variant": "#d4e7de",
+            "surface-tint": "#196b4a",
+            "on-tertiary-fixed-variant": "#604100",
+            "on-secondary": "#ffffff",
+            "inverse-on-surface": "#e2f5ec",
+            "tertiary-fixed": "#ffdeae",
+            "on-primary": "#ffffff",
+            "on-secondary-container": "#366f56",
+            "on-surface": "#0f1f19",
+            "secondary": "#2f6950",
+            "primary-container": "#2f7d5a",
+            "on-tertiary-fixed": "#281900",
+            "secondary-container": "#b3f0d0",
+            "inverse-surface": "#24342e",
+            "on-secondary-fixed": "#002114",
+            "secondary-fixed": "#b3f0d0",
+            "surface-container-high": "#daede3",
+            "surface-container-lowest": "#ffffff",
+            "primary-fixed": "#a4f3c8",
+            "outline-variant": "#bfc9c0",
+            "tertiary": "#754f00",
+            "on-error": "#ffffff",
+            "surface-dim": "#ccded5",
+            "inverse-primary": "#89d6ad",
+            "surface-container-low": "#e5f8ee",
+            "surface-container": "#dff2e9",
+            "on-surface-variant": "#3f4943",
+            "on-background": "#0f1f19",
+            "tertiary-fixed-dim": "#fcbb4c",
+            "surface-bright": "#ebfef4",
+            "on-primary-fixed": "#002113",
+            "primary-fixed-dim": "#89d6ad"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin-desktop": "2.5rem",
+            "space-xs": "0.25rem",
+            "gutter": "1rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "space-lg": "1.5rem",
+            "margin-tablet": "1.5rem",
+            "margin": "1rem",
+            "gutter-desktop": "1.5rem",
+            "space-xl": "2.5rem"
+          },
+          "fontFamily": {
+            "headline-xl-mobile": ["Plus Jakarta Sans"],
+            "body-sm": ["Inter"],
+            "body-md": ["Inter"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "body-lg": ["Inter"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "headline-xl": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "headline-xl-mobile": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-lg-mobile": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "600" }],
+            "headline-lg": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-outlined.fill {
+      font-variation-settings: 'FILL' 1;
+    }
+    /* Estilo sutil de transição nos toques */
+    .touch-target {
+      min-width: 44px;
+      min-height: 44px;
+    }
+    /* Previne overflow horizontal */
+    body {
+      overflow-x: hidden;
+      -webkit-tap-highlight-color: transparent;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md antialiased pb-44 selection:bg-secondary-container">
+<!-- TopAppBar Component (from JSON specification) -->
+<header class="sticky top-0 z-40 flex items-center justify-between px-margin py-space-sm w-full backdrop-blur-md bg-opacity-95 bg-surface-container-lowest shadow-[0_2px_8px_rgba(15,31,25,0.04)]">
+<div class="flex items-center gap-space-sm">
+<button aria-label="Voltar" class="touch-target flex items-center justify-center rounded-lg hover:bg-surface-container active:scale-95 transition-transform duration-150 text-on-surface" type="button">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+</button>
+<div>
+<div class="flex items-center gap-space-xs">
+<h1 class="font-headline-sm text-headline-sm font-bold text-on-surface">Supermercado Semanal</h1>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold tracking-tight">
+            100% Offline PWA
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Sua orientação aplicada às compras.</p>
+</div>
+</div>
+<!-- Ações do Topo -->
+<div class="flex items-center gap-1">
+<button aria-label="Compartilhar lista" class="touch-target flex items-center justify-center rounded-lg text-primary hover:bg-surface-container active:scale-95 transition-transform duration-150" type="button">
+<span class="material-symbols-outlined">share</span>
+</button>
+<button aria-label="Opções" class="touch-target flex items-center justify-center rounded-lg text-on-surface-variant hover:bg-surface-container active:scale-95 transition-transform duration-150" type="button">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</header>
+<!-- Barra de Progresso do Carrinho -->
+<section class="bg-surface-container-lowest px-margin pt-space-xs pb-space-sm border-b border-outline-variant/30">
+<div class="flex items-center justify-between font-label-md text-label-md mb-1.5">
+<div class="flex items-center gap-1.5 text-primary font-semibold">
+<span class="material-symbols-outlined text-primary text-[18px]">shopping_basket</span>
+<span>14 de 22 itens no carrinho</span>
+</div>
+<span class="text-on-surface-variant font-bold">63%</span>
+</div>
+<!-- Track & Fill -->
+<div class="w-full h-2.5 bg-surface-container rounded-full overflow-hidden flex">
+<div class="h-full bg-primary-container rounded-full transition-all duration-300" style="width: 63.6%;"></div>
+</div>
+</section>
+<!-- Container Principal -->
+<main class="max-w-screen-md mx-auto px-margin pt-space-md space-y-space-lg">
+<!-- 2. Campo de Adição Expressa Inteligente -->
+<section class="bg-surface-container-lowest p-space-md rounded-xl border border-outline-variant/40 shadow-[0_4px_16px_rgba(32,48,42,0.04)]">
+<form class="space-y-space-sm" onsubmit="event.preventDefault();">
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-outline pointer-events-none">search</span>
+<input class="w-full pl-10 pr-24 h-11 bg-surface-container-lowest border border-outline-variant rounded-lg font-body-md text-body-md text-on-surface placeholder:text-outline focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" placeholder="Adicionar produto (ex: Tomate 1kg, Leite...)" type="text" value="Manteiga de Primeira"/>
+<div class="absolute right-2 flex items-center gap-1">
+<button aria-label="Leitor de Código de Barras" class="p-1.5 text-outline hover:text-primary rounded-lg active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[20px]">barcode_scanner</span>
+</button>
+<button aria-label="Entrada por Voz" class="p-1.5 text-outline hover:text-primary rounded-lg active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[20px]">mic</span>
+</button>
+</div>
+</div>
+<!-- Autocomplete Contextual com Sugestões Inteligentes -->
+<div class="bg-surface-container-low rounded-lg p-2 border border-outline-variant/40">
+<div class="flex items-center justify-between px-1 pb-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1 font-semibold text-primary">
+<span class="material-symbols-outlined text-[15px]">auto_awesome</span> Sugestão Nutricional & Corredor
+            </span>
+<span class="text-outline">Corredor 3: Laticínios</span>
+</div>
+<div class="flex flex-wrap items-center gap-1.5 pt-1">
+<button class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-surface-container-lowest border border-primary text-primary font-label-sm text-label-sm font-semibold active:scale-95" type="button">
+<span>Manteiga Extra s/ Sal 200g</span>
+<span class="material-symbols-outlined text-[14px]">add</span>
+</button>
+<button class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-surface-container-lowest border border-outline-variant text-on-surface-variant font-label-sm text-label-sm hover:border-primary" type="button">
+<span>Ghee Orgânica 150g</span>
+</button>
+<button class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-surface-container-lowest border border-outline-variant text-on-surface-variant font-label-sm text-label-sm hover:border-primary" type="button">
+<span>Ricota Fresca</span>
+</button>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-tertiary">info</span>
+<span>Qtd. padrão: <strong>1 un</strong></span>
+</div>
+<button class="h-10 px-4 bg-primary text-on-primary font-label-md text-label-md font-semibold rounded-lg flex items-center gap-1.5 shadow-sm active:scale-95 transition-transform duration-150" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+            Adicionar à Lista
+          </button>
+</div>
+</form>
+</section>
+<!-- 3. Seções Organizadas por Corredores do Supermercado -->
+<!-- CORREDOR 1: Hortifrúti & Feira -->
+<section class="space-y-space-sm">
+<div class="sticky top-[60px] z-20 bg-surface/95 backdrop-blur-sm py-1.5 flex items-center justify-between border-b border-secondary-container">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">eco</span>
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Corredor 1: Hortifrúti & Feira</h2>
+</div>
+<span class="font-label-sm text-label-sm bg-surface-container text-secondary font-bold px-2 py-0.5 rounded-full">3 itens restantes</span>
+</div>
+<div class="space-y-space-xs">
+<!-- Item 1.1 -->
+<article class="bg-surface-container-lowest rounded-xl p-space-sm border border-outline-variant/40 flex items-center gap-3 transition-colors hover:border-primary">
+<!-- Checkbox Amplo para Polegar -->
+<label class="touch-target flex items-center justify-center cursor-pointer select-none">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-7 h-7 rounded-lg border-2 border-outline-variant peer-checked:bg-primary-container peer-checked:border-primary-container flex items-center justify-center transition-all">
+<span class="material-symbols-outlined text-white text-[20px] scale-0 peer-checked:scale-100 transition-transform font-bold">check</span>
+</div>
+</label>
+<!-- Detalhes do Produto -->
+<div class="flex-1 min-w-0">
+<div class="flex items-start justify-between gap-1">
+<h3 class="font-label-lg text-label-lg font-bold text-on-surface truncate">Banana Prata Climatizada</h3>
+<span class="font-label-md text-label-md font-bold text-primary whitespace-nowrap">Est. R$ 5,40</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5 flex-wrap">
+<span class="font-body-sm text-body-sm text-on-surface-variant">6 unidades</span>
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[13px] text-tertiary">workspace_premium</span>
+                Safra da Semana
+              </span>
+</div>
+</div>
+<!-- Stepper de Quantidade -->
+<div class="flex items-center bg-surface-container rounded-lg p-0.5 border border-outline-variant/30">
+<button aria-label="Diminuir" class="w-7 h-7 flex items-center justify-center text-on-surface-variant rounded active:scale-90" type="button">-</button>
+<span class="font-label-md text-label-md font-bold px-2 text-on-surface">6 un</span>
+<button aria-label="Aumentar" class="w-7 h-7 flex items-center justify-center text-on-surface-variant rounded active:scale-90" type="button">+</button>
+</div>
+</article>
+<!-- Item 1.2 -->
+<article class="bg-surface-container-lowest rounded-xl p-space-sm border border-outline-variant/40 flex items-center gap-3 transition-colors hover:border-primary">
+<label class="touch-target flex items-center justify-center cursor-pointer select-none">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-7 h-7 rounded-lg border-2 border-outline-variant peer-checked:bg-primary-container peer-checked:border-primary-container flex items-center justify-center transition-all">
+<span class="material-symbols-outlined text-white text-[20px] scale-0 peer-checked:scale-100 transition-transform font-bold">check</span>
+</div>
+</label>
+<div class="flex-1 min-w-0">
+<div class="flex items-start justify-between gap-1">
+<h3 class="font-label-lg text-label-lg font-bold text-on-surface truncate">Tomate Italiano Orgânico</h3>
+<span class="font-label-md text-label-md font-bold text-primary whitespace-nowrap">Est. R$ 9,80</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5 flex-wrap">
+<span class="font-body-sm text-body-sm text-on-surface-variant">1 kg</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">
+                Safra Fresca
+              </span>
+</div>
+</div>
+<div class="flex items-center bg-surface-container rounded-lg p-0.5 border border-outline-variant/30">
+<button aria-label="Diminuir" class="w-7 h-7 flex items-center justify-center text-on-surface-variant rounded active:scale-90" type="button">-</button>
+<span class="font-label-md text-label-md font-bold px-1.5 text-on-surface">1 kg</span>
+<button aria-label="Aumentar" class="w-7 h-7 flex items-center justify-center text-on-surface-variant rounded active:scale-90" type="button">+</button>
+</div>
+</article>
+<!-- Item 1.3 -->
+<article class="bg-surface-container-lowest rounded-xl p-space-sm border border-outline-variant/40 flex items-center gap-3 transition-colors hover:border-primary">
+<label class="touch-target flex items-center justify-center cursor-pointer select-none">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-7 h-7 rounded-lg border-2 border-outline-variant peer-checked:bg-primary-container peer-checked:border-primary-container flex items-center justify-center transition-all">
+<span class="material-symbols-outlined text-white text-[20px] scale-0 peer-checked:scale-100 transition-transform font-bold">check</span>
+</div>
+</label>
+<div class="flex-1 min-w-0">
+<div class="flex items-start justify-between gap-1">
+<h3 class="font-label-lg text-label-lg font-bold text-on-surface truncate">Alface Americana Hidropônica</h3>
+<span class="font-label-md text-label-md font-bold text-primary whitespace-nowrap">Est. R$ 4,20</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5 flex-wrap">
+<span class="font-body-sm text-body-sm text-on-surface-variant">1 maço</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-medium">
+                Consumir até 3 dias
+              </span>
+</div>
+</div>
+<div class="flex items-center bg-surface-container rounded-lg p-0.5 border border-outline-variant/30">
+<button aria-label="Diminuir" class="w-7 h-7 flex items-center justify-center text-on-surface-variant rounded active:scale-90" type="button">-</button>
+<span class="font-label-md text-label-md font-bold px-2 text-on-surface">1 un</span>
+<button aria-label="Aumentar" class="w-7 h-7 flex items-center justify-center text-on-surface-variant rounded active:scale-90" type="button">+</button>
+</div>
+</article>
+</div>
+</section>
+<!-- CORREDOR 2: Mercearia & Grãos -->
+<section class="space-y-space-sm">
+<div class="sticky top-[60px] z-20 bg-surface/95 backdrop-blur-sm py-1.5 flex items-center justify-between border-b border-secondary-container">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">grain</span>
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Corredor 2: Mercearia & Grãos</h2>
+</div>
+<span class="font-label-sm text-label-sm bg-surface-container text-secondary font-bold px-2 py-0.5 rounded-full">3 itens restantes</span>
+</div>
+<div class="space-y-space-xs">
+<!-- Item 2.1 -->
+<article class="bg-surface-container-lowest rounded-xl p-space-sm border border-outline-variant/40 flex items-center gap-3 transition-colors hover:border-primary">
+<label class="touch-target flex items-center justify-center cursor-pointer select-none">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-7 h-7 rounded-lg border-2 border-outline-variant peer-checked:bg-primary-container peer-checked:border-primary-container flex items-center justify-center transition-all">
+<span class="material-symbols-outlined text-white text-[20px] scale-0 peer-checked:scale-100 transition-transform font-bold">check</span>
+</div>
+</label>
+<div class="flex-1 min-w-0">
+<div class="flex items-start justify-between gap-1">
+<h3 class="font-label-lg text-label-lg font-bold text-on-surface truncate">Arroz Integral Cateto 1kg</h3>
+<span class="font-label-md text-label-md font-bold text-primary whitespace-nowrap">Est. R$ 7,90</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5 flex-wrap">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container-high text-on-secondary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[13px]">verified</span>
+                Rico em Fibras • Dra. Camila
+              </span>
+</div>
+</div>
+<div class="flex items-center bg-surface-container rounded-lg p-0.5 border border-outline-variant/30">
+<button aria-label="Diminuir" class="w-7 h-7 flex items-center justify-center text-on-surface-variant rounded active:scale-90" type="button">-</button>
+<span class="font-label-md text-label-md font-bold px-2 text-on-surface">1 un</span>
+<button aria-label="Aumentar" class="w-7 h-7 flex items-center justify-center text-on-surface-variant rounded active:scale-90" type="button">+</button>
+</div>
+</article>
+<!-- Item 2.2 -->
+<article class="bg-surface-container-lowest rounded-xl p-space-sm border border-outline-variant/40 flex items-center gap-3 transition-colors hover:border-primary">
+<label class="touch-target flex items-center justify-center cursor-pointer select-none">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-7 h-7 rounded-lg border-2 border-outline-variant peer-checked:bg-primary-container peer-checked:border-primary-container flex items-center justify-center transition-all">
+<span class="material-symbols-outlined text-white text-[20px] scale-0 peer-checked:scale-100 transition-transform font-bold">check</span>
+</div>
+</label>
+<div class="flex-1 min-w-0">
+<div class="flex items-start justify-between gap-1">
+<h3 class="font-label-lg text-label-lg font-bold text-on-surface truncate">Feijão Preto Tipo 1 1kg</h3>
+<span class="font-label-md text-label-md font-bold text-primary whitespace-nowrap">Est. R$ 8,50</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5 flex-wrap">
+<span class="inline-flex items-center px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">
+                Fonte de Ferro & Fibras
+              </span>
+</div>
+</div>
+<div class="flex items-center bg-surface-container rounded-lg p-0.5 border border-outline-variant/30">
+<button aria-label="Diminuir" class="w-7 h-7 flex items-center justify-center text-on-surface-variant rounded active:scale-90" type="button">-</button>
+<span class="font-label-md text-label-md font-bold px-2 text-on-surface">2 un</span>
+<button aria-label="Aumentar" class="w-7 h-7 flex items-center justify-center text-on-surface-variant rounded active:scale-90" type="button">+</button>
+</div>
+</article>
+<!-- Item 2.3 -->
+<article class="bg-surface-container-lowest rounded-xl p-space-sm border border-outline-variant/40 flex items-center gap-3 transition-colors hover:border-primary">
+<label class="touch-target flex items-center justify-center cursor-pointer select-none">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-7 h-7 rounded-lg border-2 border-outline-variant peer-checked:bg-primary-container peer-checked:border-primary-container flex items-center justify-center transition-all">
+<span class="material-symbols-outlined text-white text-[20px] scale-0 peer-checked:scale-100 transition-transform font-bold">check</span>
+</div>
+</label>
+<div class="flex-1 min-w-0">
+<div class="flex items-start justify-between gap-1">
+<h3 class="font-label-lg text-label-lg font-bold text-on-surface truncate">Aveia em Flocos Finos 500g</h3>
+<span class="font-label-md text-label-md font-bold text-primary whitespace-nowrap">Est. R$ 6,30</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5 flex-wrap">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[13px]">lightbulb</span>
+                Orientação Nutri
+              </span>
+</div>
+</div>
+<div class="flex items-center bg-surface-container rounded-lg p-0.5 border border-outline-variant/30">
+<button aria-label="Diminuir" class="w-7 h-7 flex items-center justify-center text-on-surface-variant rounded active:scale-90" type="button">-</button>
+<span class="font-label-md text-label-md font-bold px-2 text-on-surface">1 un</span>
+<button aria-label="Aumentar" class="w-7 h-7 flex items-center justify-center text-on-surface-variant rounded active:scale-90" type="button">+</button>
+</div>
+</article>
+</div>
+</section>
+<!-- CORREDOR 3: Padaria & Laticínios -->
+<section class="space-y-space-sm">
+<div class="sticky top-[60px] z-20 bg-surface/95 backdrop-blur-sm py-1.5 flex items-center justify-between border-b border-secondary-container">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">bakery_dining</span>
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Corredor 3: Padaria & Laticínios</h2>
+</div>
+<span class="font-label-sm text-label-sm bg-surface-container text-secondary font-bold px-2 py-0.5 rounded-full">2 itens restantes</span>
+</div>
+<div class="space-y-space-xs">
+<article class="bg-surface-container-lowest rounded-xl p-space-sm border border-outline-variant/40 flex items-center gap-3 transition-colors hover:border-primary">
+<label class="touch-target flex items-center justify-center cursor-pointer select-none">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-7 h-7 rounded-lg border-2 border-outline-variant peer-checked:bg-primary-container peer-checked:border-primary-container flex items-center justify-center transition-all">
+<span class="material-symbols-outlined text-white text-[20px] scale-0 peer-checked:scale-100 transition-transform font-bold">check</span>
+</div>
+</label>
+<div class="flex-1 min-w-0">
+<div class="flex items-start justify-between gap-1">
+<h3 class="font-label-lg text-label-lg font-bold text-on-surface truncate">Iogurte Natural 2 Ingredientes</h3>
+<span class="font-label-md text-label-md font-bold text-primary whitespace-nowrap">Est. R$ 8,40</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5 flex-wrap">
+<span class="inline-flex items-center px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">
+                Sem Açúcar Adicionado
+              </span>
+</div>
+</div>
+<div class="flex items-center bg-surface-container rounded-lg p-0.5 border border-outline-variant/30">
+<button aria-label="Diminuir" class="w-7 h-7 flex items-center justify-center text-on-surface-variant rounded active:scale-90" type="button">-</button>
+<span class="font-label-md text-label-md font-bold px-2 text-on-surface">2 un</span>
+<button aria-label="Aumentar" class="w-7 h-7 flex items-center justify-center text-on-surface-variant rounded active:scale-90" type="button">+</button>
+</div>
+</article>
+<article class="bg-surface-container-lowest rounded-xl p-space-sm border border-outline-variant/40 flex items-center gap-3 transition-colors hover:border-primary">
+<label class="touch-target flex items-center justify-center cursor-pointer select-none">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-7 h-7 rounded-lg border-2 border-outline-variant peer-checked:bg-primary-container peer-checked:border-primary-container flex items-center justify-center transition-all">
+<span class="material-symbols-outlined text-white text-[20px] scale-0 peer-checked:scale-100 transition-transform font-bold">check</span>
+</div>
+</label>
+<div class="flex-1 min-w-0">
+<div class="flex items-start justify-between gap-1">
+<h3 class="font-label-lg text-label-lg font-bold text-on-surface truncate">Pão 100% Integral Fermentação Natural</h3>
+<span class="font-label-md text-label-md font-bold text-primary whitespace-nowrap">Est. R$ 12,50</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5 flex-wrap">
+<span class="font-body-sm text-body-sm text-on-surface-variant">500g • Padaria Artesanal</span>
+</div>
+</div>
+<div class="flex items-center bg-surface-container rounded-lg p-0.5 border border-outline-variant/30">
+<button aria-label="Diminuir" class="w-7 h-7 flex items-center justify-center text-on-surface-variant rounded active:scale-90" type="button">-</button>
+<span class="font-label-md text-label-md font-bold px-2 text-on-surface">1 un</span>
+<button aria-label="Aumentar" class="w-7 h-7 flex items-center justify-center text-on-surface-variant rounded active:scale-90" type="button">+</button>
+</div>
+</article>
+</div>
+</section>
+<!-- CORREDOR 4: Higiene & Limpeza -->
+<section class="space-y-space-sm">
+<div class="sticky top-[60px] z-20 bg-surface/95 backdrop-blur-sm py-1.5 flex items-center justify-between border-b border-secondary-container">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">cleaning_services</span>
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Corredor 4: Higiene & Limpeza</h2>
+</div>
+<span class="font-label-sm text-label-sm bg-surface-container text-secondary font-bold px-2 py-0.5 rounded-full">2 itens restantes</span>
+</div>
+<div class="space-y-space-xs">
+<article class="bg-surface-container-lowest rounded-xl p-space-sm border border-outline-variant/40 flex items-center gap-3 transition-colors hover:border-primary">
+<label class="touch-target flex items-center justify-center cursor-pointer select-none">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-7 h-7 rounded-lg border-2 border-outline-variant peer-checked:bg-primary-container peer-checked:border-primary-container flex items-center justify-center transition-all">
+<span class="material-symbols-outlined text-white text-[20px] scale-0 peer-checked:scale-100 transition-transform font-bold">check</span>
+</div>
+</label>
+<div class="flex-1 min-w-0">
+<div class="flex items-start justify-between gap-1">
+<h3 class="font-label-lg text-label-lg font-bold text-on-surface truncate">Sabão Líquido Lava-Roupas Ecológico Refil 1L</h3>
+<span class="font-label-md text-label-md font-bold text-primary whitespace-nowrap">Est. R$ 18,50</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5 flex-wrap">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Biodegradável • Hipoalergênico</span>
+</div>
+</div>
+<div class="flex items-center bg-surface-container rounded-lg p-0.5 border border-outline-variant/30">
+<button aria-label="Diminuir" class="w-7 h-7 flex items-center justify-center text-on-surface-variant rounded active:scale-90" type="button">-</button>
+<span class="font-label-md text-label-md font-bold px-2 text-on-surface">1 un</span>
+<button aria-label="Aumentar" class="w-7 h-7 flex items-center justify-center text-on-surface-variant rounded active:scale-90" type="button">+</button>
+</div>
+</article>
+<article class="bg-surface-container-lowest rounded-xl p-space-sm border border-outline-variant/40 flex items-center gap-3 transition-colors hover:border-primary">
+<label class="touch-target flex items-center justify-center cursor-pointer select-none">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-7 h-7 rounded-lg border-2 border-outline-variant peer-checked:bg-primary-container peer-checked:border-primary-container flex items-center justify-center transition-all">
+<span class="material-symbols-outlined text-white text-[20px] scale-0 peer-checked:scale-100 transition-transform font-bold">check</span>
+</div>
+</label>
+<div class="flex-1 min-w-0">
+<div class="flex items-start justify-between gap-1">
+<h3 class="font-label-lg text-label-lg font-bold text-on-surface truncate">Papel Toalha Folha Dupla 2 rolos</h3>
+<span class="font-label-md text-label-md font-bold text-primary whitespace-nowrap">Est. R$ 6,20</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5 flex-wrap">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Fibras 100% Naturais</span>
+</div>
+</div>
+<div class="flex items-center bg-surface-container rounded-lg p-0.5 border border-outline-variant/30">
+<button aria-label="Diminuir" class="w-7 h-7 flex items-center justify-center text-on-surface-variant rounded active:scale-90" type="button">-</button>
+<span class="font-label-md text-label-md font-bold px-2 text-on-surface">1 un</span>
+<button aria-label="Aumentar" class="w-7 h-7 flex items-center justify-center text-on-surface-variant rounded active:scale-90" type="button">+</button>
+</div>
+</article>
+</div>
+</section>
+<!-- 5. Seção de Itens Concluídos / No Carrinho (Colapsável) -->
+<details class="group bg-surface-container-low rounded-xl border border-outline-variant/40 overflow-hidden" open="">
+<summary class="flex items-center justify-between p-space-md cursor-pointer select-none bg-surface-container list-none">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[16px] font-bold">check</span>
+</div>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">No carrinho (14 itens marcados)</span>
+</div>
+<span class="material-symbols-outlined text-outline group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="p-space-sm space-y-space-xs divide-y divide-outline-variant/20">
+<!-- Item Concluído 1 -->
+<article class="pt-2 first:pt-0 flex items-center gap-3 opacity-75">
+<div class="w-7 h-7 rounded-lg bg-primary flex items-center justify-center text-white shrink-0">
+<span class="material-symbols-outlined text-[18px] font-bold">check</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="font-body-md text-body-md font-medium text-on-surface-variant line-through truncate">Azeite de Oliva Extra Virgem 500ml</p>
+<span class="font-body-sm text-body-sm text-outline">Acidez máx 0.2% • 1 garrafa</span>
+</div>
+<span class="font-label-md text-label-md font-bold text-outline">R$ 38,90</span>
+</article>
+<!-- Item Concluído 2 -->
+<article class="pt-2 flex items-center gap-3 opacity-75">
+<div class="w-7 h-7 rounded-lg bg-primary flex items-center justify-center text-white shrink-0">
+<span class="material-symbols-outlined text-[18px] font-bold">check</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="font-body-md text-body-md font-medium text-on-surface-variant line-through truncate">Maçã Gala Nacional Selecionada</p>
+<span class="font-body-sm text-body-sm text-outline">Aprox. 1kg • Safra Fresca</span>
+</div>
+<span class="font-label-md text-label-md font-bold text-outline">R$ 8,90</span>
+</article>
+<!-- Item Concluído 3 -->
+<article class="pt-2 flex items-center gap-3 opacity-75">
+<div class="w-7 h-7 rounded-lg bg-primary flex items-center justify-center text-white shrink-0">
+<span class="material-symbols-outlined text-[18px] font-bold">check</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="font-body-md text-body-md font-medium text-on-surface-variant line-through truncate">Ovos Caipiras Grandes (12 unidades)</p>
+<span class="font-body-sm text-body-sm text-outline">Galinhas livres de gaiola</span>
+</div>
+<span class="font-label-md text-label-md font-bold text-outline">R$ 14,50</span>
+</article>
+</div>
+</details>
+</main>
+<!-- 6. Dock de Compra Fixo com Resumo em Tempo Real & Botões -->
+<aside class="fixed bottom-14 left-0 w-full z-30 bg-surface-container-lowest/95 backdrop-blur-md px-margin py-space-sm border-t border-outline-variant/30 shadow-[0_-4px_16px_rgba(15,31,25,0.06)]">
+<div class="max-w-screen-md mx-auto flex items-center justify-between gap-space-sm">
+<!-- Resumo Financeiro da Compra -->
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1">
+          Total Estimado
+          <span class="text-tertiary font-medium">(restam R$ 51,20)</span>
+</span>
+<span class="font-headline-sm text-headline-sm font-extrabold text-on-surface">R$ 142,80</span>
+</div>
+<!-- Ações: Modo Mercado & Finalizar -->
+<div class="flex items-center gap-2">
+<button class="touch-target px-3 bg-surface-container text-secondary font-label-md text-label-md font-bold rounded-lg border border-outline-variant/50 flex items-center gap-1 active:scale-95 transition-transform duration-150" title="Modo Mercado Tela Cheia" type="button">
+<span class="material-symbols-outlined text-[18px]">fullscreen</span>
+<span class="hidden sm:inline">Modo Mercado</span>
+</button>
+<button class="touch-target px-4 h-11 bg-primary-container text-on-primary font-label-md text-label-md font-bold rounded-lg flex items-center gap-1.5 shadow-[0_4px_12px_rgba(47,125,90,0.25)] active:scale-95 transition-transform duration-150" type="button">
+<span class="material-symbols-outlined text-[20px] font-bold">shopping_bag</span>
+<span>Finalizar Compra</span>
+</button>
+</div>
+</div>
+</aside>
+<!-- BottomNavBar Component (from JSON specification: Active item is "Listas") -->
+<nav aria-label="Navegação Principal" class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-space-sm py-space-xs backdrop-blur-md bg-opacity-95 bg-surface-container-lowest shadow-[0_-2px_6px_rgba(15,31,25,0.03)]">
+<!-- Destino 1: Listas (ATIVO) -->
+<a aria-current="page" class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-xl px-space-md py-space-xs font-semibold active:scale-95 transition-transform duration-150" href="#listas">
+<span class="material-symbols-outlined text-[22px] fill">checklist</span>
+<span class="font-label-sm text-label-sm">Listas</span>
+</a>
+<!-- Destino 2: Despensa (INATIVO) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-space-md py-space-xs hover:bg-surface-container-low active:scale-95 transition-transform duration-150" href="#despensa">
+<span class="material-symbols-outlined text-[22px]">inventory_2</span>
+<span class="font-label-sm text-label-sm">Despensa</span>
+</a>
+<!-- Destino 3: Histórico (INATIVO) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-space-md py-space-xs hover:bg-surface-container-low active:scale-95 transition-transform duration-150" href="#historico">
+<span class="material-symbols-outlined text-[22px]">receipt_long</span>
+<span class="font-label-sm text-label-sm">Histórico</span>
+</a>
+<!-- Destino 4: Ajustes (INATIVO) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-space-md py-space-xs hover:bg-surface-container-low active:scale-95 transition-transform duration-150" href="#ajustes">
+<span class="material-symbols-outlined text-[22px]">tune</span>
+<span class="font-label-sm text-label-sm">Ajustes</span>
+</a>
+</nav>
+<!-- Micro-interações táteis nativas em vanilla JS -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Toggle interativo dos checkboxes nos cards de produto
+      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+      checkboxes.forEach(cb => {
+        cb.addEventListener('change', (e) => {
+          const card = e.target.closest('article');
+          if (card) {
+            if (e.target.checked) {
+              card.classList.add('opacity-50', 'bg-surface-container-low');
+            } else {
+              card.classList.remove('opacity-50', 'bg-surface-container-low');
+            }
+          }
+        });
+      });
+    });
+  </script>
+  <script src="/nav-switcher.js"></script>
+</body></html>

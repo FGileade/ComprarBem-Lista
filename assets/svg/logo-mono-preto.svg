@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 180" width="760" height="180">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&amp;display=swap');
+      .font-brand { font-family: 'Nunito', system-ui, -apple-system, BlinkMacSystemFont, sans-serif; }
+    </style>
+  </defs>
+  <g transform="translate(20, 10) scale(0.88)">
+    <rect width="180" height="180" rx="44" fill="#111827" />
+    <g transform="translate(15, 15) scale(0.75)">
+      
+    <g class="cb-symbol">
+      <!-- Handle -->
+      <path d="M 68 86 V 56 C 68 38, 132 38, 132 56 V 86" 
+            fill="none" 
+            stroke="#FFFFFF" 
+            stroke-width="14" 
+            stroke-linecap="round" />
+      
+      <!-- Leaf Accent on Shoulder -->
+      <path d="M 132 56 C 138 38, 162 38, 162 58 C 162 74, 142 78, 132 56 Z" 
+            fill="#FFFFFF" />
+      
+      <!-- Basket / Bag Body -->
+      <rect x="42" y="86" width="116" height="90" rx="26" ry="26" 
+            fill="none" 
+            stroke="#FFFFFF" 
+            stroke-width="14" />
+      
+      <!-- Checklist / Checkmark -->
+      <path d="M 74 130 L 92 148 L 126 110" 
+            fill="none" 
+            stroke="#FFFFFF" 
+            stroke-width="14" 
+            stroke-linecap="round" 
+            stroke-linejoin="round" />
+    </g>
+  
+    </g>
+  </g>
+  <g transform="translate(210, 84)">
+    <text class="font-brand" font-size="52" font-weight="700" fill="#111827" letter-spacing="-0.5">Compra<tspan font-weight="900" fill="#111827">Bem</tspan></text>
+  </g>
+  <g transform="translate(212, 126)">
+    <text class="font-brand" font-size="20" font-weight="600" fill="#111827" letter-spacing="0.2">Sua orientação aplicada às compras.</text>
+  </g>
+</svg>

@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CompraBem Produtos - Catálogo e Marcas Preferidas</title>
+<!-- Google Fonts: Plus Jakarta Sans & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus Jakarta Sans:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-surface": "#0f1f19",
+            "surface-container-highest": "#d4e7de",
+            "on-error": "#ffffff",
+            "error-container": "#ffdad6",
+            "surface": "#ebfef4",
+            "on-secondary-fixed": "#002114",
+            "tertiary-container": "#956600",
+            "primary": "#0c6443",
+            "inverse-primary": "#89d6ad",
+            "on-primary-container": "#d0ffe3",
+            "on-background": "#0f1f19",
+            "surface-dim": "#ccded5",
+            "surface-bright": "#ebfef4",
+            "surface-container-lowest": "#ffffff",
+            "surface-tint": "#196b4a",
+            "on-tertiary": "#ffffff",
+            "on-primary-fixed-variant": "#005235",
+            "on-primary-fixed": "#002113",
+            "surface-variant": "#d4e7de",
+            "tertiary-fixed": "#ffdeae",
+            "tertiary": "#754f00",
+            "outline": "#6f7a72",
+            "surface-container-low": "#e5f8ee",
+            "on-tertiary-container": "#fff1e2",
+            "primary-fixed-dim": "#89d6ad",
+            "on-surface-variant": "#3f4943",
+            "primary-fixed": "#a4f3c8",
+            "error": "#ba1a1a",
+            "surface-container": "#dff2e9",
+            "on-tertiary-fixed-variant": "#604100",
+            "on-secondary-fixed-variant": "#135039",
+            "background": "#ebfef4",
+            "on-primary": "#ffffff",
+            "inverse-surface": "#24342e",
+            "inverse-on-surface": "#e2f5ec",
+            "secondary": "#2f6950",
+            "secondary-container": "#b3f0d0",
+            "on-secondary": "#ffffff",
+            "on-error-container": "#93000a",
+            "surface-container-high": "#daede3",
+            "tertiary-fixed-dim": "#fcbb4c",
+            "secondary-fixed": "#b3f0d0",
+            "outline-variant": "#bfc9c0",
+            "on-tertiary-fixed": "#281900",
+            "on-secondary-container": "#366f56",
+            "secondary-fixed-dim": "#98d3b5",
+            "primary-container": "#2f7d5a"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter-desktop": "1.5rem",
+            "margin": "1rem",
+            "gutter": "1rem",
+            "space-xl": "2.5rem",
+            "space-lg": "1.5rem",
+            "space-xs": "0.25rem",
+            "margin-tablet": "1.5rem",
+            "margin-desktop": "2.5rem",
+            "space-md": "1rem",
+            "space-sm": "0.5rem"
+          },
+          "fontFamily": {
+            "headline-sm": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "headline-xl-mobile": ["Plus Jakarta Sans"],
+            "body-md": ["Inter"],
+            "body-lg": ["Inter"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "headline-xl": ["Plus Jakarta Sans"],
+            "body-sm": ["Inter"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+            "headline-lg": ["28px", {"lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "headline-xl-mobile": ["30px", {"lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "700"}],
+            "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+            "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "headline-lg-mobile": ["22px", {"lineHeight": "28px", "fontWeight": "600"}],
+            "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+            "headline-xl": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+            "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "600"}],
+            "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #f1f5f3;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #bfc9c0;
+      border-radius: 9999px;
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface antialiased min-h-full flex flex-col font-body-md text-body-md selection:bg-surface-container-highest selection:text-primary">
+<!-- TOP APP BAR (Shared Component Execution from TopNavBar) -->
+<header class="docked full-width top-0 z-40 bg-surface-container-lowest border-b border-outline-variant sticky top-0 shadow-sm transition-all duration-200 backdrop-blur-md bg-white/95">
+<div class="flex justify-between items-center w-full px-6 py-3 max-w-[1200px] mx-auto gap-4">
+<!-- Brand Logo & Identity Cluster -->
+<div class="flex items-center gap-4 shrink-0">
+<div class="flex items-center gap-3">
+<img alt="Logotipo oficial CompraBem" class="w-10 h-10 rounded-lg object-cover shadow-sm ring-1 ring-outline-variant/40" src="https://lh3.googleusercontent.com/aida/AEtjO1XHEdgg_y8A4FdnD6Rs9kqv5LePmVEr08kBmPu_ysCJGKx_k0WEKb1fwfn4Wf-Mg91VJAjR1KnZgxWGZ-jfIgdnBFl9ZfupUvsuCAuVZa75f02jJbsw7kKxd2I-OB0B8isNoFA7tCVdxk78cdppi2d2tmBOYBkrUvH6u6lrU9JpVXFp0eUG64et_FbnRgGU4iYYrlit96nM6VKMhX9dQD6Jdh4GcqWrqsGvHSmF9goWZ35uz0NDN7lyFbs"/>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-lg text-headline-lg font-bold text-primary tracking-tight">CompraBem</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container text-secondary font-semibold border border-outline-variant/50">Módulo Produtos</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant leading-none mt-0.5">Sua orientação aplicada às compras.</p>
+</div>
+</div>
+</div>
+<!-- Prominent Universal Search Bar -->
+<div class="flex-1 max-w-xl mx-4 hidden md:block">
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-on-surface-variant text-[20px] pointer-events-none">search</span>
+<input class="w-full pl-10 pr-12 py-2 bg-surface-container-lowest border border-outline-variant rounded-lg font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/70 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all shadow-sm" placeholder="Buscar por nome do produto, marca, ingrediente ou código de barras... (Ctrl+K)" type="text"/>
+<div class="absolute right-2.5 flex items-center gap-1.5 pointer-events-none">
+<kbd class="px-1.5 py-0.5 text-[10px] font-semibold text-on-surface-variant bg-surface-container border border-outline-variant rounded font-mono">⌘K</kbd>
+</div>
+</div>
+</div>
+<!-- Action & Profile Cluster -->
+<div class="flex items-center gap-3 shrink-0">
+<!-- Quick Scanner Action -->
+<button class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors active:scale-[0.98] duration-150 border border-outline-variant/40" title="Escanear Código de Barras" type="button">
+<span class="material-symbols-outlined text-[22px]">barcode_scanner</span>
+</button>
+<!-- Notification Bell -->
+<button class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors active:scale-[0.98] duration-150 border border-outline-variant/40" title="Notificações Nutricionais" type="button">
+<span class="material-symbols-outlined text-[22px]">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-tertiary-container ring-2 ring-white"></span>
+</button>
+<!-- Trailing Primary Action: Cadastrar Novo Produto -->
+<button class="inline-flex items-center gap-2 px-3.5 py-2 bg-primary text-on-primary rounded-lg font-label-lg text-label-lg font-semibold hover:bg-primary-container transition-all shadow-sm active:scale-[0.98] duration-150" id="openDrawerBtn" type="button">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+<span>Cadastrar Novo Produto</span>
+</button>
+<!-- Profile Chip: Família Silva -->
+<div class="flex items-center gap-2.5 pl-2 border-l border-outline-variant">
+<div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-fixed flex items-center justify-center font-headline-sm text-label-md font-bold ring-1 ring-primary/20">
+            FS
+          </div>
+<div class="hidden xl:block text-left">
+<p class="font-label-md text-label-md font-semibold text-on-surface leading-tight">Família Silva</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">3 membros ativos</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Navigation Tab Links Row -->
+<div class="w-full bg-surface-container-lowest border-t border-outline-variant/30">
+<div class="max-w-[1200px] mx-auto px-6 flex items-center gap-8">
+<!-- Active Tab: Catálogo Geral -->
+<a class="border-b-2 border-primary text-primary font-semibold pb-2.5 pt-2 font-label-lg text-label-lg flex items-center gap-2" href="#catalogo">
+<span class="material-symbols-outlined text-[18px]">menu_book</span>
+<span>Catálogo Geral</span>
+<span class="px-2 py-0.5 text-xs font-semibold bg-surface-container text-primary rounded-full">1.240</span>
+</a>
+<!-- Inactive Tab: Minhas Marcas Favoritas -->
+<a class="text-on-surface-variant hover:text-on-surface pb-2.5 pt-2 transition-colors font-label-lg text-label-lg flex items-center gap-2" href="#favoritos">
+<span class="material-symbols-outlined text-[18px]">star</span>
+<span>Minhas Marcas Favoritas</span>
+<span class="px-2 py-0.5 text-xs font-semibold bg-surface-container-low text-on-surface-variant rounded-full">18</span>
+</a>
+<!-- Inactive Tab: Produtos com Alerta -->
+<a class="text-on-surface-variant hover:text-on-surface pb-2.5 pt-2 transition-colors font-label-lg text-label-lg flex items-center gap-2" href="#alertas">
+<span class="material-symbols-outlined text-[18px] text-error">warning</span>
+<span>Produtos com Alerta</span>
+<span class="px-2 py-0.5 text-xs font-semibold bg-error-container text-error rounded-full">7</span>
+</a>
+</div>
+</div>
+</header>
+<!-- MAIN VIEWPORT CONTAINER -->
+<main class="flex-1 max-w-[1200px] w-full mx-auto px-6 py-6 space-y-6">
+<!-- SUB-BAR / FILTERS SECTION -->
+<section class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/60 shadow-sm space-y-3.5">
+<!-- Row 1: Category Pills and Active List Toggle -->
+<div class="flex flex-wrap items-center justify-between gap-3">
+<div class="flex flex-wrap items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant mr-1 font-semibold uppercase tracking-wider">Corredores:</span>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container border border-primary font-label-md text-label-md text-primary font-semibold flex items-center gap-1.5 shadow-xs" type="button">
+<span class="material-symbols-outlined text-[16px]">apps</span>
+<span>Todos</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest border border-outline-variant text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low font-label-md text-label-md transition-colors flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px]">eco</span>
+<span>Hortifrúti Fresco</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest border border-outline-variant text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low font-label-md text-label-md transition-colors flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px]">bakery_dining</span>
+<span>Padaria &amp; Grãos</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest border border-outline-variant text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low font-label-md text-label-md transition-colors flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px]">egg_alt</span>
+<span>Laticínios &amp; Substitutos</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest border border-outline-variant text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low font-label-md text-label-md transition-colors flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px]">kitchen</span>
+<span>Mercearia Saudável</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest border border-outline-variant text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low font-label-md text-label-md transition-colors flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px]">sanitizer</span>
+<span>Higiene &amp; Limpeza</span>
+</button>
+</div>
+<!-- Toggle 'Apenas itens que constam nas minhas listas ativas' -->
+<label class="inline-flex items-center gap-2 cursor-pointer select-none bg-surface-container-low px-3 py-1.5 rounded-lg border border-outline-variant/40 hover:bg-surface-container transition-colors">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-primary border-outline-variant" type="checkbox"/>
+<span class="font-label-sm text-label-sm font-medium text-on-surface">Nas minhas listas ativas</span>
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+</label>
+</div>
+<!-- Divider line -->
+<div class="h-px bg-outline-variant/40 w-full"></div>
+<!-- Row 2: Dietary Status Pills -->
+<div class="flex flex-wrap items-center justify-between gap-3 pt-0.5">
+<div class="flex flex-wrap items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant mr-1 font-semibold uppercase tracking-wider">Compatibilidade:</span>
+<!-- Todos os Status -->
+<button class="px-2.5 py-1 rounded-full text-xs font-label-sm font-medium bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-colors border border-outline-variant/40" type="button">
+            Todos os Status
+          </button>
+<!-- Compatível com Perfil -->
+<button class="px-2.5 py-1 rounded-full text-xs font-label-sm font-semibold bg-surface-container text-primary border border-primary flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span>Compatível com Perfil (14)</span>
+</button>
+<!-- Conflito Amigável -->
+<button class="px-2.5 py-1 rounded-full text-xs font-label-sm font-medium bg-tertiary-fixed/30 text-tertiary border border-tertiary-fixed flex items-center gap-1 hover:bg-tertiary-fixed/50 transition-colors" type="button">
+<span class="material-symbols-outlined text-[14px]">info</span>
+<span>Conflito Amigável (3)</span>
+</button>
+<!-- Pendente de Análise -->
+<button class="px-2.5 py-1 rounded-full text-xs font-label-sm font-medium bg-surface-container-highest/60 text-on-surface-variant border border-outline-variant/50 flex items-center gap-1 hover:bg-surface-container-highest transition-colors" type="button">
+<span class="material-symbols-outlined text-[14px]">hourglass_empty</span>
+<span>Pendente de Análise (1)</span>
+</button>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<span>Ordenação:</span>
+<select class="py-1 px-2.5 bg-surface-container-lowest border border-outline-variant rounded-md text-xs font-medium focus:ring-primary focus:border-primary text-on-surface">
+<option>Mais comprados recentemente</option>
+<option>Índice Nutricional Crescente</option>
+<option>Nome de A a Z</option>
+</select>
+</div>
+</div>
+</section>
+<!-- SECTION 3: 'Marcas Favoritas da Família' (Bento Ribbon) -->
+<section class="space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">verified</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-bold">Marcas Favoritas da Família Silva</h2>
+<span class="px-2.5 py-0.5 rounded-full text-xs bg-surface-container text-primary font-semibold">Padrão Ouro de Fidelidade</span>
+</div>
+<button class="font-label-md text-label-md text-primary hover:text-primary-container font-semibold inline-flex items-center gap-1 transition-colors" type="button">
+<span>Gerenciar Marcas &amp; Substitutos Aprovados</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+<!-- Cards Horizontais Elegantes -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<!-- Card Marca 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-4 border border-outline-variant/70 hover:border-primary/60 transition-all hover:shadow-md flex flex-col justify-between group relative overflow-hidden">
+<div class="absolute top-0 right-0 bg-surface-container px-3 py-1 rounded-bl-lg border-l border-b border-outline-variant/40 flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[14px]">fact_check</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">100% Compatível</span>
+</div>
+<div class="space-y-2.5 pt-1">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary font-bold border border-primary/20 shrink-0">
+<span class="material-symbols-outlined text-[26px]">bakery_dining</span>
+</div>
+<div>
+<span class="text-xs font-semibold text-secondary uppercase tracking-wider">Nutrella</span>
+<h3 class="font-headline-sm text-[16px] font-semibold text-on-surface leading-snug">Pão 100% Integral Especial</h3>
+</div>
+</div>
+<p class="text-xs text-on-surface-variant font-body-sm leading-relaxed">
+              Meta atingida: Rico em fibras e grãos nobres ancestrais. Recomendado pela nutricionista Dra. Camila.
+            </p>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/30 flex items-center justify-between text-xs">
+<span class="inline-flex items-center gap-1 font-medium text-secondary">
+<span class="material-symbols-outlined text-[14px]">shopping_cart</span>
+              Em 2 listas ativas
+            </span>
+<button class="p-1 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded transition-colors" title="Ver ficha">
+<span class="material-symbols-outlined text-[18px]">more_horiz</span>
+</button>
+</div>
+</div>
+<!-- Card Marca 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-4 border border-outline-variant/70 hover:border-primary/60 transition-all hover:shadow-md flex flex-col justify-between group relative overflow-hidden">
+<div class="absolute top-0 right-0 bg-tertiary-fixed/40 px-3 py-1 rounded-bl-lg border-l border-b border-outline-variant/40 flex items-center gap-1">
+<span class="material-symbols-outlined text-tertiary text-[14px]">verified</span>
+<span class="font-label-sm text-label-sm text-tertiary font-bold">Selo de Pureza</span>
+</div>
+<div class="space-y-2.5 pt-1">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary font-bold border border-primary/20 shrink-0">
+<span class="material-symbols-outlined text-[26px]">oil_barrel</span>
+</div>
+<div>
+<span class="text-xs font-semibold text-secondary uppercase tracking-wider">Andorinha</span>
+<h3 class="font-headline-sm text-[16px] font-semibold text-on-surface leading-snug">Azeite Extra Virgem 0.2%</h3>
+</div>
+</div>
+<p class="text-xs text-on-surface-variant font-body-sm leading-relaxed">
+              Prensagem a frio tradicional, acidez máxima 0.2%. Ingrediente base da despensa da Família Silva.
+            </p>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/30 flex items-center justify-between text-xs">
+<span class="inline-flex items-center gap-1 font-medium text-tertiary">
+<span class="material-symbols-outlined text-[14px]">event_repeat</span>
+              Reposição quinzenal
+            </span>
+<button class="p-1 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded transition-colors" title="Ver ficha">
+<span class="material-symbols-outlined text-[18px]">more_horiz</span>
+</button>
+</div>
+</div>
+<!-- Card Marca 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-4 border border-outline-variant/70 hover:border-primary/60 transition-all hover:shadow-md flex flex-col justify-between group relative overflow-hidden">
+<div class="absolute top-0 right-0 bg-surface-container px-3 py-1 rounded-bl-lg border-l border-b border-outline-variant/40 flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[14px]">sentiment_very_satisfied</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">Zero Lactose</span>
+</div>
+<div class="space-y-2.5 pt-1">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary font-bold border border-primary/20 shrink-0">
+<span class="material-symbols-outlined text-[26px]">icecream</span>
+</div>
+<div>
+<span class="text-xs font-semibold text-secondary uppercase tracking-wider">Fazenda Bela Vista</span>
+<h3 class="font-headline-sm text-[16px] font-semibold text-on-surface leading-snug">Iogurte Natural LacFree</h3>
+</div>
+</div>
+<p class="text-xs text-on-surface-variant font-body-sm leading-relaxed">
+              Formulado especificamente para o conforto digestivo do Lucas e Clara. Apenas leite e fermento ativo.
+            </p>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/30 flex items-center justify-between text-xs">
+<span class="inline-flex items-center gap-1 font-medium text-secondary">
+<span class="material-symbols-outlined text-[14px]">recommend</span>
+              Indicado p/ digestão
+            </span>
+<button class="p-1 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded transition-colors" title="Ver ficha">
+<span class="material-symbols-outlined text-[18px]">more_horiz</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: GRID DE PRODUTOS DO CATÁLOGO -->
+<section class="space-y-4">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface tracking-tight">Produtos em Análise &amp; Compras Frequentes</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Conferência contínua com as restrições alimentares ativas da família.</p>
+</div>
+<div class="text-xs font-medium text-on-surface-variant">
+          Exibindo <span class="font-bold text-on-surface">6 itens prioritários</span> de 1.240
+        </div>
+</div>
+<!-- Bento Product Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+<!-- Produto 1: Totalmente Compatível -->
+<article class="bg-surface-container-lowest rounded-xl border border-outline-variant/70 p-4 hover:border-primary transition-all duration-200 hover:shadow-md flex flex-col justify-between group">
+<div>
+<!-- Header do Card com Imagem/Ilustração e Tags -->
+<div class="flex items-start gap-3.5 pb-3">
+<div class="w-16 h-16 rounded-xl bg-surface-container flex items-center justify-center text-primary shrink-0 relative overflow-hidden">
+<span class="material-symbols-outlined text-[32px]">bakery_dining</span>
+<span class="absolute bottom-1 right-1 w-2.5 h-2.5 bg-primary rounded-full ring-2 ring-white" title="Produto verificado"></span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold text-secondary uppercase tracking-wider">Nutrella</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium bg-surface-container-low px-2 py-0.5 rounded">450g • Pacote</span>
+</div>
+<h3 class="font-headline-sm text-[16px] font-bold text-on-surface truncate group-hover:text-primary transition-colors">Pão 100% Integral Grãos Nobres</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant block mt-0.5">Padaria &amp; Grãos</span>
+</div>
+</div>
+<!-- Chips de Composição -->
+<div class="flex flex-wrap gap-1.5 py-2">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-surface-container text-primary">Rico em Fibras</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-surface-container text-primary">Zero Açúcar Adicionado</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-surface-container-low text-on-surface-variant">Farinha Integral Real</span>
+</div>
+<!-- Selo de Compatibilidade Familiar (Verde) -->
+<div class="mt-2.5 p-2.5 rounded-lg bg-surface-container/70 border border-primary/20 flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<div>
+<p class="font-label-sm text-label-sm font-bold text-primary">Totalmente Compatível</p>
+<p class="font-body-sm text-[11px] text-on-surface-variant leading-tight">Alinhado às diretrizes da Dra. Camila para reforço intestinal.</p>
+</div>
+</div>
+</div>
+<!-- Ações do Card -->
+<div class="mt-4 pt-3 border-t border-outline-variant/40 flex items-center justify-between gap-2">
+<button class="flex-1 py-2 px-3 bg-surface-container-low hover:bg-surface-container text-primary font-label-md text-label-md font-semibold rounded-lg transition-colors inline-flex items-center justify-center gap-1.5 active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+<span>+ Adicionar à Lista</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg transition-colors" title="Ver Detalhes Nutricionais" type="button">
+<span class="material-symbols-outlined text-[18px]">nutrition</span>
+</button>
+</div>
+</article>
+<!-- Produto 2: Conflito Amigável (Atenção / Substitutos) -->
+<article class="bg-surface-container-lowest rounded-xl border border-outline-variant/70 p-4 hover:border-tertiary-fixed-dim transition-all duration-200 hover:shadow-md flex flex-col justify-between group">
+<div>
+<!-- Header do Card -->
+<div class="flex items-start gap-3.5 pb-3">
+<div class="w-16 h-16 rounded-xl bg-tertiary-fixed/20 flex items-center justify-center text-tertiary shrink-0 relative overflow-hidden">
+<span class="material-symbols-outlined text-[32px]">egg_alt</span>
+<span class="absolute bottom-1 right-1 w-2.5 h-2.5 bg-tertiary-container rounded-full ring-2 ring-white"></span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold text-tertiary uppercase tracking-wider">Danone</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium bg-surface-container-low px-2 py-0.5 rounded">170g • Pote</span>
+</div>
+<h3 class="font-headline-sm text-[16px] font-bold text-on-surface truncate group-hover:text-tertiary transition-colors">Iogurte Grego Tradicional Mel</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant block mt-0.5">Laticínios</span>
+</div>
+</div>
+<!-- Chips de Composição -->
+<div class="flex flex-wrap gap-1.5 py-2">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-tertiary-fixed/30 text-tertiary">Contém Lactose</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-surface-container text-primary">Rico em Proteína</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-surface-container-low text-on-surface-variant">Açúcar de Mel</span>
+</div>
+<!-- Selo de Compatibilidade Familiar (Âmbar) -->
+<div class="mt-2.5 p-2.5 rounded-lg bg-tertiary-fixed/20 border border-tertiary-fixed flex items-start gap-2">
+<span class="material-symbols-outlined text-tertiary text-[18px] shrink-0 mt-0.5">warning</span>
+<div>
+<p class="font-label-sm text-label-sm font-bold text-tertiary">Conflito Amigável Identificado</p>
+<p class="font-body-sm text-[11px] text-on-surface-variant leading-tight">Contém lactose moderada • <a class="text-tertiary underline font-semibold" href="#">Ver 2 substitutos disponíveis</a></p>
+</div>
+</div>
+</div>
+<!-- Ações do Card -->
+<div class="mt-4 pt-3 border-t border-outline-variant/40 flex items-center justify-between gap-2">
+<button class="flex-1 py-2 px-3 bg-surface-container-low hover:bg-surface-container text-primary font-label-md text-label-md font-semibold rounded-lg transition-colors inline-flex items-center justify-center gap-1.5 active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined text-[16px]">swap_horiz</span>
+<span>Substituir com 1 Toque</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg transition-colors" title="Ver Detalhes" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</article>
+<!-- Produto 3: Pendente de Análise do Rótulo -->
+<article class="bg-surface-container-lowest rounded-xl border border-outline-variant/70 p-4 hover:border-outline transition-all duration-200 hover:shadow-md flex flex-col justify-between group">
+<div>
+<!-- Header do Card -->
+<div class="flex items-start gap-3.5 pb-3">
+<div class="w-16 h-16 rounded-xl bg-surface-container-high flex items-center justify-center text-on-surface-variant shrink-0 relative overflow-hidden">
+<span class="material-symbols-outlined text-[32px]">kitchen</span>
+<span class="absolute bottom-1 right-1 w-2.5 h-2.5 bg-outline rounded-full ring-2 ring-white"></span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface-variant uppercase tracking-wider">Mãe Terra</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium bg-surface-container-low px-2 py-0.5 rounded">250g • Caixa</span>
+</div>
+<h3 class="font-headline-sm text-[16px] font-bold text-on-surface truncate group-hover:text-primary transition-colors">Granola Artesanal Cacau &amp; Castanhas</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant block mt-0.5">Mercearia Saudável</span>
+</div>
+</div>
+<!-- Chips de Composição -->
+<div class="flex flex-wrap gap-1.5 py-2">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-surface-container text-primary">Orgânico Certificado</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-surface-container-highest text-on-surface-variant">Pode conter glúten</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-surface-container-low text-on-surface-variant">Vegano</span>
+</div>
+<!-- Selo de Compatibilidade Familiar (Pendente) -->
+<div class="mt-2.5 p-2.5 rounded-lg bg-surface-container-high/60 border border-outline-variant/60 flex items-start gap-2">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px] shrink-0 mt-0.5">hourglass_top</span>
+<div>
+<p class="font-label-sm text-label-sm font-bold text-on-surface-variant">Pendente de Verificação</p>
+<p class="font-body-sm text-[11px] text-on-surface-variant leading-tight">Aguardando conferência de traços de oleaginosas para a Clara.</p>
+</div>
+</div>
+</div>
+<!-- Ações do Card -->
+<div class="mt-4 pt-3 border-t border-outline-variant/40 flex items-center justify-between gap-2">
+<button class="flex-1 py-2 px-3 bg-surface-container text-primary font-label-md text-label-md font-semibold rounded-lg hover:bg-surface-container-highest transition-colors inline-flex items-center justify-center gap-1.5 active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined text-[16px]">qr_code_scanner</span>
+<span>Validar Rótulo</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg transition-colors" title="Ver Detalhes" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</article>
+<!-- Produto 4: Hortifrúti Orgânico -->
+<article class="bg-surface-container-lowest rounded-xl border border-outline-variant/70 p-4 hover:border-primary transition-all duration-200 hover:shadow-md flex flex-col justify-between group">
+<div>
+<div class="flex items-start gap-3.5 pb-3">
+<div class="w-16 h-16 rounded-xl bg-surface-container flex items-center justify-center text-primary shrink-0 relative overflow-hidden">
+<span class="material-symbols-outlined text-[32px]">nutrition</span>
+<span class="absolute bottom-1 right-1 w-2.5 h-2.5 bg-primary rounded-full ring-2 ring-white"></span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold text-secondary uppercase tracking-wider">Sítio das Flores</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium bg-surface-container-low px-2 py-0.5 rounded">1 Maço • 300g</span>
+</div>
+<h3 class="font-headline-sm text-[16px] font-bold text-on-surface truncate group-hover:text-primary transition-colors">Espinafre Orgânico Baby Leaf</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant block mt-0.5">Hortifrúti Fresco</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-1.5 py-2">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-surface-container text-primary">Orgânico Certificado</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-surface-container text-primary">Fonte de Ferro</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-surface-container-low text-on-surface-variant">Livre de Pesticidas</span>
+</div>
+<div class="mt-2.5 p-2.5 rounded-lg bg-surface-container/70 border border-primary/20 flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<div>
+<p class="font-label-sm text-label-sm font-bold text-primary">Super Alimento Recomendado</p>
+<p class="font-body-sm text-[11px] text-on-surface-variant leading-tight">Compatibilidade com a meta de vitaminas foliares da família.</p>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/40 flex items-center justify-between gap-2">
+<button class="flex-1 py-2 px-3 bg-surface-container-low hover:bg-surface-container text-primary font-label-md text-label-md font-semibold rounded-lg transition-colors inline-flex items-center justify-center gap-1.5 active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+<span>+ Adicionar à Lista</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg transition-colors" title="Ver Detalhes" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</article>
+<!-- Produto 5: Azeite Virgem Familiar -->
+<article class="bg-surface-container-lowest rounded-xl border border-outline-variant/70 p-4 hover:border-primary transition-all duration-200 hover:shadow-md flex flex-col justify-between group">
+<div>
+<div class="flex items-start gap-3.5 pb-3">
+<div class="w-16 h-16 rounded-xl bg-surface-container flex items-center justify-center text-primary shrink-0 relative overflow-hidden">
+<span class="material-symbols-outlined text-[32px]">oil_barrel</span>
+<span class="absolute bottom-1 right-1 w-2.5 h-2.5 bg-primary rounded-full ring-2 ring-white"></span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold text-secondary uppercase tracking-wider">Andorinha</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium bg-surface-container-low px-2 py-0.5 rounded">500ml • Vidro</span>
+</div>
+<h3 class="font-headline-sm text-[16px] font-bold text-on-surface truncate group-hover:text-primary transition-colors">Azeite de Oliva Extra Virgem 0.2</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant block mt-0.5">Mercearia Saudável</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-1.5 py-2">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-surface-container text-primary">Baixo Sódio</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-surface-container text-primary">Gorduras Boas</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-surface-container-low text-on-surface-variant">Prensagem a Frio</span>
+</div>
+<div class="mt-2.5 p-2.5 rounded-lg bg-surface-container/70 border border-primary/20 flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<div>
+<p class="font-label-sm text-label-sm font-bold text-primary">Item Essencial Despensa</p>
+<p class="font-body-sm text-[11px] text-on-surface-variant leading-tight">Consumo semanal monitorado: resta ~20% no estoque da cozinha.</p>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/40 flex items-center justify-between gap-2">
+<button class="flex-1 py-2 px-3 bg-surface-container-low hover:bg-surface-container text-primary font-label-md text-label-md font-semibold rounded-lg transition-colors inline-flex items-center justify-center gap-1.5 active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+<span>+ Adicionar à Lista</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg transition-colors" title="Ver Detalhes" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</article>
+<!-- Produto 6: Bebida Vegetal de Amêndoas -->
+<article class="bg-surface-container-lowest rounded-xl border border-outline-variant/70 p-4 hover:border-primary transition-all duration-200 hover:shadow-md flex flex-col justify-between group">
+<div>
+<div class="flex items-start gap-3.5 pb-3">
+<div class="w-16 h-16 rounded-xl bg-surface-container flex items-center justify-center text-primary shrink-0 relative overflow-hidden">
+<span class="material-symbols-outlined text-[32px]">local_cafe</span>
+<span class="absolute bottom-1 right-1 w-2.5 h-2.5 bg-primary rounded-full ring-2 ring-white"></span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold text-secondary uppercase tracking-wider">A Tal da Castanha</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium bg-surface-container-low px-2 py-0.5 rounded">1L • TetraPak</span>
+</div>
+<h3 class="font-headline-sm text-[16px] font-bold text-on-surface truncate group-hover:text-primary transition-colors">Bebida Vegetal de Amêndoa Pura</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant block mt-0.5">Laticínios &amp; Substitutos</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-1.5 py-2">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-surface-container text-primary">Sem Lactose</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-surface-container text-primary">Sem Adição de Óleo</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-surface-container-low text-on-surface-variant">Limpo 100%</span>
+</div>
+<div class="mt-2.5 p-2.5 rounded-lg bg-surface-container/70 border border-primary/20 flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">verified</span>
+<div>
+<p class="font-label-sm text-label-sm font-bold text-primary">Substituto Ouro Aprovado</p>
+<p class="font-body-sm text-[11px] text-on-surface-variant leading-tight">Perfeita conformidade com a restrição de lactose da Família.</p>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/40 flex items-center justify-between gap-2">
+<button class="flex-1 py-2 px-3 bg-surface-container-low hover:bg-surface-container text-primary font-label-md text-label-md font-semibold rounded-lg transition-colors inline-flex items-center justify-center gap-1.5 active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+<span>+ Adicionar à Lista</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg transition-colors" title="Ver Detalhes" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</article>
+</div>
+</section>
+<!-- BANNER CONTEXTUAL DE ORIENTAÇÃO FAMILIAR -->
+<section class="bg-gradient-to-r from-surface-container to-surface-container-high rounded-xl p-5 border border-primary/20 flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary text-on-primary flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[26px]">psychology</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-[16px] font-bold text-on-surface">Diretrizes da Nutricionista Dra. Camila para a Família Silva</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+            Meta ativa do mês: Reduzir açúcares ocultos nos molhos e manter nível de fibras acima de 25g/dia.
+          </p>
+</div>
+</div>
+<div class="flex items-center gap-3 shrink-0">
+<button class="px-3.5 py-2 bg-surface-container-lowest hover:bg-surface-container-low text-primary border border-primary/30 rounded-lg font-label-md text-label-md font-semibold transition-colors" type="button">
+          Ajustar Metas Nutricionais
+        </button>
+</div>
+</section>
+</main>
+<!-- DRAWER / SLIDE-OVER LATERAL: 'Cadastrar Novo Produto' (Shared Component SideNavBar Blueprint) -->
+<aside class="fixed right-0 top-0 h-full w-[420px] z-50 flex flex-col bg-surface-container-lowest border-l border-outline-variant shadow-2xl transition-transform duration-300 translate-x-0" id="sideDrawer">
+<div class="flex flex-col justify-between h-full p-6 custom-scrollbar overflow-y-auto">
+<!-- Header do Drawer -->
+<div>
+<div class="flex items-center justify-between pb-4 border-b border-outline-variant/50">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary font-bold">
+<span class="material-symbols-outlined text-[24px]">add_circle</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface leading-tight">Cadastrar Novo Produto</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Verificação inteligente com o perfil alimentar</p>
+</div>
+</div>
+<button class="p-1.5 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg transition-colors" id="closeDrawerBtn" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Abas Internas de Navegação do Drawer (From JSON SideNavBar) -->
+<div class="grid grid-cols-4 gap-1.5 mt-4 p-1 bg-surface-container-low rounded-lg text-center">
+<button class="bg-surface-container text-primary font-semibold rounded-lg py-1.5 text-xs flex flex-col items-center gap-0.5 shadow-xs">
+<span class="material-symbols-outlined text-[16px]">fact_check</span>
+<span>Visão Geral</span>
+</button>
+<button class="text-on-surface-variant hover:bg-surface-container-low rounded-lg py-1.5 text-xs flex flex-col items-center gap-0.5 transition-colors">
+<span class="material-symbols-outlined text-[16px]">nutrition</span>
+<span>Nutrição</span>
+</button>
+<button class="text-on-surface-variant hover:bg-surface-container-low rounded-lg py-1.5 text-xs flex flex-col items-center gap-0.5 transition-colors">
+<span class="material-symbols-outlined text-[16px]">warning</span>
+<span>Alertas</span>
+</button>
+<button class="text-on-surface-variant hover:bg-surface-container-low rounded-lg py-1.5 text-xs flex flex-col items-center gap-0.5 transition-colors">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>Selo</span>
+</button>
+</div>
+<!-- Formulário de Cadastro Inteligente -->
+<form class="space-y-3.5 mt-5">
+<!-- Campo 1: Nome do Produto -->
+<div>
+<label class="block font-label-md text-label-md font-semibold text-on-surface mb-1">Nome do Produto</label>
+<input class="w-full h-11 px-3.5 bg-surface-container-lowest border border-outline-variant rounded-lg font-body-md text-body-md text-on-surface focus:ring-2 focus:ring-primary/20 focus:border-primary" placeholder="Ex: Pão Artesanal Australiano" type="text" value="Bebida Vegetal de Castanha de Caju"/>
+</div>
+<!-- Campo 2: Marca -->
+<div class="grid grid-cols-2 gap-3">
+<div>
+<label class="block font-label-md text-label-md font-semibold text-on-surface mb-1">Marca / Produtor</label>
+<input class="w-full h-11 px-3.5 bg-surface-container-lowest border border-outline-variant rounded-lg font-body-md text-body-md text-on-surface focus:ring-2 focus:ring-primary/20 focus:border-primary" placeholder="Ex: Wickbold" type="text" value="A Tal da Castanha"/>
+</div>
+<div>
+<label class="block font-label-md text-label-md font-semibold text-on-surface mb-1">Embalagem &amp; Unidade</label>
+<input class="w-full h-11 px-3.5 bg-surface-container-lowest border border-outline-variant rounded-lg font-body-md text-body-md text-on-surface focus:ring-2 focus:ring-primary/20 focus:border-primary" placeholder="Ex: 500g" type="text" value="1 Litro (Garrafa)"/>
+</div>
+</div>
+<!-- Campo 3: Categoria / Corredor -->
+<div>
+<label class="block font-label-md text-label-md font-semibold text-on-surface mb-1">Categoria / Corredor</label>
+<div class="relative">
+<select class="w-full h-11 pl-3.5 pr-10 bg-surface-container-lowest border border-outline-variant rounded-lg font-body-md text-body-md text-on-surface focus:ring-2 focus:ring-primary/20 focus:border-primary appearance-none">
+<option selected="">Laticínios &amp; Substitutos Vegetais</option>
+<option>Hortifrúti Fresco</option>
+<option>Padaria &amp; Grãos Integrais</option>
+<option>Mercearia Saudável</option>
+<option>Higiene &amp; Limpeza Consciente</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 text-on-surface-variant pointer-events-none text-[20px]">expand_more</span>
+</div>
+</div>
+<!-- Ingredientes Principais ou Foto do Rótulo -->
+<div>
+<div class="flex items-center justify-between mb-1">
+<label class="font-label-md text-label-md font-semibold text-on-surface">Ingredientes Principais</label>
+<button class="text-xs text-primary font-semibold hover:underline inline-flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[14px]">photo_camera</span>
+<span>Fotografar Rótulo</span>
+</button>
+</div>
+<textarea class="w-full p-3 bg-surface-container-lowest border border-outline-variant rounded-lg font-body-md text-body-md text-on-surface focus:ring-2 focus:ring-primary/20 focus:border-primary placeholder:text-on-surface-variant/60" rows="2">Água e castanha de caju orgânica. Zero conservantes. Não contém glúten.</textarea>
+</div>
+<!-- Botão de Verificação Automática -->
+<button class="w-full py-2.5 px-4 bg-surface-container text-primary border border-primary/40 rounded-lg font-label-md text-label-md font-bold hover:bg-surface-container-highest transition-all flex items-center justify-center gap-2 active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined text-[18px] text-tertiary-container">auto_awesome</span>
+<span>Verificar com meu perfil alimentar</span>
+</button>
+<!-- Card de Feedback em Tempo Real da Análise Nutricional -->
+<div class="p-3.5 bg-surface-container-low rounded-xl border border-primary/30 space-y-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-bold text-primary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">verified_user</span>
+<span>Análise de Compatibilidade (Família Silva)</span>
+</span>
+<span class="text-[11px] font-bold text-primary bg-surface-container px-2 py-0.5 rounded-full">Score 98/100</span>
+</div>
+<ul class="text-xs space-y-1 text-on-surface-variant">
+<li class="flex items-center gap-1.5 text-primary">
+<span class="material-symbols-outlined text-[14px]">check</span>
+<span>Livre de lactose (Ideal para restrição declarada de Lucas)</span>
+</li>
+<li class="flex items-center gap-1.5 text-primary">
+<span class="material-symbols-outlined text-[14px]">check</span>
+<span>Sem açúcares refinados adicionados</span>
+</li>
+<li class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">info</span>
+<span>Alérgeno: Contém Castanha de Caju (sem conflito ativo)</span>
+</li>
+</ul>
+</div>
+</form>
+</div>
+<!-- Footer do Drawer com Ações e Links de Apoio -->
+<div class="pt-4 border-t border-outline-variant/60 space-y-3 mt-4">
+<div class="flex items-center justify-between text-xs text-on-surface-variant px-1">
+<a class="flex items-center gap-1 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[16px]">help</span>
+<span>Guia de Alérgenos</span>
+</a>
+<a class="flex items-center gap-1 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[16px]">support_agent</span>
+<span>Suporte</span>
+</a>
+</div>
+<div class="flex items-center gap-2">
+<button class="w-1/3 py-2.5 px-3 bg-surface-container-lowest border border-outline-variant text-on-surface-variant hover:text-on-surface rounded-lg font-label-md text-label-md font-semibold transition-colors" id="cancelDrawerBtn" type="button">
+            Cancelar
+          </button>
+<button class="w-2/3 py-2.5 px-4 bg-primary text-on-primary hover:bg-primary-container rounded-lg font-label-md text-label-md font-semibold transition-all shadow-sm active:scale-[0.98]" type="button">
+            Salvar no Catálogo Familiar
+          </button>
+</div>
+</div>
+</div>
+</aside>
+<!-- OVERLAY ESCURO PARA O DRAWER QUANDO ABERTO EM TELAS MENORES -->
+<div class="fixed inset-0 bg-inverse-surface/30 backdrop-blur-xs z-40 hidden transition-opacity" id="drawerBackdrop"></div>
+<!-- RODAPÉ INSTITUCIONAL -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant/50 mt-12 py-8">
+<div class="max-w-[1200px] mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-on-surface-variant">
+<div class="flex items-center gap-3">
+<img alt="Símbolo CompraBem" class="w-6 h-6 rounded object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1XHEdgg_y8A4FdnD6Rs9kqv5LePmVEr08kBmPu_ysCJGKx_k0WEKb1fwfn4Wf-Mg91VJAjR1KnZgxWGZ-jfIgdnBFl9ZfupUvsuCAuVZa75f02jJbsw7kKxd2I-OB0B8isNoFA7tCVdxk78cdppi2d2tmBOYBkrUvH6u6lrU9JpVXFp0eUG64et_FbnRgGU4iYYrlit96nM6VKMhX9dQD6Jdh4GcqWrqsGvHSmF9goWZ35uz0NDN7lyFbs"/>
+<div>
+<p class="font-bold text-on-surface">CompraBem Produtos • Ecossistema Consciente de Compras</p>
+<p class="text-[11px]">Tecnologia de curadoria alimentar em conformidade com as diretrizes da ANVISA e OMS.</p>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<span class="inline-flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-[15px]">lock</span>
+<span>Dados Familiares Criptografados</span>
+</span>
+<span class="inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">health_and_safety</span>
+<span>Protocolo NutriShield™ Ativo</span>
+</span>
+<span class="text-outline">v2.4.1</span>
+</div>
+</div>
+</footer>
+<!-- SCRIPT DE MICROINTERAÇÕES E TOGGLE DO DRAWER -->
+<script>
+    const openBtn = document.getElementById('openDrawerBtn');
+    const closeBtn = document.getElementById('closeDrawerBtn');
+    const cancelBtn = document.getElementById('cancelDrawerBtn');
+    const drawer = document.getElementById('sideDrawer');
+    const backdrop = document.getElementById('drawerBackdrop');
+
+    function toggleDrawer(open) {
+      if (open) {
+        drawer.classList.remove('translate-x-full');
+        drawer.classList.add('translate-x-0');
+        backdrop.classList.remove('hidden');
+      } else {
+        drawer.classList.add('translate-x-full');
+        drawer.classList.remove('translate-x-0');
+        backdrop.classList.add('hidden');
+      }
+    }
+
+    if (openBtn) {
+      openBtn.addEventListener('click', () => toggleDrawer(true));
+    }
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => toggleDrawer(false));
+    }
+    if (cancelBtn) {
+      cancelBtn.addEventListener('click', () => toggleDrawer(false));
+    }
+    if (backdrop) {
+      backdrop.addEventListener('click', () => toggleDrawer(false));
+    }
+
+    // Tecla ESC fecha drawer
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        toggleDrawer(false);
+      }
+    });
+  </script>
+  <script src="/nav-switcher.js"></script>
+</body></html>
