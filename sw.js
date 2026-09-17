@@ -1,20 +1,10 @@
-const CACHE_NAME = 'comprabem-v2';
+const CACHE_NAME = 'comprabem-v3';
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html',
-  '/landing.html',
   '/login.html',
-  '/dashboard.html',
   '/lista.html',
-  '/modo-mercado.html',
-  '/lembretes.html',
   '/perfil-nutri.html',
-  '/conflitos.html',
-  '/catalogo.html',
-  '/portal-nutri.html',
-  '/despensa.html',
-  '/historico.html',
-  '/app.html',
   '/design-system.html',
   '/tailwind.js',
   '/nav-switcher.js',

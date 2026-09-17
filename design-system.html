@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CompraBem — Sistema Refinado de Design & PWA</title>
-  <meta name="description" content="Ecossistema Refinado CompraBem: Lista, Nutri, Lembretes e Profissionais. Sua orientação aplicada às compras.">
+  <meta name="description" content="Sistema de design CompraBem: marca, cores, tipografia e padrões de interface. Sua orientação aplicada às compras.">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#2F7D5A">
@@ -516,7 +516,6 @@
           <li><a href="#telas">Telas Refinadas</a></li>
           <li><a href="#arquitetura">Arquitetura de Abas</a></li>
           <li><a href="#componentes">Componentes Acolhedores</a></li>
-          <li><a href="#conflitos">Conflito & Origem</a></li>
           <li><a href="/CompraBem-Lista-Kit-Marca-Completo.zip" class="btn btn-primary" download>⬇ Baixar Kit de Marca</a></li>
         </ul>
       </nav>
@@ -533,19 +532,13 @@
       <h1>CompraBem</h1>
       <p class="slogan">“Sua orientação aplicada às compras.”</p>
 
-      <!-- 4 Mother Tabs Selector -->
+      <!-- Screens Selector -->
       <div class="mother-tabs-bar">
         <div class="mother-tab active" onclick="filtrarAba('lista')">
-          🛒 <strong>CompraBem Lista</strong> (Mercado & Despensa)
+          🛒 <strong>Lista</strong> (por corredor do mercado)
         </div>
-        <div class="mother-tab nutri" onclick="filtrarAba('nutri')">
-          🥗 <strong>CompraBem Nutri</strong> (Perfil & Orientações)
-        </div>
-        <div class="mother-tab" onclick="filtrarAba('lembretes')">
-          📅 <strong>CompraBem Lembretes</strong> (Feiras & Recorrência)
-        </div>
-        <div class="mother-tab nutri" onclick="filtrarAba('profissionais')">
-          💼 <strong>Para Profissionais</strong> (Área Nutricionista)
+        <div class="mother-tab nutri" onclick="filtrarAba('perfil')">
+          🥗 <strong>Meu Perfil</strong> (documento da nutri & regras da IA)
         </div>
       </div>
     </section>
@@ -563,8 +556,8 @@
         <div class="screen-showcase">
           <div class="screen-showcase-header">
             <div>
-              <h4>Desktop Web — Ecossistema Multi-Abas & Dashboard</h4>
-              <small style="color: var(--cinza-secundario);">Sidebar com as 4 abas-mãe, cards concisos e pontes nutricionais</small>
+              <h4>Desktop Web — Lista por Corredor</h4>
+              <small style="color: var(--cinza-secundario);">Cards concisos, navegação mínima e foco na lista de compras</small>
             </div>
             <span class="origin-badge origin-manual">Desktop 2560px</span>
           </div>
@@ -695,7 +688,7 @@
     <div class="container">
       <img src="/assets/svg/logo-mono-branco.svg" style="height: 36px; margin-bottom: 12px;" alt="CompraBem">
       <div style="font-weight: 700;">Sua orientação aplicada às compras.</div>
-      <p style="opacity: 0.8; font-size: 13.5px; margin-top: 6px;">CompraBem Lista • CompraBem Nutri • CompraBem Lembretes • CompraBem para Profissionais</p>
+      <p style="opacity: 0.8; font-size: 13.5px; margin-top: 6px;">Lista por corredor • Meu Perfil</p>
     </div>
   </footer>
 

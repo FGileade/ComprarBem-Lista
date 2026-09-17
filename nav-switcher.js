@@ -31,18 +31,9 @@
     const screens = [
       { name: '1. Landing Page', url: '/index.html', icon: 'home' },
       { name: '2. Login & Autenticação', url: '/login.html', icon: 'lock' },
-      { name: '3. Dashboard Principal', url: '/dashboard.html', icon: 'dashboard' },
-      { name: '4. Editar Lista', url: '/lista.html', icon: 'edit_note' },
-      { name: '5. Modo Mercado Offline', url: '/modo-mercado.html', icon: 'shopping_cart' },
-      { name: '6. Lembretes & Feira', url: '/lembretes.html', icon: 'alarm' },
-      { name: '7. Despensa & Validade', url: '/despensa.html', icon: 'kitchen' },
-      { name: '8. Conflitos & Substitutos', url: '/conflitos.html', icon: 'sync_problem' },
-      { name: '9. Catálogo de Produtos', url: '/catalogo.html', icon: 'inventory_2' },
-      { name: '10. Perfil Nutri & LGPD', url: '/perfil-nutri.html', icon: 'person' },
-      { name: '11. Portal Nutricionista', url: '/portal-nutri.html', icon: 'medical_services' },
-      { name: '12. Histórico & Métricas', url: '/historico.html', icon: 'bar_chart' },
-      { name: '13. PWA App Refinado', url: '/app.html', icon: 'smartphone' },
-      { name: '14. Design System & Marca', url: '/design-system.html', icon: 'palette' }
+      { name: '3. Lista por Corredor', url: '/lista.html', icon: 'edit_note' },
+      { name: '4. Meu Perfil Nutri & LGPD', url: '/perfil-nutri.html', icon: 'person' },
+      { name: '5. Design System & Marca', url: '/design-system.html', icon: 'palette' }
     ];
 
     const currentPath = window.location.pathname.replace(/^\//, '') || 'index.html';
@@ -94,7 +85,7 @@
         <div style="padding: 14px 18px; background: #0c6443; color: white; display: flex; justify-content: space-between; align-items: center;">
           <div>
             <div style="font-weight: 800; font-size: 14px;">CompraBem Mostruário</div>
-            <div style="font-size: 11px; opacity: 0.85;">14 Telas Stitch Interligadas</div>
+            <div style="font-size: 11px; opacity: 0.85;">${screens.length} Telas Interligadas</div>
           </div>
           <button id="showcase-close" style="background:none;border:none;color:white;font-size:18px;cursor:pointer;">✕</button>
         </div>

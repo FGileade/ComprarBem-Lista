@@ -170,7 +170,7 @@
           3. Recuperar Senha
         </button>
 <button class="tab-btn px-3.5 py-1.5 rounded-lg font-label-md text-label-md transition-all duration-150 text-on-surface-variant hover:text-primary" id="tab-profile" onclick="switchState('profile')">
-          4. Escolha de Perfil
+          4. Boas-Vindas
         </button>
 </div>
 </div>
@@ -483,85 +483,42 @@
 </div>
 </div>
 <!-- ========================================== -->
-<!-- ESTADO 4: ESCOLHA DE PERFIL -->
+<!-- ESTADO 4: BOAS-VINDAS -->
 <!-- ========================================== -->
 <div class="state-view hidden" id="view-profile">
 <div class="text-center max-w-lg mx-auto mb-space-lg">
 <span class="px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold">Passo de Boas-Vindas</span>
-<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight mt-1">Como você deseja utilizar o CompraBem?</h2>
-<p class="font-body-md text-body-md text-on-surface-variant">Personalize sua experiência para que possamos organizar as ferramentas ideais para a sua rotina.</p>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight mt-1">Sua conta está pronta!</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Se você já passou por uma consulta com a nutricionista parceira, envie o documento que ela preparou para que nosso assistente configure suas regras de compra.</p>
 </div>
-<!-- Dual Profile Cards Grid -->
-<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md mb-space-lg">
-<!-- Option 1: Consumidor / Usuário -->
-<div class="profile-card group cursor-pointer p-space-lg rounded-xl border-2 border-primary-container bg-surface-container-low hover:border-primary-container transition-all flex flex-col justify-between relative" id="card-user" onclick="selectProfile('user')">
-<div class="absolute top-3 right-3 text-primary-container" id="check-user">
-<span class="material-symbols-outlined text-2xl" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<!-- Welcome Card -->
+<div class="max-w-lg mx-auto p-space-lg rounded-xl border-2 border-primary-container bg-surface-container-low mb-space-lg">
+<div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-primary-container mb-space-md mx-auto">
+<span class="material-symbols-outlined text-2xl" data-icon="upload_file">upload_file</span>
 </div>
-<div>
-<div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-primary-container mb-space-md">
-<span class="material-symbols-outlined text-2xl" data-icon="shopping_basket">shopping_basket</span>
-</div>
-<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container text-primary font-semibold">Rotina Doméstica &amp; Família</span>
-<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mt-1 mb-2">Sou Usuário / Consumidor</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">Para quem busca praticidade, despensa sob controle e economia no supermercado.</p>
 <ul class="space-y-2 mb-space-lg text-on-surface-variant font-body-sm text-body-sm">
 <li class="flex items-center gap-2">
 <span class="material-symbols-outlined text-base text-primary" data-icon="check">check</span>
-<span>Organização de hortifrúti e despensa</span>
+<span>Envie o documento da sua nutricionista (PDF ou foto)</span>
 </li>
 <li class="flex items-center gap-2">
 <span class="material-symbols-outlined text-base text-primary" data-icon="check">check</span>
-<span>Substituições inteligentes no mercado</span>
+<span>A IA cria automaticamente as regras da sua lista</span>
 </li>
 <li class="flex items-center gap-2">
 <span class="material-symbols-outlined text-base text-primary" data-icon="check">check</span>
-<span>Sincronização familiar e listas offline</span>
+<span>Você também pode pular e enviar o documento depois</span>
 </li>
 </ul>
-</div>
-<button class="w-full h-11 bg-primary-container text-on-primary font-label-md text-label-md font-semibold rounded-lg flex items-center justify-center gap-2 shadow-xs group-hover:bg-primary transition-colors" type="button">
-<span>Continuar como Consumidor</span>
+<a class="w-full h-11 bg-primary-container text-on-primary font-label-md text-label-md font-semibold rounded-lg flex items-center justify-center gap-2 shadow-xs hover:bg-primary transition-colors" href="perfil-nutri.html">
+<span>Enviar documento da nutricionista</span>
 <span class="material-symbols-outlined text-base" data-icon="arrow_forward">arrow_forward</span>
-</button>
-</div>
-<!-- Option 2: Nutricionista / Profissional -->
-<div class="profile-card group cursor-pointer p-space-lg rounded-xl border border-outline-variant bg-surface-container-lowest hover:border-tertiary-fixed-dim transition-all flex flex-col justify-between relative" id="card-nutri" onclick="selectProfile('nutri')">
-<div class="absolute top-3 right-3 text-outline hidden" id="check-nutri">
-<span class="material-symbols-outlined text-2xl" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-</div>
-<div>
-<div class="w-12 h-12 rounded-xl bg-tertiary-fixed flex items-center justify-center text-tertiary mb-space-md">
-<span class="material-symbols-outlined text-2xl" data-icon="clinical_notes">clinical_notes</span>
-</div>
-<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-semibold">Prescrição &amp; Acompanhamento</span>
-<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mt-1 mb-2">Sou Nutricionista / Profissional</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">Para profissionais que desejam guiar seus pacientes nas compras sem tom proibitivo.</p>
-<ul class="space-y-2 mb-space-lg text-on-surface-variant font-body-sm text-body-sm">
-<li class="flex items-center gap-2">
-<span class="material-symbols-outlined text-base text-tertiary" data-icon="check">check</span>
-<span>Envio direto de listas guiadas para pacientes</span>
-</li>
-<li class="flex items-center gap-2">
-<span class="material-symbols-outlined text-base text-tertiary" data-icon="check">check</span>
-<span>Alertas de ingredientes sem tom punitivo</span>
-</li>
-<li class="flex items-center gap-2">
-<span class="material-symbols-outlined text-base text-tertiary" data-icon="check">check</span>
-<span>Gestão de múltiplos perfis e credenciamento CRN</span>
-</li>
-</ul>
-</div>
-<button class="w-full h-11 bg-surface-container-highest text-on-surface font-label-md text-label-md font-semibold rounded-lg flex items-center justify-center gap-2 group-hover:bg-tertiary-fixed group-hover:text-on-tertiary-fixed transition-colors" type="button">
-<span>Continuar como Profissional</span>
-<span class="material-symbols-outlined text-base" data-icon="arrow_forward">arrow_forward</span>
-</button>
-</div>
+</a>
 </div>
 <!-- Bottom Microcopy -->
 <div class="bg-surface-container-low p-space-sm rounded-lg text-center">
 <p class="font-body-sm text-body-sm text-on-surface-variant">
-              💡 Você poderá alternar, convidar nutricionistas ou familiares a qualquer momento através do menu de configurações da sua conta.
+              💡 Você poderá enviar ou atualizar o documento a qualquer momento em "Meu Perfil".
             </p>
 </div>
 </div>
@@ -680,33 +637,6 @@
       document.getElementById('recovery-success-box').classList.remove('hidden');
     }
 
-    // Profile Selector (User vs Nutri)
-    function selectProfile(type) {
-      const cardUser = document.getElementById('card-user');
-      const cardNutri = document.getElementById('card-nutri');
-      const checkUser = document.getElementById('check-user');
-      const checkNutri = document.getElementById('check-nutri');
-
-      if (type === 'user') {
-        cardUser.classList.remove('border-outline-variant', 'bg-surface-container-lowest');
-        cardUser.classList.add('border-primary-container', 'bg-surface-container-low');
-        checkUser.classList.remove('hidden');
-
-        cardNutri.classList.add('border-outline-variant', 'bg-surface-container-lowest');
-        cardNutri.classList.remove('border-primary-container', 'bg-surface-container-low');
-        checkNutri.classList.add('hidden');
-      } else {
-        cardNutri.classList.remove('border-outline-variant', 'bg-surface-container-lowest');
-        cardNutri.classList.add('border-primary-container', 'bg-surface-container-low');
-        checkNutri.classList.remove('hidden');
-        checkNutri.classList.remove('text-outline');
-        checkNutri.classList.add('text-primary-container');
-
-        cardUser.classList.add('border-outline-variant', 'bg-surface-container-lowest');
-        cardUser.classList.remove('border-primary-container', 'bg-surface-container-low');
-        checkUser.classList.add('hidden');
-      }
-    }
   </script>
   <script src="/nav-switcher.js"></script>
 </body></html>
