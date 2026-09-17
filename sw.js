@@ -16,6 +16,8 @@ const ASSETS_TO_CACHE = [
   '/historico.html',
   '/app.html',
   '/design-system.html',
+  '/tailwind.js',
+  '/nav-switcher.js',
   '/manifest.json',
   '/favicon.ico'
 ];
