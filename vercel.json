@@ -1,7 +1,6 @@
 {
   "version": 2,
-  "name": "comprabem-lista",
-  "cleanUrls": true,
+  "cleanUrls": false,
   "headers": [
     {
       "source": "/(.*)",
