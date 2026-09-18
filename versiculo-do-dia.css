@@ -1,0 +1,68 @@
+.versiculo-banner {
+  position: fixed;
+  top: 84px;
+  right: 16px;
+  width: 320px;
+  max-width: calc(100vw - 32px);
+  background: #ffffff;
+  color: #1b2b23;
+  font-family: inherit;
+  border-radius: 16px;
+  border: 1px solid #bfc9c0;
+  padding: 18px 20px;
+  box-shadow: 0 10px 30px rgba(15, 31, 25, 0.15);
+  z-index: 60;
+  animation: versiculoSlideIn 0.4s ease;
+}
+
+.versiculo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  color: #0c6443;
+}
+
+#fechar-versiculo {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+  padding: 0;
+  color: inherit;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+
+#fechar-versiculo:hover {
+  opacity: 1;
+}
+
+#versiculo-texto {
+  font-size: 15px;
+  font-style: italic;
+  line-height: 1.4;
+  margin-bottom: 8px;
+  color: #3a473f;
+}
+
+#versiculo-ref {
+  text-align: right;
+  font-weight: 700;
+  font-size: 13px;
+  color: #0c6443;
+}
+
+@keyframes versiculoSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -12,6 +12,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <!-- Tailwind CSS v3 -->
+<link href="/versiculo-do-dia.css" rel="stylesheet"/>
 <script src="/tailwind.js"></script>
 <script id="tailwind-config">
     tailwind.config = {
@@ -249,7 +250,7 @@
 <label class="block font-label-md text-label-md text-on-surface mb-1" for="login-email">E-mail cadastrado</label>
 <div class="relative">
 <span class="material-symbols-outlined absolute left-3 top-2.5 text-outline text-xl" data-icon="mail">mail</span>
-<input class="w-full h-11 pl-10 pr-3 rounded-lg border border-outline-variant bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 outline-none transition-all placeholder:text-outline-variant" id="login-email" placeholder="nome@exemplo.com" required="" type="email"/>
+<input class="w-full h-11 pl-10 pr-3 rounded-lg border border-outline-variant bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 outline-none transition-all placeholder:text-outline-variant" autocomplete="email" id="login-email" inputmode="email" placeholder="nome@exemplo.com" required="" type="email"/>
 </div>
 <p class="mt-1 font-body-sm text-body-sm text-on-surface-variant">Utilize o e-mail da sua conta pessoal ou profissional.</p>
 </div>
@@ -263,8 +264,8 @@
 </div>
 <div class="relative">
 <span class="material-symbols-outlined absolute left-3 top-2.5 text-outline text-xl" data-icon="lock">lock</span>
-<input class="w-full h-11 pl-10 pr-10 rounded-lg border border-outline-variant bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 outline-none transition-all placeholder:text-outline-variant" id="login-password" placeholder="Sua senha secreta" required="" type="password"/>
-<button class="absolute right-3 top-2.5 text-outline hover:text-on-surface transition-colors" onclick="togglePasswordVisibility('login-password', this)" title="Mostrar senha" type="button">
+<input class="w-full h-11 pl-10 pr-10 rounded-lg border border-outline-variant bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 outline-none transition-all placeholder:text-outline-variant" autocomplete="current-password" id="login-password" placeholder="Sua senha secreta" required="" type="password"/>
+<button aria-label="Mostrar senha" class="absolute right-3 top-2.5 text-outline hover:text-on-surface transition-colors" onclick="togglePasswordVisibility('login-password', this)" title="Mostrar senha" type="button">
 <span class="material-symbols-outlined text-xl" data-icon="visibility">visibility</span>
 </button>
 </div>
@@ -338,7 +339,7 @@
 <label class="block font-label-md text-label-md text-on-surface mb-1" for="reg-name">Nome completo</label>
 <div class="relative">
 <span class="material-symbols-outlined absolute left-3 top-2.5 text-outline text-xl" data-icon="person">person</span>
-<input class="w-full h-11 pl-10 pr-3 rounded-lg border border-outline-variant bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 outline-none transition-all placeholder:text-outline-variant" id="reg-name" placeholder="Como podemos te chamar?" required="" type="text"/>
+<input class="w-full h-11 pl-10 pr-3 rounded-lg border border-outline-variant bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 outline-none transition-all placeholder:text-outline-variant" autocapitalize="words" autocomplete="name" id="reg-name" placeholder="Como podemos te chamar?" required="" type="text"/>
 </div>
 </div>
 <!-- Email -->
@@ -346,7 +347,7 @@
 <label class="block font-label-md text-label-md text-on-surface mb-1" for="reg-email">E-mail principal</label>
 <div class="relative">
 <span class="material-symbols-outlined absolute left-3 top-2.5 text-outline text-xl" data-icon="mail">mail</span>
-<input class="w-full h-11 pl-10 pr-3 rounded-lg border border-outline-variant bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 outline-none transition-all placeholder:text-outline-variant" id="reg-email" placeholder="seuemail@exemplo.com" required="" type="email"/>
+<input class="w-full h-11 pl-10 pr-3 rounded-lg border border-outline-variant bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 outline-none transition-all placeholder:text-outline-variant" autocomplete="email" id="reg-email" inputmode="email" placeholder="seuemail@exemplo.com" required="" type="email"/>
 </div>
 </div>
 <!-- Create Password with Strength Indicator -->
@@ -354,8 +355,8 @@
 <label class="block font-label-md text-label-md text-on-surface mb-1" for="reg-password">Criar senha forte</label>
 <div class="relative">
 <span class="material-symbols-outlined absolute left-3 top-2.5 text-outline text-xl" data-icon="lock">lock</span>
-<input class="w-full h-11 pl-10 pr-10 rounded-lg border border-outline-variant bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 outline-none transition-all placeholder:text-outline-variant" id="reg-password" oninput="updatePasswordStrength(this.value)" placeholder="Mínimo 8 caracteres e números" required="" type="password"/>
-<button class="absolute right-3 top-2.5 text-outline hover:text-on-surface transition-colors" onclick="togglePasswordVisibility('reg-password', this)" type="button">
+<input class="w-full h-11 pl-10 pr-10 rounded-lg border border-outline-variant bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 outline-none transition-all placeholder:text-outline-variant" autocomplete="new-password" id="reg-password" oninput="updatePasswordStrength(this.value)" placeholder="Mínimo 8 caracteres e números" required="" type="password"/>
+<button aria-label="Mostrar senha" class="absolute right-3 top-2.5 text-outline hover:text-on-surface transition-colors" onclick="togglePasswordVisibility('reg-password', this)" type="button">
 <span class="material-symbols-outlined text-xl" data-icon="visibility">visibility</span>
 </button>
 </div>
@@ -373,8 +374,8 @@
 <label class="block font-label-md text-label-md text-on-surface mb-1" for="reg-confirm-password">Confirmação de senha</label>
 <div class="relative">
 <span class="material-symbols-outlined absolute left-3 top-2.5 text-outline text-xl" data-icon="verified">verified</span>
-<input class="w-full h-11 pl-10 pr-10 rounded-lg border border-outline-variant bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 outline-none transition-all placeholder:text-outline-variant" id="reg-confirm-password" placeholder="Repita sua senha" required="" type="password"/>
-<button class="absolute right-3 top-2.5 text-outline hover:text-on-surface transition-colors" onclick="togglePasswordVisibility('reg-confirm-password', this)" type="button">
+<input class="w-full h-11 pl-10 pr-10 rounded-lg border border-outline-variant bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 outline-none transition-all placeholder:text-outline-variant" autocomplete="new-password" id="reg-confirm-password" placeholder="Repita sua senha" required="" type="password"/>
+<button aria-label="Mostrar senha" class="absolute right-3 top-2.5 text-outline hover:text-on-surface transition-colors" onclick="togglePasswordVisibility('reg-confirm-password', this)" type="button">
 <span class="material-symbols-outlined text-xl" data-icon="visibility">visibility</span>
 </button>
 </div>
@@ -452,7 +453,7 @@
 <label class="block font-label-md text-label-md text-on-surface mb-1" for="recovery-email">E-mail cadastrado</label>
 <div class="relative">
 <span class="material-symbols-outlined absolute left-3 top-2.5 text-outline text-xl" data-icon="mail">mail</span>
-<input class="w-full h-11 pl-10 pr-3 rounded-lg border border-outline-variant bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 outline-none transition-all" id="recovery-email" placeholder="nome@exemplo.com" required="" type="email"/>
+<input class="w-full h-11 pl-10 pr-3 rounded-lg border border-outline-variant bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 outline-none transition-all" autocomplete="email" id="recovery-email" inputmode="email" placeholder="nome@exemplo.com" required="" type="email"/>
 </div>
 </div>
 <button class="w-full h-11 bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg font-semibold rounded-lg flex items-center justify-center gap-2 transition-transform active:scale-[0.98] shadow-xs" type="submit">
@@ -526,6 +527,9 @@
 <a class="text-primary dark:text-inverse-primary font-semibold font-body-sm text-body-sm hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">Contact Trust Desk</a>
 </div>
 </div>
+<div style="width:100%;text-align:center;padding:10px 0 16px;font-size:12px;color:#667085;">
+      Developed by <a href="https://gileadehub.com.br/" rel="noopener noreferrer" style="color:#0b5cff;text-decoration:none;font-weight:600;" target="_blank">Gileade HUB</a>
+    </div>
 </footer>
 <!-- Vanilla JavaScript Interactive Controller -->
 <script>
@@ -565,9 +569,13 @@
       if (input.type === 'password') {
         input.type = 'text';
         icon.textContent = 'visibility_off';
+        triggerBtn.setAttribute('aria-label', 'Ocultar senha');
+        triggerBtn.setAttribute('title', 'Ocultar senha');
       } else {
         input.type = 'password';
         icon.textContent = 'visibility';
+        triggerBtn.setAttribute('aria-label', 'Mostrar senha');
+        triggerBtn.setAttribute('title', 'Mostrar senha');
       }
     }
 
@@ -622,6 +630,23 @@
       document.getElementById('recovery-success-box').classList.remove('hidden');
     }
 
+    // Remove espaços extras dos campos de e-mail ao sair do campo
+    document.querySelectorAll('input[type="email"]').forEach((emailInput) => {
+      emailInput.addEventListener('blur', () => {
+        emailInput.value = emailInput.value.trim();
+      });
+    });
+
   </script>
   <script src="/nav-switcher.js"></script>
+  <!-- Banner Versículo do Dia -->
+  <div class="versiculo-banner" id="versiculo-banner" style="display:none;">
+    <div class="versiculo-header">
+      <span>📖 Versículo do Dia</span>
+      <button aria-label="Fechar versículo do dia" id="fechar-versiculo" type="button">✕</button>
+    </div>
+    <div id="versiculo-texto"></div>
+    <div id="versiculo-ref"></div>
+  </div>
+  <script src="/versiculo-do-dia.js"></script>
 </body></html>

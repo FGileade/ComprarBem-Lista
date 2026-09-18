@@ -11,6 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/>
 <!-- Tailwind CSS CDN -->
+<link href="/versiculo-do-dia.css" rel="stylesheet"/>
 <script src="/tailwind.js"></script>
 <!-- Tailwind Config -->
 <script id="tailwind-config">
@@ -538,6 +539,9 @@
 <div class="border-t border-outline-variant/20 py-3 text-center text-label-sm font-label-sm text-on-surface-variant bg-surface-container">
       Sua orientação aplicada às compras. • Certificado PWA W3C Compliant
     </div>
+<div style="width:100%;text-align:center;padding:10px 0;font-size:12px;color:#667085;">
+      Developed by <a href="https://gileadehub.com.br/" rel="noopener noreferrer" style="color:#0b5cff;text-decoration:none;font-weight:600;" target="_blank">Gileade HUB</a>
+    </div>
 </footer>
 <!-- Simple Vanilla JS for Accordion Interaction -->
 <script>
@@ -556,4 +560,14 @@
     }
   </script>
   <script src="/nav-switcher.js"></script>
+  <!-- Banner Versículo do Dia -->
+  <div class="versiculo-banner" id="versiculo-banner" style="display:none;">
+    <div class="versiculo-header">
+      <span>📖 Versículo do Dia</span>
+      <button aria-label="Fechar versículo do dia" id="fechar-versiculo" type="button">✕</button>
+    </div>
+    <div id="versiculo-texto"></div>
+    <div id="versiculo-ref"></div>
+  </div>
+  <script src="/versiculo-do-dia.js"></script>
 </body></html>

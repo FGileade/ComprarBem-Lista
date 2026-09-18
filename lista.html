@@ -9,6 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/>
+<link href="/versiculo-do-dia.css" rel="stylesheet"/>
 <script src="/tailwind.js"></script>
 <script id="tailwind-config">
     tailwind.config = {
@@ -615,4 +616,14 @@
     });
   </script>
   <script src="/nav-switcher.js"></script>
+  <!-- Banner Versículo do Dia -->
+  <div class="versiculo-banner" id="versiculo-banner" style="display:none;">
+    <div class="versiculo-header">
+      <span>📖 Versículo do Dia</span>
+      <button aria-label="Fechar versículo do dia" id="fechar-versiculo" type="button">✕</button>
+    </div>
+    <div id="versiculo-texto"></div>
+    <div id="versiculo-ref"></div>
+  </div>
+  <script src="/versiculo-do-dia.js"></script>
 </body></html>
