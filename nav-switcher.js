@@ -32,8 +32,7 @@
       { name: '1. Landing Page', url: '/index.html', icon: 'home' },
       { name: '2. Login & Autenticação', url: '/login.html', icon: 'lock' },
       { name: '3. Lista por Corredor', url: '/lista.html', icon: 'edit_note' },
-      { name: '4. Meu Perfil Nutri & LGPD', url: '/perfil-nutri.html', icon: 'person' },
-      { name: '5. Design System & Marca', url: '/design-system.html', icon: 'palette' }
+      { name: '4. Meu Perfil Nutri & LGPD', url: '/perfil-nutri.html', icon: 'person' }
     ];
 
     const currentPath = window.location.pathname.replace(/^\//, '') || 'index.html';
