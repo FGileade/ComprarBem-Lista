@@ -563,8 +563,11 @@
   <!-- Banner Versículo do Dia -->
   <div class="versiculo-banner" id="versiculo-banner" style="display:none;">
     <div class="versiculo-header">
-      <span>📖 Versículo do Dia</span>
-      <button aria-label="Fechar versículo do dia" id="fechar-versiculo" type="button">✕</button>
+      <span class="versiculo-header-title">📖 Versículo do Dia</span>
+      <div class="versiculo-header-actions">
+        <span id="versiculo-timer">20s</span>
+        <button aria-label="Fechar versículo do dia" id="fechar-versiculo" type="button">✕</button>
+      </div>
     </div>
     <div id="versiculo-texto"></div>
     <div id="versiculo-ref"></div>

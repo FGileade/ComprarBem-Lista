@@ -1,16 +1,17 @@
 .versiculo-banner {
   position: fixed;
-  top: 84px;
-  right: 16px;
-  width: 320px;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  width: 340px;
   max-width: calc(100vw - 32px);
   background: #ffffff;
   color: #1b2b23;
   font-family: inherit;
   border-radius: 16px;
   border: 1px solid #bfc9c0;
-  padding: 18px 20px;
-  box-shadow: 0 10px 30px rgba(15, 31, 25, 0.15);
+  padding: 16px 18px;
+  box-shadow: 0 10px 30px rgba(15, 31, 25, 0.18);
   z-index: 60;
   animation: versiculoSlideIn 0.4s ease;
 }
@@ -19,10 +20,35 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 10px;
   margin-bottom: 10px;
   font-weight: 700;
   font-size: 14px;
   color: #0c6443;
+}
+
+.versiculo-header-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.versiculo-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+#versiculo-timer {
+  font-size: 11px;
+  font-weight: 700;
+  color: #667085;
+  background: #f1f3f5;
+  padding: 2px 8px;
+  border-radius: 999px;
+  min-width: 30px;
+  text-align: center;
 }
 
 #fechar-versiculo {
@@ -59,10 +85,10 @@
 @keyframes versiculoSlideIn {
   from {
     opacity: 0;
-    transform: translateY(-12px);
+    transform: translateX(-50%) translateY(16px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(-50%) translateY(0);
   }
 }
